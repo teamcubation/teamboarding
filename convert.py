@@ -54,6 +54,9 @@ add_to_body("""
     </script>
 """)
 
+# add favicon
+add_to_head("""<link rel="icon" href="static/favicon.ico">""")
+
 
 with open(INDEX_OUT, 'w') as f:
     f.write(content)
