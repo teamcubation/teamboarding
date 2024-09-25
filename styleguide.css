@@ -31,6 +31,8 @@
   --global-colors-neutral-neutral-900: rgba(29, 27, 27, 1);
   --global-colors-neutral-neutral-700: rgba(71, 70, 70, 1);
   --global-colors-negative-red-500: rgba(223, 55, 48, 1);
+  --global-colors-positive-green-200: rgba(82, 221, 180, 1);
+  --global-colors-primary-violet-300: rgba(170, 160, 255, 1);
   --global-colors-primary-violet-200: rgba(198, 191, 255, 1);
   --global-colors-teamboarding-tb-primary-light: var(--global-colors-primary-violet-50);
   --global-colors-neutral-neutral-600: rgba(95, 94, 94, 1);
@@ -39,7 +41,6 @@
   --global-colors-neutral-neutral-300: rgba(173, 171, 170, 1);
   --global-colors-neutral-neutral-100: rgba(230, 226, 225, 1);
   --global-colors-primary-violet-50: rgba(243, 238, 255, 1);
-  --global-colors-positive-green-200: rgba(82, 221, 180, 1);
   --global-colors-neutral-neutral-200: rgba(200, 198, 197, 1);
   --global-colors-positive-green-400: rgba(1, 164, 128, 1);
   --global-colors-neutral-neutral-50: rgba(245, 245, 245, 1);

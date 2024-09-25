@@ -16,6 +16,8 @@ def add_to_body(s):
 
 def replace_text(old, new):
     global content
+    if old not in content:
+        raise Exception(f'Text "{old}" not found in {INDEX_BASE}')
     content = content.replace(old, new)
 
 def replace_text_regex(old, new):
@@ -29,9 +31,9 @@ add_to_head("""<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">""")
 add_to_head('<meta name="description" content="Simplify and enhance your onboarding experience, ensuring every new team member is set up for success from day one.">')
 replace_text('<div class="text-wrapper">', '<div class="text-wrapper" style="line-height: 10px;">')
-replace_text('<div class="frame-62">', '<div class="frame-62" style="width: 545px;">')
+replace_text('<div class="frame-61">', '<div class="frame-61" style="width: 545px;">')
 replace_text('<input class="input-2" placeholder="Fullname" type="text" />', '<input class="input-2" placeholder="Fullname" name="fullname" style="color: #000;" type="text" />')
-replace_text('<div class="input-4"><div class="text-wrapper-59">Company</div></div>', '<input class="input-2" placeholder="Company" name="company" style="color: #000;" type="text">')
+replace_text('<div class="input-4"><div class="text-wrapper-58">Company</div></div>', '<input class="input-2" placeholder="Company" name="company" style="color: #000;" type="text">')
 replace_text('<input class="input-5" placeholder="Company Email" type="email" />', '<input class="input-5" placeholder="Company Email" name="email" style="color: #000;" type="email" />')
 replace_text('<div class="link-2">', '<div class="link-2" style="padding: 12px 24px; cursor: pointer;">')
 replace_text('<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" />', '<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" style="width: 100%;" />')
@@ -66,11 +68,14 @@ add_to_head("""<link rel="icon" href="static/favicon.ico">""")
 
 # links
 replace_text_regex(r'<div class="header-header-nav">(.*?)</div>', '<a class="header-header-nav" href="#\\1">\\1</a>')
+replace_text_regex(r'<div class="header-header-nav-2">(.*?)</div>', '<a class="header-header-nav-2" href="#\\1">\\1</a>')
+replace_text_regex(r'<div class="header-header-nav-3">(.*?)</div>', '<a class="header-header-nav-3" href="#\\1">\\1</a>')
+replace_text_regex(r'<div class="header-header-nav-4">(.*?)</div>', '<a class="header-header-nav-4" href="#\\1">\\1</a>')
 replace_text('<div class="frame-8">', '<div class="frame-8"><a name="About"></a>')
 replace_text('<div class="section">', '<div class="section"><a name="Customers"></a>')
 replace_text('<div class="frame-19">', '<a name="Features"></a><div class="frame-19">')
 replace_text('<div class="overlap-group-3">', '<div class="overlap-group-3"><a name="Integrations"></a>')
-replace_text('<div class="frame-71">', '<div class="frame-71"><a name="Benefits"></a>')
+replace_text('<div class="frame-70">', '<div class="frame-70"><a name="Benefits"></a>')
 
 with open(INDEX_OUT, 'w') as f:
     f.write(content)
