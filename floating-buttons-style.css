@@ -1,0 +1,98 @@
+.floating-buttons {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+    width: 100%;
+    position: fixed;
+    bottom: 13px;
+    z-index: 100;
+}
+
+.floating-buttons .frame-wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border-radius: 90px;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+    margin: 0 auto;
+}
+
+.floating-buttons .div {
+  align-items: center;
+  gap: 16px;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.floating-buttons .link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 24px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--global-colors-teamboarding-tb-primary-dark);
+  border-radius: 46px;
+    cursor: pointer;
+}
+
+.floating-buttons .text-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Satoshi Variable-Black", Helvetica;
+  font-weight: 900;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.floating-buttons .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter", Helvetica;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--tokens-text-secondary);
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.floating-buttons .div-wrapper {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background-color: var(--global-colors-teamboarding-tb-primary-light);
+  border-radius: 46px;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.floating-buttons .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter", Helvetica;
+  font-weight: 500;
+  color: var(--global-colors-teamboarding-tb-primary-dark);
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 14px;
+  white-space: nowrap;
+}
