@@ -1,3 +1,5 @@
+import re
+
 INDEX_BASE = 'index-base.html'
 INDEX_OUT = 'index.html'
 
@@ -16,6 +18,10 @@ def replace_text(old, new):
     global content
     content = content.replace(old, new)
 
+def replace_text_regex(old, new):
+    global content
+    content = re.sub(old, new, content)
+
 # general fixes
 add_to_head('<title>Teamboarding - Revolutionize your Technical Onboarding Process</title>')
 add_to_head("""<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +35,7 @@ replace_text('<div class="input-4"><div class="text-wrapper-59">Company</div></d
 replace_text('<input class="input-5" placeholder="Company Email" type="email" />', '<input class="input-5" placeholder="Company Email" name="email" style="color: #000;" type="email" />')
 replace_text('<div class="link-2">', '<div class="link-2" style="padding: 12px 24px; cursor: pointer;">')
 replace_text('<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" />', '<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" style="width: 100%;" />')
+replace_text('<div class="title-with-emoji">', '<div class="title-with-emoji" style="width: auto;">')
 
 # add floating buttons
 add_to_head('<link rel="stylesheet" href="floating-buttons-style.css" />')
@@ -57,6 +64,13 @@ add_to_body("""
 # add favicon
 add_to_head("""<link rel="icon" href="static/favicon.ico">""")
 
+# links
+replace_text_regex(r'<div class="header-header-nav">(.*?)</div>', '<a class="header-header-nav" href="#\\1">\\1</a>')
+replace_text('<div class="frame-8">', '<div class="frame-8"><a name="About"></a>')
+replace_text('<div class="section">', '<div class="section"><a name="Customers"></a>')
+replace_text('<div class="frame-19">', '<a name="Features"></a><div class="frame-19">')
+replace_text('<div class="overlap-group-3">', '<div class="overlap-group-3"><a name="Integrations"></a>')
+replace_text('<div class="frame-71">', '<div class="frame-71"><a name="Benefits"></a>')
 
 with open(INDEX_OUT, 'w') as f:
     f.write(content)
