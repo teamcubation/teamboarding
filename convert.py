@@ -30,7 +30,7 @@ add_to_head("""<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">""")
 add_to_head('<meta name="description" content="Simplify and enhance your onboarding experience, ensuring every new team member is set up for success from day one.">')
-replace_text('<div class="frame-61">', '<div class="frame-61" style="width: 545px;">')
+replace_text('<div class="frame-58">', '<div class="frame-58" style="width: 545px;">')
 replace_text('<input class="input-2" placeholder="Fullname" type="text" />', '<input class="input-2" placeholder="Fullname" name="fullname" style="color: #000;" type="text" />')
 replace_text('<div class="input-4"><div class="text-wrapper-58">Company</div></div>', '<input class="input-2" placeholder="Company" name="company" style="color: #000;" type="text">')
 replace_text('<input class="input-5" placeholder="Company Email" type="email" />', '<input class="input-5" placeholder="Company Email" name="email" style="color: #000;" type="email" />')
@@ -38,6 +38,9 @@ replace_text('<div class="link-2">', '<div class="link-2" style="padding: 12px 2
 replace_text('<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" />', '<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" style="width: 100%;" />')
 replace_text('<div class="title-with-emoji">', '<div class="title-with-emoji" style="width: auto;">')
 replace_text('<span class="text-wrapper-4">&nbsp;</span>', '')
+replace_text('<img class="img" src="img/frame-276-2.png" />', '')
+replace_text('<div class="chips-4">', '<div class="chips-4" style="padding: 3px 6.25px;">')
+replace_text('<div class="chips-5">', '<div class="chips-5" style="padding: 3px 6.25px;">')
 
 # add floating buttons
 add_to_head('<link rel="stylesheet" href="floating-buttons-style.css" />')
@@ -75,7 +78,7 @@ replace_text('<div class="frame-8">', '<div class="frame-8"><a name="About"></a>
 replace_text('<div class="section">', '<div class="section"><a name="Customers"></a>')
 replace_text('<div class="frame-19">', '<a name="Features"></a><div class="frame-19">')
 replace_text('<div class="overlap-group-3">', '<div class="overlap-group-3"><a name="Integrations"></a>')
-replace_text('<div class="frame-70">', '<div class="frame-70"><a name="Benefits"></a>')
+replace_text('<div class="frame-67">', '<div class="frame-67"><a name="Benefits"></a>')
 replace_text('<div class="text-wrapper">Sign in</div>', '<a style="line-height: 10px;" class="text-wrapper" href="https://app.teamcubation.com/login" target="_blank">Sign in</a>')
 replace_text('<div class="text-wrapper">Talk to Sales</div>', '<a style="line-height: 10px;" class="text-wrapper" href="https://calendly.com/natalia-perez-tq/teamboarding-talk-to-sales" target="_blank">Talk to Sales</a>')
 replace_text('<div class="section-2"', '<a name="Start"></a><div class="section-2"')
