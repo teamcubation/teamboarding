@@ -30,7 +30,6 @@ add_to_head("""<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">""")
 add_to_head('<meta name="description" content="Simplify and enhance your onboarding experience, ensuring every new team member is set up for success from day one.">')
-replace_text('<div class="text-wrapper">', '<div class="text-wrapper" style="line-height: 10px;">')
 replace_text('<div class="frame-61">', '<div class="frame-61" style="width: 545px;">')
 replace_text('<input class="input-2" placeholder="Fullname" type="text" />', '<input class="input-2" placeholder="Fullname" name="fullname" style="color: #000;" type="text" />')
 replace_text('<div class="input-4"><div class="text-wrapper-58">Company</div></div>', '<input class="input-2" placeholder="Company" name="company" style="color: #000;" type="text">')
@@ -76,6 +75,10 @@ replace_text('<div class="section">', '<div class="section"><a name="Customers">
 replace_text('<div class="frame-19">', '<a name="Features"></a><div class="frame-19">')
 replace_text('<div class="overlap-group-3">', '<div class="overlap-group-3"><a name="Integrations"></a>')
 replace_text('<div class="frame-70">', '<div class="frame-70"><a name="Benefits"></a>')
+replace_text('<div class="text-wrapper">Sign in</div>', '<a style="line-height: 10px;" class="text-wrapper" href="https://app.teamcubation.com/login" target="_blank">Sign in</a>')
+replace_text('<div class="text-wrapper">Talk to Sales</div>', '<a style="line-height: 10px;" class="text-wrapper" href="https://calendly.com/natalia-perez-tq/teamboarding-talk-to-sales" target="_blank">Talk to Sales</a>')
+replace_text('<div class="section-2"', '<a name="Start"></a><div class="section-2"')
+replace_text('<div class="text-wrapper-3">Start for free</div>', '<a class="text-wrapper-3" href="#Start">Start for free</a>')
 
 with open(INDEX_OUT, 'w') as f:
     f.write(content)
