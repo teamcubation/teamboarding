@@ -37,6 +37,7 @@ replace_text('<input class="input-5" placeholder="Company Email" type="email" />
 replace_text('<div class="link-2">', '<div class="link-2" style="padding: 12px 24px; cursor: pointer;">')
 replace_text('<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" />', '<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" style="width: 100%;" />')
 replace_text('<div class="title-with-emoji">', '<div class="title-with-emoji" style="width: auto;">')
+replace_text('<span class="text-wrapper-4">&nbsp;</span>', '')
 
 # add floating buttons
 add_to_head('<link rel="stylesheet" href="floating-buttons-style.css" />')
@@ -44,9 +45,9 @@ add_to_body("""
     <div class="floating-buttons" style="display: none;">
       <div class="frame-wrapper">
         <div class="div">
-          <a class="link"><div class="text-wrapper">Start for free</div></a>
+          <a class="link" href="#Start"><div class="text-wrapper">Start for free</div></a>
           <div class="text-wrapper-2">or</div>
-          <a class="div-wrapper"><div class="text-wrapper-3">Get a demo</div></a>
+          <a class="div-wrapper" onclick="showDemoDialog()"><div class="text-wrapper-3">Get a demo</div></a>
         </div>
       </div>
     </div>
@@ -78,7 +79,59 @@ replace_text('<div class="frame-70">', '<div class="frame-70"><a name="Benefits"
 replace_text('<div class="text-wrapper">Sign in</div>', '<a style="line-height: 10px;" class="text-wrapper" href="https://app.teamcubation.com/login" target="_blank">Sign in</a>')
 replace_text('<div class="text-wrapper">Talk to Sales</div>', '<a style="line-height: 10px;" class="text-wrapper" href="https://calendly.com/natalia-perez-tq/teamboarding-talk-to-sales" target="_blank">Talk to Sales</a>')
 replace_text('<div class="section-2"', '<a name="Start"></a><div class="section-2"')
-replace_text('<div class="text-wrapper-3">Start for free</div>', '<a class="text-wrapper-3" href="#Start">Start for free</a>')
+replace_text('<div class="link"><div class="text-wrapper-3">Start for free</div></div>', '<a class="link" href="#Start"><div class="text-wrapper-3">Start for free</div></a>')
+replace_text('<span class="text-wrapper-5">Get a demo</span>', '<a class="text-wrapper-5" style="cursor: pointer;" onclick="showDemoDialog()">Get a demo</a>')
+replace_text("""<p class="privacy-policy-terms">
+              Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Terms &amp; Conditions
+            </p>""",
+             """<p class="privacy-policy-terms">
+              <a href="https://teamcubation.com/privacy-policy.html" target="_blank" style="color: var(--tokens-text-secondary);">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://teamcubation.com/terms.html" target="_blank" style="color: var(--tokens-text-secondary);">Terms &amp; Conditions</a>
+            </p>""")
+
+# demo dialog
+add_to_head('<link rel="stylesheet" href="demo-dialog-style.css" />')
+add_to_head('<script src="static/scripts.js"></script>')
+add_to_body("""<div class="demo-dialog-container" style="display: none;">
+      <div class="overlay" onclick="hideDemoDialog()"></div>
+      <div class="demo-dialog">
+        <img class="demo-dialog-image" src="img/shot-two-smart-business-women-working-together-with-computer-digital-tablet-while-talking-office%201.png" />
+        <div class="content">
+          <div class="title">
+            <div class="text-wrapper">Get a Demo</div>
+            <p class="div">The demo includes a test user with dummy data so you can navigate and try out Teamboarding.</p>
+          </div>
+          <div class="div-2">
+            <div class="form">
+              <div class="div-2">
+                <div class="input">
+                  <label class="label" for="demo-name">FULL NAME</label>
+                  <input class="input-2" placeholder="Enter your full name" type="text" id="demo-name" name="demo-name" />
+                </div>
+                <div class="input">
+                  <label class="label" for="demo-email">COMPANY EMAIL</label>
+                  <input class="input-2" placeholder="Enter your company email" type="email" id="demo-email" name="demo-email" />
+                </div>
+              </div>
+            </div>
+            <div class="frame">
+              <a class="link" onclick="demoDialogOk()"><div class="text-wrapper-2">Let’s go</div></a>
+              <p class="p">By filling out this form and clicking submit, you acknowledge our privacy policy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-ok" style="display: none;">
+          <div class="title">
+            <img class="icon" src="img/icon-ok.png" />
+            <div class="text-wrapper">Request received</div>
+            <p class="thank-you-for-your">
+              Thank you for your interest! We&#39;ve received your request and will send you an email soon with all the
+              information you need to get started. We&#39;ll be in touch shortly, so keep an eye on your inbox!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+""")
 
 with open(INDEX_OUT, 'w') as f:
     f.write(content)

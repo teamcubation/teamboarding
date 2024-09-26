@@ -45,4 +45,23 @@
   --global-colors-positive-green-400: rgba(1, 164, 128, 1);
   --global-colors-neutral-neutral-50: rgba(245, 245, 245, 1);
   --global-colors-positive-green-25: rgba(212, 243, 235, 1);
+  /* Demo dialog */
+  --heading-3-font-family: "Inter", Helvetica;
+  --heading-3-font-weight: 600;
+  --heading-3-font-size: 22px;
+  --heading-3-letter-spacing: -0.66px;
+  --heading-3-line-height: 24px;
+  --heading-3-font-style: normal;
+  --label-font-family: "Inter", Helvetica;
+  --label-font-weight: 500;
+  --label-font-size: 11px;
+  --label-letter-spacing: 0.22px;
+  --label-line-height: 150%;
+  --label-font-style: normal;
+  --text-small-font-family: "Inter", Helvetica;
+  --text-small-font-weight: 400;
+  --text-small-font-size: 12px;
+  --text-small-letter-spacing: 0px;
+  --text-small-line-height: 20px;
+  --text-small-font-style: normal;
 }
