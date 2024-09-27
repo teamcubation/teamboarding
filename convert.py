@@ -87,7 +87,7 @@ replace_text('<div class="frame-145">', '<a name="Features"></a><div class="fram
 replace_text('<div class="frame-89">', '<a name="Features"></a><div class="frame-89">')
 replace_text('<div class="frame-17">', '<a name="Features"></a><div class="frame-17">')
 replace_text('<div class="overlap-group-9">', '<div class="overlap-group-9"><a name="Integrations"></a>')
-replace_text('<div class="frame-56">', '<div class="frame-56"><a name="Integrations"></a>')
+replace_text('<div class="frame-56">', '<div class="frame-56" style="padding: 40px 10px;"><a name="Integrations"></a>')
 replace_text('<div class="frame-194">', '<div class="frame-194"><a name="Benefits"></a>')
 replace_text('<div class="frame-125">', '<div class="frame-125"><a name="Benefits"></a>')
 replace_text('<div class="frame-63">', '<div class="frame-63"><a name="Benefits"></a>')
