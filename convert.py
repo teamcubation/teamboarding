@@ -30,6 +30,7 @@ add_to_head("""<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">""")
 add_to_head('<meta name="description" content="Simplify and enhance your onboarding experience, ensuring every new team member is set up for success from day one.">')
+add_to_head('<meta name="viewport" content="width=device-width, initial-scale=1">')
 replace_text('<body>', '<body style="overflow-x: hidden;">')
 replace_text('<div class="frame-184">', '<div class="frame-184" style="width: 545px;">')
 replace_text('<input class="input-2" placeholder="Fullname" type="text" />', '<input class="input-2" placeholder="Fullname" name="fullname" style="color: #000;" type="text" />')
