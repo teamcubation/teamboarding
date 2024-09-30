@@ -1,6 +1,34 @@
 let TB_MODE = 'onboarding';
 const API_URL = 'https://api.prod.tq.teamcubation.com';
 
+function initMode() {
+    // get mode from localStorage
+    if (localStorage.getItem('tb_mode') && window.location.search.indexOf('override') === -1) {
+        TB_MODE = localStorage.getItem('tb_mode');
+    } else {
+        if (window.location.search.indexOf('m=t') > -1) {
+            TB_MODE = 'tracking';
+        } else if (window.location.search.indexOf('m=p') > -1) {
+            TB_MODE = 'performance';
+        }
+        // remove mode from url
+        window.history.replaceState({}, '', window.location.pathname.replace(/\/m\/t|\/m\/p/, ''));
+        // save mode in local storage
+        localStorage.setItem('tb_mode', TB_MODE);
+    }
+
+    // replace the texts in the page
+    for (const [text, replacements] of Object.entries(TEXTS)) {
+        if (TB_MODE in replacements) {
+            const elems = document.evaluate(`//*[contains(text(), "${text}")]`, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+            for (let i = 0; i < elems.snapshotLength; i++) {
+                const elem = elems.snapshotItem(i);
+                elem.textContent = replacements[TB_MODE];
+            }
+        }
+    }
+}
+
 function validateEmail(email) {
     return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
 }
@@ -83,6 +111,8 @@ function atBottomMinus(n) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    initMode();
+
     const floatingButtons = document.querySelector('.floating-buttons');
     window.onscroll = function() {
         if (window.pageYOffset > 600 && (document.body.scrollWidth >= 1440 || !atBottomMinus(400))) {

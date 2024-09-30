@@ -31,11 +31,11 @@ add_to_head("""<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">""")
 add_to_head('<meta name="description" content="Simplify and enhance your onboarding experience, ensuring every new team member is set up for success from day one.">')
 add_to_head('<meta name="viewport" content="width=device-width, initial-scale=1">')
-add_to_head("""<!-- Hotjar Tracking Code for Sitio 3900861 (falta el nombre) -->
+add_to_head("""<!-- Hotjar Tracking Code for Landing teambaording -->
 <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:3900861,hjsv:6};
+        h._hjSettings={hjid:5153745,hjsv:6};
         a=o.getElementsByTagName('head')[0];
         r=o.createElement('script');r.async=1;
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
@@ -130,7 +130,8 @@ replace_text("""<p class="privacy-policy-terms">
 
 # demo dialog
 add_to_head('<link rel="stylesheet" href="demo-dialog-style.css" />')
-add_to_head('<script src="static/scripts.js"></script>')
+add_to_head('<script src="static/texts.js?v=2"></script>')
+add_to_head('<script src="static/scripts.js?v=2"></script>')
 add_to_body("""<div class="demo-dialog-container" style="display: none;">
       <div class="overlay" onclick="hideDemoDialog()"></div>
       <div class="demo-dialog">
