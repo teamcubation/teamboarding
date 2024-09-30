@@ -54,5 +54,17 @@ const TEXTS = {
     "Track and evaluate the onboarding journey for new hires, buddies, and leaders—all from a single, centralized platform.": {
         "tracking": "Track and evaluate daily performance for your team—all from a single, centralized platform.",
         "performance": "Track and evaluate daily performance for your team—all from a single, centralized platform."
+    },
+    "Streamline onboarding and boost team efficiency, seamlessly integrating into your processes.": {
+        "tracking": "Streamline daily tracking and enhance team efficiency, seamlessly integrating into your processes.",
+        "performance": "Streamline daily tracking and enhance team efficiency, seamlessly integrating into your processes."
+    },
+    "Reduce expenses by accelerating onboarding, optimizing resources, and decreasing turnover": {
+        "tracking": "Reduce expenses by optimizing resources, enhancing daily performance, and decreasing turnover.",
+        "performance": "Reduce expenses by optimizing resources, enhancing daily performance, and decreasing turnover."
+    },
+    "Adapts effortlessly to your existing tools and processes, eliminating costly and complex implementations.": {
+        "tracking": "Adapts effortlessly to your existing tools and processes, eliminating costly and complex implementations.",
+        "performance": "Adapts effortlessly to your existing tools and processes, eliminating costly and complex implementations."
     }
 }

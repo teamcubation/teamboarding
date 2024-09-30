@@ -65,7 +65,7 @@
   position: relative;
   width: fit-content;
   margin-top: -2px;
-  font-family: "Satoshi Variable-Black", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 900;
   color: var(--global-colors-teamboarding-tb-primary-dark);
   font-size: 14px;
@@ -103,7 +103,7 @@
   position: relative;
   align-self: stretch;
   margin-top: -1px;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 33px;
@@ -149,7 +149,7 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Satoshi Variable-Black", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 900;
   color: #ffffff;
   font-size: 18px;
@@ -1327,7 +1327,7 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Satoshi Variable-Black", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 900;
   color: var(--global-colors-teamboarding-tb-primary-dark);
   font-size: 12px;
@@ -1339,7 +1339,7 @@
 .landing-onboarding .text-wrapper-28 {
   position: relative;
   align-self: stretch;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 30px;
@@ -3090,7 +3090,7 @@
 .landing-onboarding .heading-integrate {
   position: relative;
   align-self: stretch;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 30px;
@@ -3366,7 +3366,7 @@
   position: relative;
   align-self: stretch;
   margin-top: -1px;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 30px;
@@ -3503,7 +3503,7 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Satoshi Variable-Black", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 900;
   color: #ffffff;
   font-size: 16px;
@@ -3734,7 +3734,7 @@
   position: relative;
   align-self: stretch;
   margin-top: -1px;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 50px;
@@ -4748,7 +4748,7 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Satoshi Variable-Black", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 900;
   color: var(--global-colors-teamboarding-tb-primary-dark);
   font-size: 14px;
@@ -4760,7 +4760,7 @@
 .landing-onboarding .text-wrapper-84 {
   position: relative;
   width: fit-content;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 36px;
@@ -5781,7 +5781,7 @@
 .landing-onboarding .text-wrapper-94 {
   position: relative;
   align-self: stretch;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 36px;
@@ -6218,7 +6218,7 @@
   position: relative;
   align-self: stretch;
   margin-top: -1px;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 36px;
@@ -6429,7 +6429,7 @@
   position: relative;
   align-self: stretch;
   margin-top: -1px;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 60px;
@@ -7476,7 +7476,7 @@
   position: relative;
   width: 525px;
   height: 80px;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 36px;
@@ -9068,7 +9068,7 @@
 .landing-onboarding .text-wrapper-148 {
   position: relative;
   width: 526px;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 36px;
@@ -9225,7 +9225,7 @@
 .landing-onboarding .text-wrapper-149 {
   position: relative;
   width: 620px;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 36px;
@@ -9333,7 +9333,7 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Satoshi Variable-Bold", Helvetica;
+  font-family: "Satoshi", Helvetica;
   font-weight: 700;
   color: var(--tokens-text-primary);
   font-size: 36px;
