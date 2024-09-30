@@ -1,4 +1,8 @@
 const TEXTS = {
+    "Teamboarding - Revolutionize your Technical Onboarding Process": {
+        "tracking": "Teamboarding - Enhance Team Impact through Performance Insights",
+        "performance": "Teamboarding - Track, Optimize and Elevate Technical Performance"
+    },
     "Revolutionize your Technical Onboarding Process": {
         "tracking": "Enhance Team Impact through Performance Insights",
         "performance": "Track, Optimize and Elevate Technical Performance"
