@@ -31,13 +31,24 @@ add_to_head("""<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">""")
 add_to_head('<meta name="description" content="Simplify and enhance your onboarding experience, ensuring every new team member is set up for success from day one.">')
 add_to_head('<meta name="viewport" content="width=device-width, initial-scale=1">')
+add_to_head("""<!-- Hotjar Tracking Code for Sitio 3900861 (falta el nombre) -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3900861,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>""")
 replace_text('<body>', '<body style="overflow-x: hidden;">')
 replace_text('<div class="frame-184">', '<div class="frame-184" style="width: 545px;">')
 replace_text('<input class="input-2" placeholder="Fullname" type="text" />', '<input class="input-2" placeholder="Fullname" name="fullname" style="color: #000;" type="text" />')
 replace_text('<div class="input-4"><div class="text-wrapper-57">Company</div></div>', '<input class="input-2" placeholder="Company" name="company" style="color: #000;" type="text">')
 replace_text('<input class="input-5" placeholder="Company Email" type="email" />', '<input class="input-5" placeholder="Company Email" name="email" style="color: #000;" type="email" />')
-replace_text('<div class="link-3">', '<div class="link-3" style="padding: 12px 24px; cursor: pointer;">')
-replace_text('<div class="link-2">', '<div class="link-2" style="padding: 12px 24px; cursor: pointer;">')
+replace_text('<div class="link-3">', '<div class="link-3 req-trial-button" style="padding: 12px 24px; cursor: pointer;">')
+replace_text('<div class="link-2">', '<div class="link-2 req-trial-button" style="padding: 12px 24px; cursor: pointer;">')
 replace_text('<img class="laptop-table-looks-6" src="img/laptop-table-looks-pretty-darkness-1-5.png" />', '<img class="laptop-table-looks-6" src="img/laptop-table-looks-pretty-darkness-1-5.png" style="width: 100%;" />')
 replace_text('<img class="laptop-table-looks-4" src="img/laptop-table-looks-pretty-darkness-1-3.png" />', '<img class="laptop-table-looks-4" src="img/laptop-table-looks-pretty-darkness-1-3.png" style="width: 100%;" />')
 replace_text('<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" />', '<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" style="width: 100%; height: 100%;" />')
@@ -143,7 +154,7 @@ add_to_body("""<div class="demo-dialog-container" style="display: none;">
               </div>
             </div>
             <div class="frame">
-              <a class="link" onclick="demoDialogOk()"><div class="text-wrapper-2">Let’s go</div></a>
+              <a class="link" onclick="demoDialogOk()"><div class="text-wrapper-2" id="demo-button">Let’s go</div></a>
               <p class="p">By filling out this form and clicking submit, you acknowledge our privacy policy.</p>
             </div>
           </div>

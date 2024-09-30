@@ -9483,3 +9483,63 @@
     display: none !important;
   }
 }
+
+.trial-ok-msg {
+  display: flex;
+  flex-direction: column;
+  width: 669px;
+  height: 287px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.div .trial-ok-msg {
+  width: auto;
+}
+
+.trial-ok-msg .title {
+  display: flex;
+  flex-direction: column;
+  width: 366px;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.trial-ok-msg .icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.trial-ok-msg .text-wrapper {
+  position: relative;
+  width: fit-content;
+  font-family: var(--heading-2-font-family);
+  font-weight: var(--heading-2-font-weight);
+  color: var(--tokens-text-primary);
+  font-size: var(--heading-2-font-size);
+  letter-spacing: var(--heading-2-letter-spacing);
+  line-height: var(--heading-2-line-height);
+  white-space: nowrap;
+  font-style: var(--heading-2-font-style);
+}
+
+.trial-ok-msg .thank-you-for-your {
+  position: relative;
+  align-self: stretch;
+  font-family: var(--text-body-font-family);
+  font-weight: var(--text-body-font-weight);
+  color: var(--tokens-text-secondary);
+  font-size: var(--text-body-font-size);
+  text-align: center;
+  letter-spacing: var(--text-body-letter-spacing);
+  line-height: var(--text-body-line-height);
+  font-style: var(--text-body-font-style);
+}

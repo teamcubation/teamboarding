@@ -1,3 +1,10 @@
+let TB_MODE = 'onboarding';
+const API_URL = 'https://api.prod.tq.teamcubation.com';
+
+function validateEmail(email) {
+    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
+}
+
 function showDemoDialog() {
   document.querySelector('.demo-dialog-container').style.display = 'flex';
   document.querySelector('.demo-dialog-container .content').style.display = 'flex';
@@ -5,9 +12,39 @@ function showDemoDialog() {
 }
 
 function demoDialogOk() {
-    document.querySelector('.demo-dialog-container .content').style.display = 'none';
-    document.querySelector('.demo-dialog-container .content-ok').style.display = 'flex';
-    window.setTimeout(hideDemoDialog, 2000);
+    const demo_name = document.querySelector('#demo-name').value;
+    const demo_email = document.querySelector('#demo-email').value;
+    const demo_button = document.querySelector('#demo-button');
+    if (demo_button.innerText !== 'Please wait...') {
+        if (demo_name && demo_email) {
+            if (!validateEmail(demo_email)) {
+                alert('Please enter a valid email');
+                return;
+            }
+            demo_button.innerText = 'Please wait...';
+            fetch(API_URL + '/request-demo', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  "name": demo_name,
+                  "email": demo_email,
+                  "source": "Teamboarding Landing - " + TB_MODE
+                })
+            })
+            .then(response => {
+                demo_button.innerText = 'Let’s go';
+                document.querySelector('.demo-dialog-container .content').style.display = 'none';
+                document.querySelector('.demo-dialog-container .content-ok').style.display = 'flex';
+                document.querySelector('#demo-name').value = '';
+                document.querySelector('#demo-email').value = '';
+                window.setTimeout(hideDemoDialog, 3000);
+            });
+        } else {
+            alert('Please fill all the fields');
+        }
+    }
 }
 
 function hideDemoDialog() {
@@ -68,4 +105,51 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    document.querySelectorAll('.req-trial-button').forEach(function(button) {
+        button.addEventListener('click', function() {
+            if (button.innerText !== 'Sending...') {
+                const form = button.closest('.form-2');
+                const full_name = form.querySelector('input[name="fullname"]').value;
+                const company = form.querySelector('input[name="company"]').value;
+                const email = form.querySelector('input[name="email"]').value;
+                if (full_name && company && email) {
+                    if (!validateEmail(email)) {
+                        alert('Please enter a valid email');
+                        return;
+                    }
+                    button.innerHTML = '<div class="text-wrapper-58">Sending...</div>';
+                    fetch(API_URL + '/obi-trial', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                          "company": company,
+                          "name": full_name,
+                          "email": email,
+                          "source": "Teamboarding Landing - " + TB_MODE
+                        })
+                    })
+                    .then(response => {
+                        button.innerHTML = '<div class="text-wrapper-58">Request Trial</div>';
+                        form.querySelector('input[name="fullname"]').value = '';
+                        form.querySelector('input[name="company"]').value = '';
+                        form.querySelector('input[name="email"]').value = '';
+                        const trial_request_container = form.closest('.trial-request-container');
+                        const trial_request_form = trial_request_container.querySelector('.trial-request-form');
+                        const trial_ok_msg =  trial_request_container.querySelector('.trial-ok-msg');
+                        trial_request_form.style.display = 'none';
+                        trial_ok_msg.style.display = 'flex';
+                        window.setTimeout(function() {
+                            trial_ok_msg.style.display = 'none';
+                            trial_request_form.style.display = 'flex';
+                        }, 5000);
+                    });
+                } else {
+                    alert('Please fill all the fields');
+                }
+            }
+        });
+    });
 });
