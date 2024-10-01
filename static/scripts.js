@@ -1,7 +1,15 @@
 let TB_MODE = 'onboarding';
+let TB_SOURCE = 'direct';
 const API_URL = 'https://api.prod.tq.teamcubation.com';
 
 function initMode() {
+    // get source from url
+    if (window.location.search.indexOf('s=e') > -1) {
+        TB_SOURCE = 'email';
+    } else if (window.location.search.indexOf('s=a') > -1) {
+        TB_SOURCE = 'ads';
+    }
+
     // get mode from localStorage
     if (localStorage.getItem('tb_mode') && window.location.search.indexOf('override') === -1) {
         TB_MODE = localStorage.getItem('tb_mode');
@@ -11,11 +19,12 @@ function initMode() {
         } else if (window.location.search.indexOf('m=p') > -1) {
             TB_MODE = 'performance';
         }
-        // remove mode from url
-        window.history.replaceState({}, '', window.location.pathname.replace(/\/m\/t|\/m\/p/, ''));
         // save mode in local storage
         localStorage.setItem('tb_mode', TB_MODE);
     }
+
+    // clean url
+    window.history.replaceState(null, '', window.location.pathname);
 
     // replace the texts in the page
     for (const [text, replacements] of Object.entries(TEXTS)) {
@@ -26,6 +35,58 @@ function initMode() {
                 elem.textContent = replacements[TB_MODE];
             }
         }
+    }
+
+    trackEvent('Page View');
+
+    const startButtons = document.querySelectorAll('.link.non-floating[href="#Start"]');
+    for (let i = 0; i < startButtons.length; i++) {
+        startButtons[i].addEventListener('click', function() {
+            trackEvent('Start for free Button Clicked', {'type': 'top'});
+        });
+    }
+
+    document.querySelector('.link.floating[href="#Start"]').addEventListener('click', function() {
+        trackEvent('Start for free Button Clicked', {'type': 'floating'});
+    });
+
+    const demoButtons = document.querySelectorAll('.demo-button.non-floating');
+    for (let i = 0; i < demoButtons.length; i++) {
+        demoButtons[i].addEventListener('click', function() {
+            trackEvent('Get a demo Button Clicked', {'type': 'top'});
+        });
+    }
+
+    document.querySelector('.demo-button.floating').addEventListener('click', function() {
+        trackEvent('Get a demo Button Clicked', {'type': 'floating'});
+    });
+
+    const loginButtons = document.querySelectorAll('a[href="https://app.teamcubation.com/login"');
+    for (let i = 0; i < loginButtons.length; i++) {
+        loginButtons[i].addEventListener('click', function() {
+            trackEvent('Sign in Button Clicked');
+        });
+    }
+
+    const talkToSalesButtons = document.querySelectorAll('a[href="https://calendly.com/natalia-perez-tq/teamboarding-talk-to-sales"]');
+    for (let i = 0; i < talkToSalesButtons.length; i++) {
+        talkToSalesButtons[i].addEventListener('click', function() {
+            trackEvent('Talk to Sales Button Clicked');
+        });
+    }
+}
+
+function trackEvent(eventName, eventProps) {
+    if (!eventProps) {
+        eventProps = {};
+    }
+    eventProps.source = TB_SOURCE;
+    eventProps.mode = TB_MODE;
+    eventProps.url = window.location.href;
+    eventName = 'Teamboarding Landing - ' + eventName;
+    console.log('trackEvent:', eventName, eventProps);
+    if (typeof mixpanel !== 'undefined') {
+        mixpanel.track(eventName, eventProps);
     }
 }
 
@@ -53,6 +114,7 @@ function demoDialogOk() {
                 return;
             }
             demo_button.innerText = 'Please wait...';
+            trackEvent('Demo Let’s go Button Clicked');
             fetch(API_URL + '/request-demo', {
                 method: 'POST',
                 headers: {
@@ -115,6 +177,12 @@ function atBottomMinus(n) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    mixpanel.init("76b651d87641a235bf95859fdd1fbba7", {
+      debug: true,
+      track_pageview: true,
+      persistence: "localStorage",
+    });
+
     initMode();
 
     const floatingButtons = document.querySelector('.floating-buttons');
@@ -153,6 +221,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         return;
                     }
                     button.innerHTML = '<div class="text-wrapper-58">Sending...</div>';
+                    trackEvent('Request Trial Button Clicked');
+                    if (typeof gtag_report_conversion !== 'undefined') {
+                        gtag_report_conversion();
+                    }
                     fetch(API_URL + '/obi-trial', {
                         method: 'POST',
                         headers: {

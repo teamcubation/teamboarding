@@ -70,6 +70,27 @@ add_to_head("""<!-- Google tag (gtag.js) -->
 
   gtag('config', 'G-ZKJ6GFFR5L');
 </script>""")
+add_to_head("""<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "obxut7ej7c");
+</script>""")
+add_to_head("""<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16722831487/UX4mCN6-ytgZEP_QiKY-',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>""")
 replace_text('<body>', '<body style="overflow-x: hidden;">')
 replace_text('<div class="frame-184">', '<div class="frame-184" style="width: 545px;">')
 replace_text('<input class="input-2" placeholder="Fullname" type="text" />', '<input class="input-2" placeholder="Fullname" name="fullname" style="color: #000;" type="text" />')
@@ -105,9 +126,9 @@ add_to_body("""
     <div class="floating-buttons" style="display: none;">
       <div class="frame-wrapper">
         <div class="div">
-          <a class="link" href="#Start"><div class="text-wrapper">Start for free</div></a>
+          <a class="link floating" href="#Start"><div class="text-wrapper">Start for free</div></a>
           <div class="text-wrapper-2">or</div>
-          <a class="div-wrapper" onclick="showDemoDialog()"><div class="text-wrapper-3">Get a demo</div></a>
+          <a class="div-wrapper demo-button floating" onclick="showDemoDialog()"><div class="text-wrapper-3">Get a demo</div></a>
         </div>
       </div>
     </div>
@@ -140,8 +161,8 @@ replace_text('<div class="header-header-nav"><div class="text-wrapper">Talk to S
 replace_text('<div class="section-5"', '<a name="Start"></a><div class="section-5"')
 replace_text('<div class="section-8"', '<a name="Start"></a><div class="section-8"')
 replace_text('<div class="section-2"', '<a name="Start"></a><div class="section-2"')
-replace_text('<div class="link"><div class="text-wrapper-3">Start for free</div></div>', '<a class="link" href="#Start"><div class="text-wrapper-3">Start for free</div></a>')
-replace_text('<span class="text-wrapper-5">Get a demo</span>', '<a class="text-wrapper-5" style="cursor: pointer;" onclick="showDemoDialog()">Get a demo</a>')
+replace_text('<div class="link"><div class="text-wrapper-3">Start for free</div></div>', '<a class="link non-floating" href="#Start"><div class="text-wrapper-3">Start for free</div></a>')
+replace_text('<span class="text-wrapper-5">Get a demo</span>', '<a class="text-wrapper-5 demo-button non-floating" style="cursor: pointer;" onclick="showDemoDialog()">Get a demo</a>')
 replace_text("""<p class="privacy-policy-terms-2">
               Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Terms &amp; Conditions
             </p>""",
