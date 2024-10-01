@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -214,9 +214,9 @@
   width: 346.51px;
   height: 232.45px;
   background-color: #ffffff;
-  border-radius: 1.83px;
   overflow: hidden;
-  box-shadow: 0px 7.63px 12.2px -3.66px #4b1ffc1a, 0px 0px 0px 0.31px #1118271a;
+  border-radius: 4px;
+  border: 1px solid #5F5E5E;
 }
 
 .landing-onboarding .your-tasks {
@@ -2259,6 +2259,11 @@
   position: relative;
   flex: 1;
   flex-grow: 1;
+  margin-right: -87px;
+}
+
+.frame-202 .img-5 {
+  margin-right: -86px;
 }
 
 .landing-onboarding .chips-4 {
@@ -3759,7 +3764,6 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px;
   position: relative;
   flex: 0 0 auto;
   z-index: 0;
@@ -3799,9 +3803,9 @@
   width: 739.73px;
   height: 496.24px;
   background-color: #ffffff;
-  border-radius: 3.91px;
   overflow: hidden;
-  box-shadow: 0px 16.28px 26.05px -7.81px #4b1ffc1a, 0px 0px 0px 0.65px #1118271a;
+  border-radius: 8px;
+  border: 2px solid #5F5E5E;
 }
 
 .landing-onboarding .your-tasks-2 {
@@ -6351,7 +6355,7 @@
 .landing-onboarding.div-13 {
   display: flex;
   flex-direction: column;
-  min-width: 1440px;
+  min-width: 1280px;
   background-color: #ffffff;
   overflow: hidden;
   align-items: center;
@@ -6370,7 +6374,7 @@
 
 .landing-onboarding .frame-129 {
   display: flex;
-  width: 1440px;
+  width: 1280px;
   align-items: center;
   justify-content: space-between;
   padding: 32px 100px;
@@ -6485,9 +6489,9 @@
   width: 1168px;
   height: 783.53px;
   background-color: #ffffff;
-  border-radius: 6.17px;
   overflow: hidden;
-  box-shadow: 0px 25.7px 41.13px -12.34px #4b1ffc1a, 0px 0px 0px 1.03px #1118271a;
+  border-radius: 12px;
+  border: 3px solid #5F5E5E;
 }
 
 .landing-onboarding .your-tasks-3 {
@@ -7407,7 +7411,7 @@
 .landing-onboarding .section-7 {
   display: flex;
   flex-direction: column;
-  width: 1440px;
+  width: 1280px;
   align-items: center;
   gap: 10px;
   padding: 60px 32px;
@@ -9282,7 +9286,7 @@
 }
 
 .landing-onboarding .laptop-table-looks-6 {
-  width: 1440px;
+  width: 1280px;
   height: 579px;
   top: 0;
   left: 0;
@@ -9388,13 +9392,13 @@
 
 .landing-onboarding .group-13 {
   position: relative;
-  width: 1440px;
+  width: 1280px;
   height: 72.07px;
 }
 
 .landing-onboarding .line-4 {
   position: absolute;
-  width: 1440px;
+  width: 1280px;
   height: 1px;
   top: 71px;
   left: 0;
@@ -9408,7 +9412,7 @@
   justify-content: space-between;
   position: absolute;
   top: 0;
-  left: 120px;
+  left: 40px;
 }
 
 .landing-onboarding .widget-3 {
@@ -9467,7 +9471,7 @@
   }
 }
 
-@media (min-width: 810px) and (max-width: 1439px) {
+@media (min-width: 810px) and (max-width: 1279px) {
   .landing-onboarding.div {
     display: none !important;
   }
@@ -9476,7 +9480,7 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1280px) {
   .landing-onboarding.div {
     display: none !important;
   }

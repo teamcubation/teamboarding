@@ -43,6 +43,33 @@ add_to_head("""<!-- Hotjar Tracking Code for Landing teambaording -->
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>""")
+add_to_head("""<!-- Mixpanel -->
+<script type="text/javascript">
+  (function (f, b) { if (!b.__SV) { var e, g, i, h; window.mixpanel = b; b._i = []; b.init = function (e, f, c) { function g(a, d) { var b = d.split("."); 2 == b.length && ((a = a[b[0]]), (d = b[1])); a[d] = function () { a.push([d].concat(Array.prototype.slice.call(arguments, 0))); }; } var a = b; "undefined" !== typeof c ? (a = b[c] = []) : (c = "mixpanel"); a.people = a.people || []; a.toString = function (a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c); a || (d += " (stub)"); return d; }; a.people.toString = function () { return a.toString(1) + ".people (stub)"; }; i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split( " "); for (h = 0; h < i.length; h++) g(a, i[h]); var j = "set set_once union unset remove delete".split(" "); a.get_group = function () { function b(c) { d[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); a.push([e, call2]); }; } for ( var d = {}, e = ["get_group"].concat( Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++) b(j[c]); return d; }; b._i.push([e, f, c]); }; b.__SV = 1.2; e = f.createElement("script"); e.type = "text/javascript"; e.async = !0; e.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === f.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"; g = f.getElementsByTagName("script")[0]; g.parentNode.insertBefore(e, g); } })(document, window.mixpanel || []);
+</script>""")
+add_to_head("""<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16722831487">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16722831487');
+</script>""")
+add_to_head("""<script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"669817d6d1af0c01b288be3b"})},
+document.head.appendChild(o)}initApollo();</script>""")
+add_to_head("""<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKJ6GFFR5L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZKJ6GFFR5L');
+</script>""")
 replace_text('<body>', '<body style="overflow-x: hidden;">')
 replace_text('<div class="frame-184">', '<div class="frame-184" style="width: 545px;">')
 replace_text('<input class="input-2" placeholder="Fullname" type="text" />', '<input class="input-2" placeholder="Fullname" name="fullname" style="color: #000;" type="text" />')
@@ -95,8 +122,7 @@ replace_text_regex(r'<div class="header-header-nav-3">(.*?)</div>', '<a class="h
 replace_text_regex(r'<div class="header-header-nav-4">(.*?)</div>', '<a class="header-header-nav-4" href="#\\1">\\1</a>')
 replace_text_regex(r'<div class="header-header-nav-5">(.*?)</div>', '<a class="header-header-nav-5" href="#\\1">\\1</a>')
 replace_text_regex(r'<div class="header-header-nav-6">(.*?)</div>', '<a class="header-header-nav-6" href="#\\1">\\1</a>')
-replace_text('<div class="frame-132">', '<div class="frame-132"><a name="About"></a>')
-replace_text('<div class="frame-78">', '<div class="frame-78"><a name="About"></a>')
+replace_text('<div class="frame-77">', '<div class="frame-77"><a name="About"></a>')
 replace_text('<div class="div-rounded-xl-wrapper">', '<a name="About"></a><div class="div-rounded-xl-wrapper">')
 replace_text('<div class="section-7">', '<div class="section-7"><a name="Customers"></a>')
 replace_text('<div class="section-4">', '<div class="section-4"><a name="Customers"></a>')
