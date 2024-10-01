@@ -37,6 +37,9 @@ function showDemoDialog() {
   document.querySelector('.demo-dialog-container').style.display = 'flex';
   document.querySelector('.demo-dialog-container .content').style.display = 'flex';
   document.querySelector('.demo-dialog-container .content-ok').style.display = 'none';
+  window.setTimeout(function() {
+    document.querySelector('.demo-dialog').style.opacity = '1';
+  }, 10);
 }
 
 function demoDialogOk() {
@@ -77,6 +80,7 @@ function demoDialogOk() {
 
 function hideDemoDialog() {
     document.querySelector('.demo-dialog-container').style.display = 'none';
+    document.querySelector('.demo-dialog').style.opacity = '0';
 }
 
 function getScrollXY() {
@@ -129,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const sectionAnchors = document.querySelectorAll(`a[name="${section}"]`);
                 for (let i = 0; i < sectionAnchors.length; i++) {
                     if (sectionAnchors[i].offsetParent) {
-                        sectionAnchors[i].scrollIntoView();
+                        sectionAnchors[i].scrollIntoView({behavior: 'smooth'});
                     }
                 }
             });
