@@ -84,7 +84,6 @@ function trackEvent(eventName, eventProps) {
     eventProps.mode = TB_MODE;
     eventProps.url = window.location.href;
     eventName = 'Teamboarding Landing - ' + eventName;
-    console.log('trackEvent:', eventName, eventProps);
     if (typeof mixpanel !== 'undefined') {
         mixpanel.track(eventName, eventProps);
     }
