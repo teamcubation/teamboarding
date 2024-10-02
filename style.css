@@ -1947,7 +1947,7 @@
   display: flex;
   flex-direction: column;
   width: 342px;
-  height: 141.42px;
+  height: 148px;
   align-items: flex-start;
   position: relative;
   border-radius: 4.73px;
@@ -1967,8 +1967,6 @@
   background-color: #ffffff;
   border-radius: 3.7px;
   overflow: hidden;
-  border: 0.46px solid;
-  border-color: #cccccc;
   box-shadow: 0px 0px 0px 0.46px #5050500a, 0px 0.46px 0.46px -0.23px #1414140a, 0px 1.39px 1.39px -0.69px #1414140a,
     0px 2.77px 2.77px -1.39px #1414140a, 0px 5.55px 5.55px -2.77px #5050500a, 0px 11.09px 11.09px -5.55px #5050500a;
 }
@@ -5307,7 +5305,7 @@
   display: flex;
   flex-direction: column;
   width: 746px;
-  height: 308.47px;
+  height: 321px;
   align-items: flex-start;
   position: relative;
   margin-right: -168px;
@@ -5328,8 +5326,6 @@
   background-color: #ffffff;
   border-radius: 8.07px;
   overflow: hidden;
-  border: 1.01px solid;
-  border-color: #cccccc;
   box-shadow: 0px 0px 0px 1.01px #5050500a, 0px 1.01px 1.01px -0.5px #1414140a, 0px 3.02px 3.02px -1.51px #1414140a,
     0px 6.05px 6.05px -3.02px #1414140a, 0px 12.1px 12.1px -6.05px #5050500a, 0px 24.2px 24.2px -12.1px #5050500a;
 }
@@ -8002,7 +7998,7 @@
 .landing-onboarding .frame-161 {
   display: flex;
   flex-direction: column;
-  height: 239px;
+  height: 250px;
   align-items: flex-start;
   position: relative;
   align-self: stretch;
@@ -8024,8 +8020,6 @@
   background-color: #ffffff;
   border-radius: 6.25px;
   overflow: hidden;
-  border: 0.78px solid;
-  border-color: #cccccc;
   box-shadow: 0px 0px 0px 0.78px #5050500a, 0px 0.78px 0.78px -0.39px #1414140a, 0px 2.34px 2.34px -1.17px #1414140a,
     0px 4.69px 4.69px -2.34px #1414140a, 0px 9.38px 9.38px -4.69px #5050500a, 0px 18.75px 18.75px -9.38px #5050500a;
 }
