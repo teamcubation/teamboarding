@@ -23,9 +23,6 @@ function initMode() {
         localStorage.setItem('tb_mode', TB_MODE);
     }
 
-    // clean url
-    window.history.replaceState(null, '', window.location.pathname);
-
     // replace the texts in the page
     for (const [text, replacements] of Object.entries(TEXTS)) {
         if (TB_MODE in replacements) {
@@ -122,7 +119,7 @@ function demoDialogOk() {
                 body: JSON.stringify({
                   "name": demo_name,
                   "email": demo_email,
-                  "source": "Teamboarding Landing - " + TB_MODE
+                  "source": "Teamboarding Landing (mode: " + TB_MODE + ", source: " + TB_SOURCE + ")"
                 })
             })
             .then(response => {
@@ -233,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
                           "company": company,
                           "name": full_name,
                           "email": email,
-                          "source": "Teamboarding Landing - " + TB_MODE
+                          "source": "Teamboarding Landing (mode: " + TB_MODE + ", source: " + TB_SOURCE + ")"
                         })
                     })
                     .then(response => {
