@@ -198,6 +198,12 @@
   z-index: 0;
 }
 
+.landing-onboarding .div-rounded-xl-wrapper img {
+  padding: 0 20px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .landing-onboarding .div-rounded-xl {
   display: inline-flex;
   flex-direction: column;
@@ -1409,15 +1415,9 @@
   white-space: nowrap;
 }
 
-.landing-onboarding .frame-23 {
-  display: flex;
-  flex-direction: column;
-  width: 578px;
-  align-items: flex-start;
-  gap: 20px;
-  position: relative;
-  flex: 0 0 auto;
-  margin-right: -236px;
+.landing-onboarding .frame-23 img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .landing-onboarding .group-3 {

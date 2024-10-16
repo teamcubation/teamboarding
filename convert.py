@@ -101,24 +101,18 @@ replace_text('<div class="link-2">', '<div class="link-2 req-trial-button" style
 replace_text('<img class="laptop-table-looks-6" src="img/laptop-table-looks-pretty-darkness-1-5.png" />', '<img class="laptop-table-looks-6" src="img/laptop-table-looks-pretty-darkness-1-5.png" style="width: 100%;" />')
 replace_text('<img class="laptop-table-looks-4" src="img/laptop-table-looks-pretty-darkness-1-3.png" />', '<img class="laptop-table-looks-4" src="img/laptop-table-looks-pretty-darkness-1-3.png" style="width: 100%;" />')
 replace_text('<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" />', '<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" style="width: 100%; height: 100%;" />')
-replace_text('<div class="title-with-emoji">', '<div class="title-with-emoji" style="width: auto;">')
 replace_text('<div class="title-with-emoji-2">', '<div class="title-with-emoji-2" style="width: auto;">')
 replace_text('<div class="title-with-emoji-3">', '<div class="title-with-emoji-3" style="width: auto;">')
 replace_text('<span class="text-wrapper-4">&nbsp;</span>', '')
 replace_text('<img class="img-5" src="img/frame-276-20.png" />', '')
 replace_text('<img class="img-5" src="img/frame-276-11.png" />', '')
 replace_text('<img class="img-5" src="img/frame-276-10.png" />', '')
-replace_text('<img class="img-5" src="img/frame-276.png" />', '')
-replace_text('<img class="img-5" src="img/frame-276-2.png" />', '')
 replace_text('<div class="chips-17">', '<div class="chips-17" style="padding: 5px 6.25px 2px;">')
 replace_text('<div class="chips-18">', '<div class="chips-18" style="padding: 5px 6.25px 3px;">')
-replace_text('<div class="chips-3">', '<div class="chips-3" style="padding: 4px 3.7px 1px;">')
-replace_text('<div class="chips-4">', '<div class="chips-4" style="padding: 4px 3.7px 1px;">')
 replace_text('<div class="chips-11">', '<div class="chips-11" style="padding: 4px 8.07px;">')
 replace_text('<div class="chips-12">', '<div class="chips-12" style="padding: 4px 8.07px;">')
 replace_text('<div class="container-wrapper-3">', '<div class="container-wrapper-3" style="width: 300px;">')
 replace_text('<div class="container-wrapper-2">', '<div class="container-wrapper-2" style="width: 190px;">')
-replace_text('<div class="container-wrapper">', '<div class="container-wrapper" style="width: 90px;">')
 
 # add floating buttons
 add_to_head('<link rel="stylesheet" href="floating-buttons-style.css" />')
@@ -178,8 +172,8 @@ replace_text("""<p class="privacy-policy-terms">
 
 # demo dialog
 add_to_head('<link rel="stylesheet" href="demo-dialog-style.css" />')
-add_to_head('<script src="static/texts.js?v=6"></script>')
-add_to_head('<script src="static/scripts.js?v=6"></script>')
+add_to_head('<script src="static/texts.js?v=7"></script>')
+add_to_head('<script src="static/scripts.js?v=7"></script>')
 add_to_body("""<div class="demo-dialog-container" style="display: none;">
       <div class="overlay" onclick="hideDemoDialog()"></div>
       <div class="demo-dialog">
