@@ -173,8 +173,8 @@ replace_text("""<p class="privacy-policy-terms">
 
 # demo dialog
 add_to_head('<link rel="stylesheet" href="demo-dialog-style.css" />')
-add_to_head('<script src="static/texts.js?v=7"></script>')
-add_to_head('<script src="static/scripts.js?v=7"></script>')
+add_to_head('<script src="static/texts.js?v=8"></script>')
+add_to_head('<script src="static/scripts.js?v=8"></script>')
 add_to_body("""<div class="demo-dialog-container" style="display: none;">
       <div class="overlay" onclick="hideDemoDialog()"></div>
       <div class="demo-dialog">
