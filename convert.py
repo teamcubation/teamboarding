@@ -91,6 +91,7 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>""")
+add_to_head('<script src="/static/company-email-validator-bundle.js"></script>')
 replace_text('<body>', '<body style="overflow-x: hidden;">')
 replace_text('<div class="frame-184">', '<div class="frame-184" style="width: 545px;">')
 replace_text('<input class="input-2" placeholder="Fullname" type="text" />', '<input class="input-2" placeholder="Fullname" name="fullname" style="color: #000;" type="text" />')

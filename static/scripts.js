@@ -109,6 +109,10 @@ function demoDialogOk() {
                 alert('Please enter a valid email');
                 return;
             }
+            if (!CompanyEmailValidator.isCompanyEmail(demo_email)) {
+                alert('Please enter a company email');
+                return;
+            }
             demo_button.innerText = 'Please wait...';
             trackEvent('Demo Let’s go Button Clicked');
             fetch(API_URL + '/request-demo', {
@@ -214,6 +218,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (full_name && company && email) {
                     if (!validateEmail(email)) {
                         alert('Please enter a valid email');
+                        return;
+                    }
+                    if (!CompanyEmailValidator.isCompanyEmail(email)) {
+                        alert('Please enter a company email');
                         return;
                     }
                     button.innerHTML = '<div class="text-wrapper-58">Sending...</div>';
