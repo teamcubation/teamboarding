@@ -52,12 +52,12 @@ function initMode() {
     const demoButtons = document.querySelectorAll('.demo-button.non-floating');
     for (let i = 0; i < demoButtons.length; i++) {
         demoButtons[i].addEventListener('click', function() {
-            trackEvent('Get a demo Button Clicked', {'type': 'top'});
+            trackEvent('New View Demo Button Clicked', {'type': 'top'});
         });
     }
 
     document.querySelector('.demo-button.floating').addEventListener('click', function() {
-        trackEvent('Get a demo Button Clicked', {'type': 'floating'});
+        trackEvent('New View Demo Button Clicked', {'type': 'floating'});
     });
 
     const loginButtons = document.querySelectorAll('a[href="https://app.teamcubation.com/login"');
