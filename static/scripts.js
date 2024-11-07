@@ -8,6 +8,8 @@ function initMode() {
         TB_SOURCE = 'email';
     } else if (window.location.search.indexOf('s=a') > -1) {
         TB_SOURCE = 'ads';
+    } else if (window.location.search.indexOf('fbclid') > -1) {
+        TB_SOURCE = 'facebook/instagram';
     }
 
     // get mode from localStorage
@@ -86,6 +88,10 @@ function trackEvent(eventName, eventProps) {
     }
 }
 
+function buildSource() {
+    return 'Teamboarding Landing (mode: ' + TB_MODE + ', source: ' + TB_SOURCE + ', url: ' + window.location.href + ')';
+}
+
 function validateEmail(email) {
     return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
 }
@@ -97,6 +103,11 @@ function showDemoDialog() {
   window.setTimeout(function() {
     document.querySelector('.demo-dialog').style.opacity = '1';
   }, 10);
+}
+
+function openDemo() {
+    trackEvent('New View Demo Button Clicked');
+    window.open('https://demo.teamcubation.com/login?mid=' + mixpanel.get_distinct_id(), '_blank');
 }
 
 function demoDialogOk() {
@@ -123,7 +134,7 @@ function demoDialogOk() {
                 body: JSON.stringify({
                   "name": demo_name,
                   "email": demo_email,
-                  "source": "Teamboarding Landing (mode: " + TB_MODE + ", source: " + TB_SOURCE + ")"
+                  "source": buildSource()
                 })
             })
             .then(response => {
@@ -238,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
                           "company": company,
                           "name": full_name,
                           "email": email,
-                          "source": "Teamboarding Landing (mode: " + TB_MODE + ", source: " + TB_SOURCE + ")"
+                          "source": buildSource()
                         })
                     })
                     .then(response => {

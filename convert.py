@@ -104,7 +104,6 @@ replace_text('<img class="laptop-table-looks-4" src="img/laptop-table-looks-pret
 replace_text('<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" />', '<img class="laptop-table-looks-2" src="img/laptop-table-looks-pretty-darkness-1-1.png" style="width: 100%; height: 100%;" />')
 replace_text('<div class="title-with-emoji-2">', '<div class="title-with-emoji-2" style="width: auto;">')
 replace_text('<div class="title-with-emoji-3">', '<div class="title-with-emoji-3" style="width: auto;">')
-replace_text('<span class="text-wrapper-4">&nbsp;</span>', '')
 replace_text('<img class="img-5" src="img/frame-276-20.png" />', '')
 replace_text('<img class="img-5" src="img/frame-276-11.png" />', '')
 replace_text('<img class="img-5" src="img/frame-276-10.png" />', '')
@@ -123,7 +122,7 @@ add_to_body("""
         <div class="div">
           <a class="link floating" href="#Start"><div class="text-wrapper">Start for free</div></a>
           <div class="text-wrapper-2">or</div>
-          <a class="div-wrapper demo-button floating" onclick="showDemoDialog()"><div class="text-wrapper-3">Get a demo</div></a>
+          <a class="div-wrapper demo-button floating" onclick="openDemo()"><div class="text-wrapper-3">View Demo</div></a>
         </div>
       </div>
     </div>
@@ -151,13 +150,12 @@ replace_text('<div class="frame-56">', '<div class="frame-56" style="padding: 40
 replace_text('<div class="frame-194">', '<div class="frame-194"><a name="Benefits"></a>')
 replace_text('<div class="frame-125">', '<div class="frame-125"><a name="Benefits"></a>')
 replace_text('<div class="frame-63">', '<div class="frame-63"><a name="Benefits"></a>')
-replace_text('<div class="header-header-nav"><div class="text-wrapper">Sign in</div></div>', '<a class="header-header-nav" href="https://app.teamcubation.com/login" target="_blank"><div style="line-height: 10px;" class="text-wrapper">Sign in</div></a>')
-replace_text('<div class="header-header-nav"><div class="text-wrapper">Talk to Sales</div></div>', '<a class="header-header-nav" href="https://calendly.com/natalia-perez-tq/teamboarding-talk-to-sales" target="_blank"><div style="line-height: 10px;" class="text-wrapper">Talk to Sales</div></a>')
+replace_text('<div class="header-header-nav gray"><div class="text-wrapper">Sign in</div></div>', '<a class="header-header-nav gray" href="https://app.teamcubation.com/login" target="_blank"><div style="line-height: 10px;" class="text-wrapper">Sign in</div></a>')
+replace_text('<div class="header-header-nav"><div class="text-wrapper">Let\'s talk</div></div>', '<a class="header-header-nav" href="https://calendly.com/natalia-perez-tq/teamboarding-talk-to-sales" target="_blank"><div style="line-height: 10px;" class="text-wrapper">Let\'s talk</div></a>')
 replace_text('<div class="section-5"', '<a name="Start"></a><div class="section-5"')
 replace_text('<div class="section-8"', '<a name="Start"></a><div class="section-8"')
 replace_text('<div class="section-2"', '<a name="Start"></a><div class="section-2"')
 replace_text('<div class="link"><div class="text-wrapper-3">Start for free</div></div>', '<a class="link non-floating" href="#Start"><div class="text-wrapper-3">Start for free</div></a>')
-replace_text('<span class="text-wrapper-5">Get a demo</span>', '<a class="text-wrapper-5 demo-button non-floating" style="cursor: pointer;" onclick="showDemoDialog()">Get a demo</a>')
 replace_text("""<p class="privacy-policy-terms-2">
               Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Terms &amp; Conditions
             </p>""",
@@ -173,8 +171,8 @@ replace_text("""<p class="privacy-policy-terms">
 
 # demo dialog
 add_to_head('<link rel="stylesheet" href="demo-dialog-style.css" />')
-add_to_head('<script src="static/texts.js?v=8"></script>')
-add_to_head('<script src="static/scripts.js?v=8"></script>')
+add_to_head('<script src="static/texts.js?v=9"></script>')
+add_to_head('<script src="static/scripts.js?v=9"></script>')
 add_to_body("""<div class="demo-dialog-container" style="display: none;">
       <div class="overlay" onclick="hideDemoDialog()"></div>
       <div class="demo-dialog">
