@@ -122,7 +122,7 @@ add_to_body("""
         <div class="div">
           <a class="link floating" href="#Start"><div class="text-wrapper">Start for free</div></a>
           <div class="text-wrapper-2">or</div>
-          <a class="div-wrapper demo-button floating" onclick="openDemo()"><div class="text-wrapper-3">View Demo</div></a>
+          <a class="div-wrapper demo-button floating" href="https://demo.teamcubation.com/login" target="_blank" onclick="trackDemoOpened()"><div class="text-wrapper-3">View Demo</div></a>
         </div>
       </div>
     </div>
@@ -171,8 +171,8 @@ replace_text("""<p class="privacy-policy-terms">
 
 # demo dialog
 add_to_head('<link rel="stylesheet" href="demo-dialog-style.css" />')
-add_to_head('<script src="static/texts.js?v=10"></script>')
-add_to_head('<script src="static/scripts.js?v=10"></script>')
+add_to_head('<script src="static/texts.js?v=11"></script>')
+add_to_head('<script src="static/scripts.js?v=11"></script>')
 add_to_body("""<div class="demo-dialog-container" style="display: none;">
       <div class="overlay" onclick="hideDemoDialog()"></div>
       <div class="demo-dialog">
