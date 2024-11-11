@@ -194,21 +194,24 @@ function atBottomMinus(n) {
 
 document.addEventListener('DOMContentLoaded', function() {
     mixpanel.init("76b651d87641a235bf95859fdd1fbba7", {
-      debug: true,
-      track_pageview: true,
-      persistence: "localStorage",
+        debug: true,
+        track_pageview: true,
+        persistence: "localStorage",
+        loaded: function(mixpanel) {
+            console.log('LOADED');
+            const existingUUID = localStorage.getItem('MP_UUID');
+            if (existingUUID) {
+                mixpanel.identify(existingUUID);
+            } else {
+                mixpanel.identify(createUUID4());
+                localStorage.setItem('MP_UUID', mixpanel.get_distinct_id());
+            }
+            const demo_links = document.querySelectorAll(`[href="https://demo.teamcubation.com/login"]`);
+            for (let i = 0; i < demo_links.length; i++) {
+                demo_links[i].href = demo_links[i].href + '?mid=' + mixpanel.get_distinct_id();
+            }
+        }
     });
-    const existingUUID = localStorage.getItem('MP_UUID');
-    if (existingUUID) {
-        mixpanel.identify(existingUUID);
-    } else {
-        mixpanel.identify(createUUID4());
-        localStorage.setItem('MP_UUID', mixpanel.get_distinct_id());
-    }
-    const demo_links = document.querySelectorAll(`[href="https://demo.teamcubation.com/login"]`);
-    for (let i = 0; i < demo_links.length; i++) {
-        demo_links[i].href = demo_links[i].href + '?mid=' + mixpanel.get_distinct_id();
-    }
 
     initMode();
 
