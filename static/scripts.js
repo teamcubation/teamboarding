@@ -60,7 +60,7 @@ function initMode() {
         trackEvent('New View Demo Button Clicked', {'type': 'floating'});
     });
 
-    const loginButtons = document.querySelectorAll('a[href="https://app.teamcubation.com/login"');
+    const loginButtons = document.querySelectorAll('a[href="https://app.teamcubation.com/login"]');
     for (let i = 0; i < loginButtons.length; i++) {
         loginButtons[i].addEventListener('click', function() {
             trackEvent('Sign in Button Clicked');
@@ -198,7 +198,6 @@ document.addEventListener('DOMContentLoaded', function() {
         track_pageview: true,
         persistence: "localStorage",
         loaded: function(mixpanel) {
-            console.log('LOADED');
             const existingUUID = localStorage.getItem('MP_UUID');
             if (existingUUID) {
                 mixpanel.identify(existingUUID);
