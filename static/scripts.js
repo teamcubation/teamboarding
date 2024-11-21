@@ -209,10 +209,10 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let i = 0; i < demo_links.length; i++) {
                 demo_links[i].href = demo_links[i].href + '?mid=' + mixpanel.get_distinct_id();
             }
+
+            initMode();
         }
     });
-
-    initMode();
 
     const floatingButtons = document.querySelector('.floating-buttons');
     window.onscroll = function() {
