@@ -210,6 +210,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 demo_links[i].href = demo_links[i].href + '?mid=' + mixpanel.get_distinct_id();
             }
 
+            window.mixpanel = mixpanel;
+
             initMode();
         }
     });
