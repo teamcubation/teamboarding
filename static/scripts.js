@@ -293,4 +293,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    document.querySelector('.top-actions-bar .lang-button').addEventListener('click', function(e) {
+        e.target.classList.toggle('active');
+        document.querySelector('.top-actions-bar .lang-switch-menu').classList.toggle('active');
+    });
+
+    // hide the menu when clicking outside of it
+    document.addEventListener('click', function(e) {
+        if (!e.target.matches('.lang-switch-menu') && !e.target.matches('.lang-button')) {
+            document.querySelector('.top-actions-bar .lang-button').classList.remove('active');
+            document.querySelector('.top-actions-bar .lang-switch-menu').classList.remove('active');
+        }
+    });
 });
