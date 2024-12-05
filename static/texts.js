@@ -59,7 +59,7 @@ const TEXTS = {
         "tracking": "Streamline daily tracking and enhance team efficiency, seamlessly integrating into your processes.",
         "performance": "Streamline daily tracking and enhance team efficiency, seamlessly integrating into your processes."
     },
-    "Reduce expenses by accelerating onboarding, optimizing resources, and decreasing turnover": {
+    "Reduce expenses by accelerating onboarding, optimizing resources, and decreasing turnover.": {
         "tracking": "Reduce expenses by optimizing resources, enhancing daily performance, and decreasing turnover.",
         "performance": "Reduce expenses by optimizing resources, enhancing daily performance, and decreasing turnover."
     },

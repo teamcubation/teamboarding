@@ -1,4 +1,5 @@
-.top-actions-bar{
+.top-actions-bar {
+  position: relative;
   width: 100%;
   max-width: 1180px;
   border-bottom: 1px solid #DDDDEB;
@@ -41,11 +42,17 @@
   background: #fff;
   border-radius: 4px;
   border: 1px solid #DDDDEB;
-  right: 185px;
+  right: 55px;
   top: 45px;
   padding: 24px;
   z-index: 100;
   text-align: left;
+}
+html[lang=es] .top-actions-bar .lang-switch-menu {
+  right: 93px;
+}
+html[lang=pt] .top-actions-bar .lang-switch-menu {
+  right: 78px;
 }
 .top-actions-bar .lang-switch-menu.active {
   display: block;
@@ -68,7 +75,15 @@
   }
 
   .top-actions-bar .lang-switch-menu {
-    right: 80px;
+    right: 83px;
+  }
+
+  html[lang=es] .top-actions-bar .lang-switch-menu {
+    right: 120px;
+  }
+
+  html[lang=pt] .top-actions-bar .lang-switch-menu {
+    right: 104px;
   }
 }
 
@@ -2355,6 +2370,13 @@
   flex: 1;
   flex-grow: 1;
   margin-right: 15px;
+}
+
+html[lang=es] .landing-onboarding .img-5 {
+  margin-right: -20px;
+}
+html[lang=pt] .landing-onboarding .img-5 {
+  margin-right: -5px;
 }
 
 .frame-202 .img-5 {

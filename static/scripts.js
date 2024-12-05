@@ -2,6 +2,8 @@ let TB_MODE = 'onboarding';
 let TB_SOURCE = 'direct';
 const API_URL = 'https://api.prod.tq.teamcubation.com';
 
+const getVarText = (elementId) => document.getElementById(elementId).value;
+
 function initMode() {
     // get source from url
     if (window.location.search.indexOf('s=e') > -1) {
@@ -96,15 +98,6 @@ function validateEmail(email) {
     return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
 }
 
-function showDemoDialog() {
-  document.querySelector('.demo-dialog-container').style.display = 'flex';
-  document.querySelector('.demo-dialog-container .content').style.display = 'flex';
-  document.querySelector('.demo-dialog-container .content-ok').style.display = 'none';
-  window.setTimeout(function() {
-    document.querySelector('.demo-dialog').style.opacity = '1';
-  }, 10);
-}
-
 function trackDemoOpened() {
     trackEvent('New View Demo Button Clicked');
 }
@@ -113,52 +106,6 @@ function createUUID4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
         (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
     );
-}
-
-function demoDialogOk() {
-    const demo_name = document.querySelector('#demo-name').value;
-    const demo_email = document.querySelector('#demo-email').value;
-    const demo_button = document.querySelector('#demo-button');
-    if (demo_button.innerText !== 'Please wait...') {
-        if (demo_name && demo_email) {
-            if (!validateEmail(demo_email)) {
-                alert('Please enter a valid email');
-                return;
-            }
-            if (!CompanyEmailValidator.isCompanyEmail(demo_email)) {
-                alert('Please enter a company email');
-                return;
-            }
-            demo_button.innerText = 'Please wait...';
-            trackEvent('Demo Let’s go Button Clicked');
-            fetch(API_URL + '/request-demo', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                  "name": demo_name,
-                  "email": demo_email,
-                  "source": buildSource()
-                })
-            })
-            .then(response => {
-                demo_button.innerText = 'Let’s go';
-                document.querySelector('.demo-dialog-container .content').style.display = 'none';
-                document.querySelector('.demo-dialog-container .content-ok').style.display = 'flex';
-                document.querySelector('#demo-name').value = '';
-                document.querySelector('#demo-email').value = '';
-                window.setTimeout(hideDemoDialog, 3000);
-            });
-        } else {
-            alert('Please fill all the fields');
-        }
-    }
-}
-
-function hideDemoDialog() {
-    document.querySelector('.demo-dialog-container').style.display = 'none';
-    document.querySelector('.demo-dialog').style.opacity = '0';
 }
 
 function getScrollXY() {
@@ -240,22 +187,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.querySelectorAll('.req-trial-button').forEach(function(button) {
+        const varTextSending = getVarText('var-text-sending');
         button.addEventListener('click', function() {
-            if (button.innerText !== 'Sending...') {
+            if (button.innerText !== varTextSending) {
                 const form = button.closest('.form-2');
                 const full_name = form.querySelector('input[name="fullname"]').value;
                 const company = form.querySelector('input[name="company"]').value;
                 const email = form.querySelector('input[name="email"]').value;
                 if (full_name && company && email) {
                     if (!validateEmail(email)) {
-                        alert('Please enter a valid email');
+                        alert(getVarText('var-text-invalid-email'));
                         return;
                     }
                     if (!CompanyEmailValidator.isCompanyEmail(email)) {
-                        alert('Please enter a company email');
+                        alert(getVarText('var-text-company-email'));
                         return;
                     }
-                    button.innerHTML = '<div class="text-wrapper-58">Sending...</div>';
+                    button.innerHTML = '<div class="text-wrapper-58">' + varTextSending + '</div>';
                     trackEvent('Request Trial Button Clicked');
                     if (typeof gtag_report_conversion !== 'undefined') {
                         gtag_report_conversion();
@@ -273,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         })
                     })
                     .then(response => {
-                        button.innerHTML = '<div class="text-wrapper-58">Request Trial</div>';
+                        button.innerHTML = '<div class="text-wrapper-58">' + getVarText('var-text-request-trial') + '</div>';
                         form.querySelector('input[name="fullname"]').value = '';
                         form.querySelector('input[name="company"]').value = '';
                         form.querySelector('input[name="email"]').value = '';
@@ -288,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }, 5000);
                     });
                 } else {
-                    alert('Please fill all the fields');
+                    alert(getVarText('var-text-missing-fields'));
                 }
             }
         });
