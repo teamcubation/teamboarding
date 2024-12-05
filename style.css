@@ -7604,6 +7604,11 @@ html[lang=pt] .landing-onboarding .img-5 {
   line-height: 39.6px;
 }
 
+html[lang=es] .landing-onboarding .text-wrapper-127,
+html[lang=pt] .landing-onboarding .text-wrapper-127 {
+  font-size: 32px;
+}
+
 .landing-onboarding .frame-149 {
   display: flex;
   flex-direction: column;
@@ -9372,6 +9377,11 @@ html[lang=pt] .landing-onboarding .img-5 {
   border-radius: 16px;
   border: 2px solid;
   border-color: var(--tokens-border-primary);
+}
+
+html[lang=es] .landing-onboarding .frame-196,
+html[lang=pt] .landing-onboarding .frame-196 {
+  min-height: 275px;
 }
 
 .landing-onboarding .frame-197 {
