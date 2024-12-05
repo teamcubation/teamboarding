@@ -75,6 +75,20 @@ function initMode() {
             trackEvent('Talk to Sales Button Clicked');
         });
     }
+
+    // redirect to language-specific landing page if browser language is not the same as the one in the URL, just the first time
+    if (localStorage.getItem('lang_redirect') === null) {
+        const browser_lang = navigator.language.split('-')[0];
+
+        if (browser_lang !== document.documentElement.lang && (['en', 'es', 'pt'].includes(browser_lang))) {
+            localStorage.setItem('lang_redirect', '1');
+            if (browser_lang === 'en') {
+                location.href = '/';
+            } else {
+                location.href = `/${browser_lang}/`;
+            }
+        }
+    }
 }
 
 function trackEvent(eventName, eventProps) {
