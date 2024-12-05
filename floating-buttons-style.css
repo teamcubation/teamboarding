@@ -2,12 +2,15 @@
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-    position: fixed;
-    bottom: 13px;
-    z-index: 100;
-    width: 360px;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
+  position: fixed;
+  bottom: 13px;
+  z-index: 100;
+  width: 360px;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+}
+html[lang=pt] .floating-buttons {
+  width: 420px;
 }
 
 .floating-buttons .frame-wrapper {
