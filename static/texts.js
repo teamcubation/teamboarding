@@ -70,31 +70,31 @@ const TEXTS = {
     },
 
     /** es **/
-    "Teamboarding - Revoluciona tu proceso de incorporación técnica": {
+    "Teamboarding - Revoluciona tu proceso de onboarding técnico": {
         "tracking": "Teamboarding - Mejora el impacto del equipo a través de conocimientos sobre performance",
-        "performance": "Teamboarding - Rastrea, optimiza y eleva la performance técnica"
+        "performance": "Teamboarding - Optimiza y eleva la performance técnica"
     },
-    "Revoluciona tu proceso de incorporación técnica": {
+    "Revoluciona tu proceso de onboarding técnico": {
         "tracking": "Mejora el impacto del equipo a través de conocimientos sobre performance",
-        "performance": "Rastrea, optimiza y eleva la performance técnica"
+        "performance": "Optimiza y eleva la performance técnica"
     },
-    "Simplifica y mejora tu experiencia de incorporación, asegurando que cada nuevo miembro del equipo esté preparado para el éxito desde el primer día.": {
+    "Simplifica y mejora tu experiencia de onboarding, asegurando que cada nuevo miembro del equipo esté preparado para el éxito desde el primer día.": {
         "tracking": "Facilita evaluaciones tanto de la experiencia técnica como de las habilidades blandas para mejorar la dinámica del equipo y fomentar una colaboración más efectiva.",
-        "performance": "Obtén conocimientos en tiempo real para impulsar la performance y la colaboración dentro de tu equipo técnico, empoderando la mejora continua."
+        "performance": "Obtén insights en tiempo real para potenciar la performance y la colaboración de tu equipo técnico impulsando la mejora continua."
     },
-    "Acelera la integración técnica desde el primer día": {
+    "Acelera el onboarding técnico desde el primer día": {
         "tracking": "Libera el potencial de tu equipo con conocimientos sobre performance",
-        "performance": "Libera todo el potencial de tu equipo con nuestras funcionalidades"
+        "performance": "Maximiza el potencial de tu equipo con nuestras funcionalidades"
     },
-    "Aprovecha funcionalidades avanzadas para lograr una integración técnica fluida y mejorar la efectividad desde el principio.": {
-        "tracking": "Maximiza la efectividad de tu equipo con capacidades que facilitan el seguimiento en tiempo real, información sobre performance y comunicación fluida.",
-        "performance": "Maximiza la efectividad de tu equipo con capacidades que facilitan el seguimiento en tiempo real, información sobre performance y comunicación fluida."
+    "Aprovecha al máximo las funcionalidades avanzadas para asegurar un onboarding técnico fluido y mejorar la efectividad desde el primer día.": {
+        "tracking": "Impulsa la efectividad de tu equipo con funcionalidades que facilitan el seguimiento en tiempo real, información sobre performance y comunicación fluida.",
+        "performance": "Impulsa la efectividad de tu equipo con funcionalidades que facilitan el seguimiento en tiempo real, información sobre performance y comunicación fluida."
     },
     "Procesos Personalizados": {
         "tracking": "Árbol de Conocimiento",
         "performance": "Árbol de Conocimiento"
     },
-    "Diseña y gestiona flujos de trabajo de incorporación adaptados a cada rol técnico.": {
+    "Diseña y gestiona flujos de trabajo adaptados a cada rol técnico.": {
         "tracking": "Explora y gestiona las habilidades de los miembros de tu equipo, tanto técnicas como no técnicas, para una mejor colaboración.",
         "performance": "Explora y gestiona las habilidades de los miembros de tu equipo, tanto técnicas como no técnicas, para una mejor colaboración."
     },
@@ -102,17 +102,17 @@ const TEXTS = {
         "tracking": "Métricas Detalladas",
         "performance": "Métricas Detalladas"
     },
-    "Evalúa el progreso de la incorporación con informes y análisis precisos.": {
+    "Evalúa el progreso del onboarding con informes y análisis precisos.": {
         "tracking": "Monitorea el progreso diario y la efectividad con informes completos y análisis precisos.",
         "performance": "Monitorea el progreso diario y la efectividad con informes completos y análisis precisos."
     },
-    "Incorporación organizada y simplificada": {
+    "Onboarding organizado y simplificado": {
         "tracking": "Seguimiento de rendimiento simplificado y fácil",
         "performance": "Progreso diario simplificado y organizado"
     },
-    "Descubre lo fácil que puede ser la integración técnica como nunca antes": {
+    "Descubre lo fácil que puede ser el onboarding técnico, simplificado al máximo": {
         "tracking": "Descubre lo sencillo que puede ser el seguimiento diario de performance como nunca antes.",
-        "performance": "Descubre lo sencilla que puede ser la integración diaria como nunca antes."
+        "performance": "Descubre lo simple que puede ser la integración en el día a día."
     },
     "Empareja fácilmente compañeros y líderes con miembros del equipo para una guía y apoyo efectivos.": {
         "tracking": "Incorpora fácilmente a miembros experimentados para mejorar la guía y la colaboración dentro de tu equipo.",
@@ -126,7 +126,7 @@ const TEXTS = {
         "tracking": "Rastrea y evalúa el rendimiento diario de tu equipo, todo desde una única plataforma centralizada.",
         "performance": "Rastrea y evalúa el rendimiento diario de tu equipo, todo desde una única plataforma centralizada."
     },
-    "Optimiza la incorporación y aumenta la eficiencia del equipo, integrándose sin problemas en tus procesos.": {
+    "Optimiza el onboarding y aumenta la eficiencia del equipo, integrándose sin problemas en tus procesos.": {
         "tracking": "Optimiza el seguimiento diario y mejora la eficiencia del equipo, integrándose sin problemas en tus procesos.",
         "performance": "Optimiza el seguimiento diario y mejora la eficiencia del equipo, integrándose sin problemas en tus procesos."
     },
