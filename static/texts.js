@@ -71,19 +71,19 @@ const TEXTS = {
 
     /** es **/
     "Teamboarding - Revoluciona tu proceso de onboarding técnico": {
-        "tracking": "Teamboarding - Mejora el impacto del equipo a través de conocimientos sobre performance",
+        "tracking": "Teamboarding - Impulsa el impacto de tu equipo con insights clave sobre su performance",
         "performance": "Teamboarding - Optimiza y eleva la performance técnica"
     },
     "Revoluciona tu proceso de onboarding técnico": {
-        "tracking": "Mejora el impacto del equipo a través de conocimientos sobre performance",
+        "tracking": "Impulsa el impacto de tu equipo con insights clave sobre su performance",
         "performance": "Optimiza y eleva la performance técnica"
     },
     "Simplifica y mejora tu experiencia de onboarding, asegurando que cada nuevo miembro del equipo esté preparado para el éxito desde el primer día.": {
-        "tracking": "Facilita evaluaciones tanto de la experiencia técnica como de las habilidades blandas para mejorar la dinámica del equipo y fomentar una colaboración más efectiva.",
+        "tracking": "Facilita evaluaciones tanto de la experiencia técnica como de las soft skills para mejorar la dinámica del equipo y fomentar una colaboración más efectiva.",
         "performance": "Obtén insights en tiempo real para potenciar la performance y la colaboración de tu equipo técnico impulsando la mejora continua."
     },
     "Acelera el onboarding técnico desde el primer día": {
-        "tracking": "Libera el potencial de tu equipo con conocimientos sobre performance",
+        "tracking": "Maximiza el potencial de tu equipo con nuestras funcionalidades",
         "performance": "Maximiza el potencial de tu equipo con nuestras funcionalidades"
     },
     "Aprovecha al máximo las funcionalidades avanzadas para asegurar un onboarding técnico fluido y mejorar la efectividad desde el primer día.": {
@@ -111,7 +111,7 @@ const TEXTS = {
         "performance": "Progreso diario simplificado y organizado"
     },
     "Descubre lo fácil que puede ser el onboarding técnico, simplificado al máximo": {
-        "tracking": "Descubre lo sencillo que puede ser el seguimiento diario de performance como nunca antes.",
+        "tracking": "Descubre lo simple que puede ser la integración en el día a día.",
         "performance": "Descubre lo simple que puede ser la integración en el día a día."
     },
     "Empareja fácilmente compañeros y líderes con miembros del equipo para una guía y apoyo efectivos.": {
