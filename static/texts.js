@@ -141,19 +141,19 @@ const TEXTS = {
 
     /** pt **/
     "Teamboarding - Revolucione seu processo de integração técnica": {
-        "tracking": "Teamboarding - Melhore o impacto da equipe por meio de insights de desempenho",
+        "tracking": "Teamboarding - Melhore o impacto da sua equipe com insights de desempenho",
         "performance": "Teamboarding - Monitore, otimize e eleve o desempenho técnico"
     },
     "Revolucione seu processo de integração técnica": {
-        "tracking": "Melhore o impacto da equipe por meio de insights de desempenho",
+        "tracking": "Melhore o impacto da sua equipe com insights de desempenho",
         "performance": "Monitore, otimize e eleve o desempenho técnico"
     },
     "Simplifique e melhore sua experiência de integração, garantindo que cada novo membro da equipe esteja preparado para o sucesso desde o primeiro dia.": {
-        "tracking": "Facilite avaliações de competências técnicas e habilidades interpessoais para melhorar a dinâmica da equipe e promover uma colaboração mais eficaz.",
+        "tracking": "Facilite a avaliação de competências técnicas e softskills para melhorar a dinâmica da sua equipe e torná-la mais eficaz.",
         "performance": "Obtenha insights em tempo real para impulsionar o desempenho e a colaboração em sua equipe técnica, promovendo melhorias contínuas."
     },
     "Acelere a integração técnica desde o primeiro dia": {
-        "tracking": "Desbloqueie o potencial da sua equipe com insights de desempenho",
+        "tracking": "Desbloqueie o potencial da sua Equipe com insights de desempenho",
         "performance": "Desbloqueie todo o potencial da sua equipe com nossos recursos"
     },
     "Aproveite funcionalidades avançadas para alcançar uma integração técnica perfeita e aumentar a eficácia desde o início.": {
@@ -165,8 +165,8 @@ const TEXTS = {
         "performance": "Árvore de Conhecimento"
     },
     "Projete e gerencie fluxos de trabalho de integração adaptados a cada função técnica.": {
-        "tracking": "Explore e gerencie as competências dos membros da sua equipe, tanto técnicas quanto interpessoais, para uma colaboração mais eficaz.",
-        "performance": "Explore e gerencie as competências dos membros da sua equipe, tanto técnicas quanto interpessoais, para uma colaboração mais eficaz."
+        "tracking": "Explore e gerencie as competências dos membros da sua equipe, tanto técnicas quanto soft skills, para uma colaboração mais eficaz.",
+        "performance": "Explore e gerencie as competências dos membros da sua equipe, tanto técnicas quanto soft skills, para uma colaboração mais eficaz."
     },
     "Métricas Detalhadas": {
         "tracking": "Métricas Detalhadas",
@@ -178,11 +178,11 @@ const TEXTS = {
     },
     "Integração simplificada e organizada": {
         "tracking": "Monitoramento simplificado de desempenho facilitado",
-        "performance": "Progresso diário simplificado e organizado"
+        "performance": "Progresso diário Simplificado e Organizado"
     },
     "Descubra como a integração técnica pode ser fácil como nunca antes": {
         "tracking": "Descubra como o monitoramento diário de desempenho pode ser simples como nunca antes.",
-        "performance": "Descubra como a integração diária pode ser simples como nunca antes."
+        "performance": "Descubra como a integração diária pode ser mais fácil do que nunca."
     },
     "Emparelhe facilmente líderes e colegas com membros da equipe para orientação e suporte eficazes.": {
         "tracking": "Integre facilmente membros experientes para melhorar a orientação e a colaboração em sua equipe.",
