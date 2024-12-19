@@ -205,16 +205,10 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             if (button.innerText !== varTextSending) {
                 const form = button.closest('.form-2');
-                const full_name = form.querySelector('input[name="fullname"]').value;
-                const company = form.querySelector('input[name="company"]').value;
                 const email = form.querySelector('input[name="email"]').value;
-                if (full_name && company && email) {
+                if (email) {
                     if (!validateEmail(email)) {
                         alert(getVarText('var-text-invalid-email'));
-                        return;
-                    }
-                    if (!CompanyEmailValidator.isCompanyEmail(email)) {
-                        alert(getVarText('var-text-company-email'));
                         return;
                     }
                     button.innerHTML = '<div class="text-wrapper-58">' + varTextSending + '</div>';
@@ -228,16 +222,14 @@ document.addEventListener('DOMContentLoaded', function() {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                          "company": company,
-                          "name": full_name,
+                          "company": '-',
+                          "name": '-',
                           "email": email,
                           "source": buildSource()
                         })
                     })
                     .then(response => {
                         button.innerHTML = '<div class="text-wrapper-58">' + getVarText('var-text-request-trial') + '</div>';
-                        form.querySelector('input[name="fullname"]').value = '';
-                        form.querySelector('input[name="company"]').value = '';
                         form.querySelector('input[name="email"]').value = '';
                         const trial_request_container = form.closest('.trial-request-container');
                         const trial_request_form = trial_request_container.querySelector('.trial-request-form');

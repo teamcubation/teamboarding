@@ -3425,6 +3425,7 @@ html[lang=pt] .landing-onboarding .img-5 {
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
+  overflow: hidden;
 }
 
 .landing-onboarding .laptop-table-looks-2 {
@@ -3442,7 +3443,7 @@ html[lang=pt] .landing-onboarding .img-5 {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 48px 32px;
+  padding: 50px 40px;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -3543,7 +3544,6 @@ html[lang=pt] .landing-onboarding .img-5 {
 .landing-onboarding .input-3 {
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
@@ -3580,7 +3580,6 @@ html[lang=pt] .landing-onboarding .img-5 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -3593,9 +3592,9 @@ html[lang=pt] .landing-onboarding .img-5 {
   position: relative;
   align-self: stretch;
   width: 100%;
-  border-radius: 8px;
-  border: 1px solid;
-  border-color: #bbbbbb;
+  border-radius: 8px 0 0 8px;
+  border: 1px solid #bbbbbb;
+  border-right-width: 0;
   background: none;
   flex: 1;
   font-family: "Inter", Helvetica;
@@ -3606,19 +3605,25 @@ html[lang=pt] .landing-onboarding .img-5 {
   line-height: 21px;
 }
 
+.landing-onboarding.mobile-size .input-5 {
+  border-radius: 8px 8px 0 0;
+  border-right-width: 1px;
+  border-bottom-width: 0;
+}
+
 .landing-onboarding .link-2 {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 24px;
+  padding: 20px 32px;
   position: relative;
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
   background-color: var(--global-colors-teamboarding-tb-primary-dark);
-  border-radius: 46px;
-  box-shadow: 0px 1px 2px #0000000d;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 1px 2px #0000000d;
 }
 
 .landing-onboarding .text-wrapper-58 {
@@ -6296,6 +6301,7 @@ html[lang=pt] .landing-onboarding .img-5 {
   flex: 0 0 auto;
   z-index: 1;
   background-color: #4b1ffc;
+  overflow: hidden;
 }
 
 .landing-onboarding .laptop-table-looks-4 {
@@ -6313,7 +6319,7 @@ html[lang=pt] .landing-onboarding .img-5 {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 66px 40px;
+  padding: 70px 60px;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -6325,7 +6331,6 @@ html[lang=pt] .landing-onboarding .img-5 {
 .landing-onboarding .frame-127 {
   display: flex;
   flex-direction: column;
-  height: 287px;
   align-items: center;
   gap: 12px;
   position: relative;
@@ -6361,7 +6366,6 @@ html[lang=pt] .landing-onboarding .img-5 {
 .landing-onboarding .input-group-2 {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -6389,8 +6393,18 @@ html[lang=pt] .landing-onboarding .img-5 {
   position: relative;
 }
 
+.landing-onboarding .input-3 input,
+.landing-onboarding .input-8 input {
+  padding: 20px;
+}
+
+.landing-onboarding .input-3 input::placeholder,
+.landing-onboarding .input-8 input::placeholder {
+  color: #ADABAA;
+}
+
 .landing-onboarding .link-3 {
-  padding: 16px 24px;
+  padding: 20px 32px;
   box-shadow: 0px 1px 2px #0000000d;
   display: inline-flex;
   align-items: center;
@@ -6399,7 +6413,7 @@ html[lang=pt] .landing-onboarding .img-5 {
   position: relative;
   flex: 0 0 auto;
   background-color: var(--global-colors-teamboarding-tb-primary-dark);
-  border-radius: 46px;
+  border-radius: 0 8px 8px 0;
 }
 
 .landing-onboarding .text-wrapper-103 {
@@ -9406,6 +9420,7 @@ html[lang=pt] .landing-onboarding .frame-196 {
   flex: 0 0 auto;
   z-index: 1;
   background-color: #4b1ffc;
+  overflow: hidden;
 }
 
 .landing-onboarding .laptop-table-looks-6 {
@@ -9419,11 +9434,12 @@ html[lang=pt] .landing-onboarding .frame-196 {
 }
 
 .landing-onboarding .div-card-3 {
+  max-width: 844px;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 66px 80px;
+  padding: 80px 80px 72px 80px;
   position: relative;
   flex: 0 0 auto;
   background-color: #ffffff;
@@ -9433,7 +9449,6 @@ html[lang=pt] .landing-onboarding .frame-196 {
 .landing-onboarding .frame-198 {
   display: inline-flex;
   flex-direction: column;
-  height: 287px;
   align-items: center;
   gap: 12px;
   position: relative;
@@ -9480,7 +9495,6 @@ html[lang=pt] .landing-onboarding .frame-196 {
   text-align: center;
   letter-spacing: 0;
   line-height: 28px;
-  white-space: nowrap;
 }
 
 .landing-onboarding .p-caption-2 {
@@ -9616,7 +9630,6 @@ html[lang=pt] .landing-onboarding .frame-196 {
   display: flex;
   flex-direction: column;
   width: 669px;
-  height: 287px;
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -9670,4 +9683,20 @@ html[lang=pt] .landing-onboarding .frame-196 {
   letter-spacing: var(--text-body-letter-spacing);
   line-height: var(--text-body-line-height);
   font-style: var(--text-body-font-style);
+}
+
+.green-chip {
+  border-radius: 33px;
+  background: #D4F3EB;
+  color: #01A480;
+  text-align: center;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 8px;
+  margin-left: 20px;
+  vertical-align: text-bottom;
+  font-family: "Inter", Helvetica;
 }
