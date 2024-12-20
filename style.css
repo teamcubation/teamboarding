@@ -9700,3 +9700,7 @@ html[lang=pt] .landing-onboarding .frame-196 {
   vertical-align: text-bottom;
   font-family: "Inter", Helvetica;
 }
+
+.mobile-size .green-chip {
+  margin-left: 0;
+}
