@@ -1,0 +1,4870 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://fancy-base-6402.animaapp.io/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">.turbo-progress-bar {
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: #0076ff;
+        z-index: 9999;
+        transition: width 300ms ease-out,
+        opacity 150ms 150ms ease-in;
+        transform: translate3d(0, 0, 0);
+    }
+    </style>
+    <style id="st_globalStyles">
+        /* MEDIA QUERIES */
+        .anima-desktop-only {
+            @media (max-width: 768px) {
+                display: none !important;
+            }
+        }
+
+        /* SCROLLBAR */
+
+        [dark-scroll]::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-track-piece {
+            background-color: #2b2b2b;
+            border: 1px solid #1d1d1d;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-thumb {
+            height: 10px;
+            background-color: #4d4d4d;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-thumb:hover {
+            background-color: #5a5a5a;
+        }
+
+        /* LOAD PROGRESS */
+
+        .turbolinks-progress-bar {
+            height: 3px;
+            background-color: #ff6250;
+        }
+
+        /* GROUPING */
+
+        [data-id].ui-selecting {
+            box-shadow: inset 0 0 0 1px #4285f4 !important;
+        }
+
+        [data-id].ui-selected {
+            box-shadow: inset 0 0 0 1px #4285f4 !important;
+        }
+
+        /* CURSOR */
+
+        body[mode='comments'] * {
+            cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjkxNjQ4IDIzLjQxMDlDNS40OTE1MyAyMi45ODg3IDUuOTMxNzkgMjIuMzkzNSA2LjIzMjggMjEuNjQwN0M0Ljc5MDY5IDE5LjczODMgNCAxNy4zOTMzIDQgMTQuOTk3NUM0IDguOTM0MSA4LjkzMjgyIDQgMTUuMDAyMiA0QzIxLjA3MTcgNCAyNiA4LjkzOTE5IDI2IDE1LjAwMjVDMjYgMjEuMDY1OSAyMS4wNjcyIDI2IDE0Ljk5NzggMjZDMTIuOTg5NiAyNiAxMS4wMzUzIDI1LjQ1NTcgOS4zMjM2NyAyNC40MjMxQzguNDI5NjUgMjQuOTU3MiA3LjQxNDM0IDI1LjIyNjggNi4zMDAxOCAyNS4yMjY4QzUuOTU0MjYgMjUuMjI2OCA1LjU5OTM1IDI1LjIwMTQgNS4yNTM0MiAyNS4xNDU0QzQuOTAzIDI1LjA4OTUgNC42Mjg5NiAyNC44MDQ2IDQuNTUyNTggMjQuNDE4QzQuNDc2MjEgMjQuMDI2NCA0LjYxOTk3IDIzLjYyOTYgNC45MTY0OCAyMy40MTA5WiIgZmlsbD0iI0ZGNjI1MCIvPgo8L3N2Zz4K') 0 24,
+            auto !important;
+        }
+
+        body[mode='code'] [data-id]:not(.hidden) {
+            cursor: default;
+        }
+
+        /* default node state */
+
+        body[mode='code'] [data-id]:not(.hidden), body[mode='comments'] [data-id]:not(.hidden) {
+            pointer-events: all;
+        }
+
+        /* is_image */
+
+        body[mode='code'] [data-id].is_image [data-id], body[mode='comments'] [data-id].is_image [data-id] {
+            pointer-events: none !important;
+        }
+
+        /* without a data-id or ignored */
+
+        [data-id].ignore, body[mode='code'] *:not([data-id]) {
+            pointer-events: none !important;
+        }
+
+        /* disable transforms for ignored elements */
+
+
+        body[mode='code'] [data-id]:hover {
+            transform: none !important;
+        }
+
+        /* ANIMA BUTTONS */
+        .an-button {
+            position: relative;
+            height: 28px;
+            padding: 0 20px;
+            font-size: 14px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            vertical-align: middle;
+            white-space: nowrap;
+            transition-property: all;
+            transition-duration: 100ms;
+            appearance: none;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s ease;
+            border-width: 0;
+        }
+
+        .an-button > div {
+            width: 100%;
+        }
+
+        .an-button.primary {
+            background: #ff6250;
+            color: #ffffff;
+        }
+
+        .an-button.primary:hover:not(:disabled) {
+            background: #e2412e;
+        }
+
+        .an-button.secondary {
+            background: transparent;
+            border: 1px solid #ff6250;
+            color: #ff6250;
+        }
+
+        .an-button.secondary:hover:not(:disabled) {
+            color: #ffffff;
+            background: #ff6250;
+        }
+
+        .an-button.rounded {
+            border-radius: 100px;
+        }
+
+        .an-button:disabled {
+            opacity: 0.5;
+        }
+
+        .an-button:disabled {
+            cursor: default;
+        }
+
+        .an-button:active,
+        .an-button:focus {
+            outline: none;
+        }
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.ico">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="photo">
+    <style>
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+        @import url("https://fonts.googleapis.com/css?family=Inter:500,400,600");
+
+
+        @font-face {
+            font-family: "Satoshi Variable-Black";
+            font-style: normal;
+            font-weight: 900;
+            src: url('https://anima-uploads.s3.amazonaws.com/projects/63176d6b3d47b5e4f1981909/fonts/satoshi-variable.ttf') format("truetype");
+        }
+
+        @font-face {
+            font-family: "Satoshi Variable-Bold";
+            font-style: normal;
+            font-weight: 700;
+            src: url('https://anima-uploads.s3.amazonaws.com/projects/6256567301999579667e0c25/fonts/satoshi-variable.ttf') format("truetype");
+        }
+
+        /* The following line is used to measure usage of this code. You can remove it if you want. */
+        @import url("https://px.animaapp.com/6509d75fd1ff0c2214e900a3.6509d760d1ff0c2214e900a6.TNIsKEY.hch.png");
+
+
+        .screen textarea:focus,
+        .screen input:focus {
+            outline: none;
+        }
+
+        .screen * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        .screen div {
+            -webkit-text-size-adjust: none;
+        }
+
+        .component-wrapper a {
+            display: contents;
+            pointer-events: auto;
+            text-decoration: none;
+        }
+
+        .component-wrapper * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+
+        .component-wrapper a *,
+        .component-wrapper input,
+        .component-wrapper video,
+        .component-wrapper iframe {
+            pointer-events: auto;
+        }
+
+        .component-wrapper.not-ready,
+        .component-wrapper.not-ready * {
+            visibility: hidden !important;
+        }
+
+        .screen a {
+            display: contents;
+            text-decoration: none;
+        }
+
+        .full-width-a {
+            width: 100%;
+        }
+
+        .full-height-a {
+            height: 100%;
+        }
+
+        .container-center-vertical {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .container-center-vertical > * {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .container-center-horizontal {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .container-center-horizontal > * {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .auto-animated div {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated input {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated .container-center-vertical,
+        .auto-animated .container-center-horizontal {
+            opacity: 1;
+        }
+
+        .overlay-base {
+            display: none;
+            height: 100%;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .overlay-base.animate-appear {
+            align-items: center;
+            animation: reveal 0.3s ease-in-out 1 normal forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        .overlay-base.animate-disappear {
+            animation: reveal 0.3s ease-in-out 1 reverse forwards;
+            display: block;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .overlay-base.animate-disappear * {
+            pointer-events: none;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .animate-nodelay {
+            animation-delay: 0s;
+        }
+
+        .align-self-flex-start {
+            align-self: flex-start;
+        }
+
+        .align-self-flex-end {
+            align-self: flex-end;
+        }
+
+        .align-self-flex-center {
+            align-self: flex-center;
+        }
+
+        .valign-text-middle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .valign-text-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .listeners-active,
+        .listeners-active * {
+            pointer-events: auto;
+        }
+
+        .hidden,
+        .hidden * {
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        .smart-layers-pointers,
+        .smart-layers-pointers * {
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .listeners-active-click,
+        .listeners-active-click * {
+            cursor: pointer;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --canary: #4b1ffc;
+            --chicago: #5f5e5e;
+            --cloud: #c8c6c5;
+            --cultured-pearl: #f5f5f5;
+            --eerie-black: #1d1b1b;
+            --eerie-black-2: #201f2214;
+            --melrose: #c6bfff;
+            --white-color: #ffffff;
+
+            --font-size-l: 16px;
+            --font-size-m: 14px;
+            --font-size-xl: 18px;
+            --font-size-xxl: 20px;
+            --font-size-xxxl: 30px;
+            --font-size-xxxxl: 36px;
+            --font-size-xxxxxl: 60px;
+
+            --font-family-inter: "Inter", Helvetica;
+            --font-family-satoshi_variable-black: "Satoshi Variable-Black", Helvetica;
+            --font-family-satoshi_variable-bold: "Satoshi Variable-Bold", Helvetica;
+        }
+
+        .satoshivariable-black-canary-14px {
+            color: var(--canary);
+            font-family: var(--font-family-satoshi_variable-black);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 900;
+        }
+
+        .inter-medium-chicago-14px {
+            color: var(--chicago);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .inter-semi-bold-eerie-black-20px {
+            color: var(--eerie-black);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-xxl);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .inter-normal-chicago-14px {
+            color: var(--chicago);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .inter-normal-chicago-16px {
+            color: var(--chicago);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .inter-semi-bold-white-20px {
+            color: var(--white-color);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-xxl);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .inter-medium-white-16px {
+            color: var(--white-color);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .inter-semi-bold-chicago-14px {
+            color: var(--chicago);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .satoshivariable-bold-eerie-black-36px {
+            color: var(--eerie-black);
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .inter-normal-chicago-20px {
+            color: var(--chicago);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-xxl);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .satoshivariable-black-white-18px {
+            color: var(--white-color);
+            font-family: var(--font-family-satoshi_variable-black);
+            font-size: var(--font-size-xl);
+            font-style: normal;
+            font-weight: 900;
+        }
+
+        .inter-normal-eerie-black-14px {
+            color: var(--eerie-black);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .inter-medium-canary-14px {
+            color: var(--canary);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .inter-medium-white-14px {
+            color: var(--white-color);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        :root {
+        }
+
+
+        .sign-in {
+            background-color: transparent;
+            position: relative;
+            height: 36px;
+        }
+
+        .talk-to-sales {
+            background-color: transparent;
+            position: relative;
+            height: 36px;
+        }
+
+        .title {
+            align-self: stretch;
+            position: relative;
+        }
+
+        /* screen - partnership-1 */
+
+        .partnership-1 {
+            align-items: center;
+            background-color: var(--white-color);
+            display: flex;
+            flex-direction: column;
+            left: 0px;
+            min-width: 1440px;
+            overflow: hidden;
+            overflow-x: hidden;
+            position: relative;
+            top: 0px;
+        }
+
+        .partnership-1 .header-kZxiUr {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            padding: 32px 100px;
+            position: relative;
+            width: 1440px;
+            z-index: 11;
+        }
+
+        .partnership-1 .header-logo-zaxlIB {
+            flex: 1;
+            flex-grow: 1;
+        }
+
+        .partnership-1 .menu-zaxlIB {
+            background-color: var(--cultured-pearl);
+            border-radius: 50px;
+            gap: 32px;
+            padding: 8px 24px;
+        }
+
+        .partnership-1 .partnership-T0ruCC {
+            color: var(--canary);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .partnership-1 .sign-in-up4mst {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-1 .sign-in-6Qq6Fo {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .talk-to-sales-up4mst {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-1 .talk-to-sales-XIxo5V {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .title-kZxiUr {
+            align-items: center;
+            background-color: var(--cultured-pearl);
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 80px;
+            overflow: hidden;
+            padding: 60px 0px;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .partnership-1 .container-QzC5pv {
+            align-items: center;
+            display: flex;
+            gap: 40px;
+            padding: 40px 0px;
+            width: 850px;
+            z-index: 1;
+        }
+
+        .partnership-1 .content-lP6MIg {
+            align-items: center;
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 32px;
+            width: 100%;
+        }
+
+        .partnership-1 .title-wrap-xk9DxP {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            width: 700px;
+        }
+
+        .partnership-1 .title-hrQS10 {
+            background-color: transparent;
+            color: transparent;
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: var(--font-size-xxxxxl);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.00px;
+            line-height: 60px;
+            margin-top: -1.00px;
+            text-align: center;
+        }
+
+        .partnership-1 .span0-uxNKA4 {
+            color: var(--eerie-black);
+            font-style: normal;
+            letter-spacing: -0.60px;
+        }
+
+        .partnership-1 .span1-uxNKA4 {
+            color: var(--canary);
+            font-style: normal;
+            letter-spacing: -0.60px;
+        }
+
+        .partnership-1 .teamboarding-helps-c-xk9DxP {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-1 .cta-lP6MIg {
+            align-items: center;
+            background-color: var(--canary);
+            border-radius: 46px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px 32px;
+            position: relative;
+        }
+
+        .partnership-1 .become-a-partner-A5KZVT {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .background-QzC5pv {
+            height: 100%;
+            left: 0px;
+            object-fit: cover;
+            top: 0px;
+            width: 100%;
+            z-index: 0;
+        }
+
+        .partnership-1 .clients-kZxiUr {
+            background-color: transparent;
+            flex: 0 0 auto;
+            position: relative;
+            width: 1440px;
+            z-index: 9;
+            filter: grayscale(1);
+        }
+
+        .partnership-1 .why-section-title-kZxiUr {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            padding: 48px 0px;
+            position: relative;
+            width: 100%;
+            z-index: 8;
+        }
+
+        .partnership-1 .title-aAlPDx {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .partnership-1 .iso-teamboarding-U17x03 {
+            background-color: transparent;
+            height: 40px;
+            position: relative;
+            width: 40px;
+        }
+
+        .partnership-1 .why-become-a-teamboarding-partner-U17x03 {
+            background-color: transparent;
+            color: var(--canary);
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.00px;
+            line-height: 36px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .by-joining-our-network-you-will-aAlPDx {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .why-content-kZxiUr {
+            z-index: 7;
+        }
+
+        .partnership-1 .why-content-Uja0id {
+            z-index: 6;
+        }
+
+        .partnership-1 .why-content-Ubi1oF {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 48px 0px;
+            z-index: 5;
+        }
+
+        .partnership-1 .content-ECeOgO {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            width: 560px;
+        }
+
+        .partnership-1 .title-vUNCZE {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .partnership-1 .stand-out-in-the-market-xojI0U {
+            background-color: transparent;
+            letter-spacing: 0.70px;
+            line-height: 28px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .differentiate-your-b-xojI0U {
+            align-self: stretch;
+            background-color: transparent;
+            height: 80px;
+            letter-spacing: -1.00px;
+            line-height: 39.6px;
+            position: relative;
+            text-align: left;
+        }
+
+        .partnership-1 .in-todays-competitiv-vUNCZE {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .partnership-1 .image-ECeOgO {
+            align-items: flex-start;
+            background-color: transparent;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow: hidden;
+            position: relative;
+            width: 578px;
+        }
+
+        .partnership-1 .shot-two-smart-busin-SXKAoz {
+            align-self: stretch;
+            background-color: transparent;
+            height: 360px;
+            object-fit: cover;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-1 .separator-kZxiUr {
+            align-self: stretch;
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 100%;
+            z-index: 4;
+        }
+
+        .partnership-1 .program-for-section-kZxiUr {
+            align-items: center;
+            align-self: stretch;
+            background-color: var(--cultured-pearl);
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            width: 100%;
+            z-index: 3;
+        }
+
+        .partnership-1 .container-3WzsbK {
+            align-items: flex-start;
+            display: flex;
+            gap: 48px;
+            padding: 80px 0px;
+            width: 1200px;
+        }
+
+        .partnership-1 .title-qUQkjS {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .partnership-1 .who-is-this-program-for-7j9gnn {
+            background-color: transparent;
+            letter-spacing: 0.70px;
+            line-height: 28px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .our-program-is-designed-for-7j9gnn {
+            background-color: transparent;
+            letter-spacing: -1.00px;
+            line-height: 39.6px;
+            position: relative;
+            text-align: left;
+            width: 620px;
+        }
+
+        .partnership-1 .cards-qUQkjS {
+            flex: 0 0 auto;
+        }
+
+        .partnership-1 .card-qiYboi {
+            align-items: flex-start;
+            background-color: var(--white-color);
+            border-color: var(--cloud);
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-1 .wrap-iNHOxk {
+            align-items: flex-start;
+        }
+
+        .partnership-1 .code-gyycIx {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-1 .content-gyycIx {
+            align-items: flex-start;
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .partnership-1 .digital-transformation-consultancies-lJywxM {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .partnership-1 .optimize-enterprise-lJywxM {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .partnership-1 .card-NaLwGC {
+            align-items: flex-start;
+            background-color: var(--white-color);
+            border-color: var(--cloud);
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-1 .wrap-IrfvBV {
+            align-items: flex-start;
+        }
+
+        .partnership-1 .ranking-j6IEwS {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-1 .content-j6IEwS {
+            align-items: flex-start;
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .partnership-1 .software-factories-and-it-providers-lrded3 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .partnership-1 .add-value-by-ensurin-lrded3 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .partnership-1 .card-bbtzAL {
+            align-items: flex-start;
+            background-color: var(--white-color);
+            border-color: var(--cloud);
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-1 .wrap-G0owx6 {
+            align-items: flex-start;
+        }
+
+        .partnership-1 .user-tag-tWHAcF {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-1 .content-tWHAcF {
+            align-items: flex-start;
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .partnership-1 .employee-experience-consultancies-36mx2A {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .partnership-1 .offer-a-complete-sol-36mx2A {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .partnership-1 .card-xtJPeO {
+            align-items: flex-start;
+            background-color: var(--white-color);
+            border-color: var(--cloud);
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-1 .wrap-awmL4y {
+            align-items: flex-start;
+        }
+
+        .partnership-1 .award-D3FDlU {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-1 .content-D3FDlU {
+            align-items: flex-start;
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .partnership-1 .onboarding-specialists-2PiV7O {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .partnership-1 .expand-your-impact-w-2PiV7O {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .partnership-1 .benefits-section-kZxiUr {
+            align-items: center;
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 80px 0px;
+            position: relative;
+            width: 100%;
+            z-index: 2;
+            background: url('./static/3d-illustration-curved-metallic-circular-tunnel-interior-with-gr.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .partnership-1 .background-nUeE1n {
+            align-items: flex-start;
+            display: inline-flex;
+            flex-direction: column;
+            gap: 10px;
+            left: -360px;
+            top: -513px;
+            transform: rotate(180deg);
+        }
+
+        .partnership-1 .x3d-illustration-curv-vXZLQ3 {
+            background-color: transparent;
+            height: 508px;
+            left: 200px;
+            object-fit: cover;
+            position: absolute;
+            top: 70px;
+            transform: rotate(-180deg);
+            width: 1440px;
+        }
+
+        .partnership-1 .container-nUeE1n {
+            align-items: center;
+            display: flex;
+            gap: 60px;
+            width: 1200px;
+        }
+
+        .partnership-1 .title-PfdSOk {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .partnership-1 .benefits-revenue-model-x5nCeF {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--white-color);
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.00px;
+            line-height: 39.6px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-1 .cards-PfdSOk {
+            height: 248px;
+        }
+
+        .partnership-1 .card-aoJMBJ {
+            align-items: center;
+            background-color: transparent;
+            border-color: var(--white-color);
+            padding: 28px 40px 32px;
+        }
+
+        .partnership-1 .wrap-eZ55Ci {
+            align-items: center;
+        }
+
+        .partnership-1 .moneys-mbeUWs {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-1 .content-mbeUWs {
+            align-items: flex-start;
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .partnership-1 .commission-per-client-h5cVoQ {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-1 .earn-a-percentage-of-h5cVoQ {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            opacity: 0.8;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-1 .card-j0dg1k {
+            align-items: center;
+            background-color: transparent;
+            border-color: var(--white-color);
+            padding: 28px 40px 32px;
+        }
+
+        .partnership-1 .wrap-1nJK5q {
+            align-items: center;
+        }
+
+        .partnership-1 .layer-tj55OC {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-1 .content-tj55OC {
+            align-items: flex-start;
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .partnership-1 .additional-services-2RFnH3 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-1 .offer-consulting-and-2RFnH3 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            opacity: 0.8;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-1 .card-xxrhVs {
+            align-items: center;
+            background-color: transparent;
+            border-color: var(--white-color);
+            padding: 28px 40px 32px;
+        }
+
+        .partnership-1 .wrap-oqrVBg {
+            align-items: center;
+        }
+
+        .partnership-1 .teacher-ffjuSE {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-1 .content-ffjuSE {
+            align-items: flex-start;
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .partnership-1 .official-certification-W7n6Ph {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-1 .become-a-certified-t-W7n6Ph {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            opacity: 0.8;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-1 .teamcubation-kZxiUr {
+            align-items: center;
+            align-self: stretch;
+            background-color: var(--cultured-pearl);
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .partnership-1 .container-8BjPc4 {
+            align-items: center;
+            display: flex;
+            gap: 32px;
+            padding: 40px 0px;
+            width: 1199.999267578125px;
+        }
+
+        .partnership-1 .content-45Qwvr {
+            align-items: flex-end;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .partnership-1 .developed-by-g83xDs {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 22.4px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .header-logo-g83xDs {
+            flex: 0 0 auto;
+        }
+
+        .partnership-1 .footer-kZxiUr {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 32px;
+            padding: 40px 0px;
+            position: relative;
+            width: 100%;
+            z-index: 0;
+        }
+
+        .partnership-1 .container-pULE8Y {
+            align-items: center;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-color: var(--eerie-black-2);
+            border-left-style: none;
+            border-right-style: none;
+            border-top-style: none;
+            display: inline-flex;
+            gap: 40px;
+            padding: 40px 0px;
+        }
+
+        .partnership-1 .content-FKe2kX {
+            align-items: center;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            width: 1200px;
+        }
+
+        .partnership-1 .header-logo-3d7LW9 {
+            flex: 1;
+            flex-grow: 1;
+        }
+
+        .partnership-1 .menu-3d7LW9 {
+            background-color: transparent;
+            gap: 24px;
+        }
+
+        .partnership-1 .sign-in-X5sVp3 {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-1 .sign-in-5JjDYl {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .talk-to-sales-X5sVp3 {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-1 .talk-to-sales-4kRpk5 {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .copyright-pULE8Y {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            position: relative;
+            width: 1199.999267578125px;
+        }
+
+        .partnership-1 .copyright-2025-all-rights-reserved-fczwBF {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .privacy-policy-terms-conditions-fczwBF {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: right;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .about {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .background {
+            background-color: transparent;
+            position: absolute;
+        }
+
+        .partnership-1 .benefits {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .card {
+            align-self: stretch;
+            border: 2px solid #fff;
+            border-radius: 16px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            flex-grow: 1;
+            gap: 10px;
+            position: relative;
+        }
+
+        .partnership-1 .cards {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            position: relative;
+            width: 1200px;
+        }
+
+        .partnership-1 .container {
+            background-color: transparent;
+            flex: 0 0 auto;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .partnership-1 .content {
+            background-color: transparent;
+            position: relative;
+        }
+
+        .partnership-1 .ct-as {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex: 1;
+            flex-grow: 1;
+            gap: 20px;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .partnership-1 .customers {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .features {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .header-logo {
+            background-color: transparent;
+            position: relative;
+        }
+
+        .partnership-1 .integrations {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .menu {
+            align-items: center;
+            display: inline-flex;
+            flex: 0 0 auto;
+            justify-content: center;
+            position: relative;
+        }
+
+        .partnership-1 .partnership {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-1 .why-content {
+            background-color: transparent;
+            flex: 0 0 auto;
+            position: relative;
+            width: 1200px;
+        }
+
+        .partnership-1 .wrap {
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        /* screen - partnership-2 */
+
+        .partnership-2 {
+            align-items: center;
+            background-color: var(--white-color);
+            display: flex;
+            flex-direction: column;
+            left: 0px;
+            min-width: 390px;
+            overflow: hidden;
+            overflow-x: hidden;
+            position: relative;
+            top: 0px;
+        }
+
+        .partnership-2 .header-FHeX4R {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            padding: 32px;
+            position: relative;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .partnership-2 .header-iso-f13ZHk {
+            background-color: transparent;
+            flex: 0 0 auto;
+            position: relative;
+        }
+
+        .partnership-2 .ct-as-f13ZHk {
+            flex: 1;
+            flex-grow: 1;
+            justify-content: flex-end;
+            margin-left: -1.52587890625e-05px;
+        }
+
+        .partnership-2 .sign-in-eEUpOd {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-2 .sign-in-wuUpUD {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .talk-to-sales-eEUpOd {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-2 .talk-to-sales-nKzYex {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .title-FHeX4R {
+            align-items: center;
+            background-color: var(--cultured-pearl);
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 80px;
+            overflow: hidden;
+            padding: 32px 0px;
+            width: 100%;
+            z-index: 9;
+        }
+
+        .partnership-2 .frame-1618872774-bCsQr9 {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 40px;
+            padding: 40px 32px;
+            position: relative;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .partnership-2 .frame-1618872948-4GTEBe {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-2 .title-WhRjAx {
+            background-color: transparent;
+            color: transparent;
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: 33px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.00px;
+            line-height: 39.6px;
+            margin-top: -1.00px;
+            text-align: center;
+        }
+
+        .partnership-2 .span0-vlg05W {
+            color: var(--eerie-black);
+            font-style: normal;
+            letter-spacing: -0.33px;
+        }
+
+        .partnership-2 .span1-vlg05W {
+            color: var(--canary);
+            font-style: normal;
+            letter-spacing: -0.33px;
+        }
+
+        .partnership-2 .teamboarding-helps-c-WhRjAx {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 21px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .cta-4GTEBe {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+
+        .partnership-2 .link-zNA7kp {
+            align-items: center;
+            background-color: var(--canary);
+            border-radius: 46px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px 32px;
+            position: relative;
+        }
+
+        .partnership-2 .become-a-partner-hOgHUc {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .abstract-blur-modern-bCsQr9 {
+            background-color: transparent;
+            height: 100%;
+            left: 0px;
+            object-fit: cover;
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            z-index: 0;
+        }
+
+        .partnership-2 .clients-FHeX4R {
+            align-self: stretch;
+            background-color: transparent;
+            flex: 0 0 auto;
+            position: relative;
+            width: 100%;
+            z-index: 8;
+            filter: grayscale(1);
+        }
+
+        .partnership-2 .why-section-title-FHeX4R {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            padding: 40px 32px;
+            position: relative;
+            width: 100%;
+            z-index: 7;
+        }
+
+        .partnership-2 .title-hYA5Pk {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .partnership-2 .iso-teamboarding-lmXgmB {
+            background-color: transparent;
+            height: 40px;
+            position: relative;
+            width: 40px;
+        }
+
+        .partnership-2 .why-become-a-teamboarding-partner-lmXgmB {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--canary);
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: var(--font-size-xxxl);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.00px;
+            line-height: 30px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .by-joining-our-network-you-will-hYA5Pk {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .why-content-FHeX4R {
+            z-index: 6;
+        }
+
+        .partnership-2 .why-content-C6l6py {
+            z-index: 5;
+        }
+
+        .partnership-2 .why-content-DZShEq {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 32px 24px;
+            z-index: 4;
+        }
+
+        .partnership-2 .content-fa8GZI {
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .partnership-2 .title-1PLIsl {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .partnership-2 .stand-out-in-the-market-qYsufv {
+            background-color: transparent;
+            letter-spacing: 0.70px;
+            line-height: 28px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .differentiate-your-b-qYsufv {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--eerie-black);
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: var(--font-size-xxxl);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.00px;
+            line-height: 33.0px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .in-todays-competitiv-1PLIsl {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 21px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .image-fa8GZI {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            border-radius: 8px;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-2 .shot-two-smart-busin-htXmxi {
+            align-self: stretch;
+            background-color: transparent;
+            height: 360px;
+            object-fit: cover;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-2 .program-for-section-FHeX4R {
+            align-items: center;
+            align-self: stretch;
+            background-color: var(--cultured-pearl);
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0px 24px;
+            position: relative;
+            width: 100%;
+            z-index: 3;
+        }
+
+        .partnership-2 .container-AzylHo {
+            align-items: flex-start;
+            gap: 48px;
+            padding: 60px 0px;
+        }
+
+        .partnership-2 .title-pxEptN {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .partnership-2 .who-is-this-program-for-10x935 {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--canary);
+            font-family: var(--font-family-satoshi_variable-black);
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 900;
+            letter-spacing: 0.60px;
+            line-height: 28px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .our-program-is-designed-for-10x935 {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--eerie-black);
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: var(--font-size-xxxl);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.00px;
+            line-height: 33.0px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .card-LLxvua {
+            background-color: var(--white-color);
+            border-color: var(--cloud);
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-2 .code-ZPW968 {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-2 .content-ZPW968 {
+            align-items: center;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-2 .digital-transformation-consultancies-rA9xmW {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .optimize-enterprise-rA9xmW {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 21px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .card-pkpKKt {
+            background-color: var(--white-color);
+            border-color: var(--cloud);
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-2 .ranking-K10nnq {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-2 .content-K10nnq {
+            align-items: center;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-2 .software-factories-and-it-providers-MrUqoL {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .add-value-by-ensurin-MrUqoL {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 21px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .card-fA1GWv {
+            background-color: var(--white-color);
+            border-color: var(--cloud);
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-2 .user-tag-JYeslT {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-2 .content-JYeslT {
+            align-items: center;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-2 .employee-experience-consultancies-CHd6yG {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .offer-a-complete-sol-CHd6yG {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 21px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .card-i4f7uE {
+            background-color: var(--white-color);
+            border-color: var(--cloud);
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-2 .award-cmoWpD {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-2 .content-cmoWpD {
+            align-items: center;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-2 .onboarding-specialists-dBfUyx {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .expand-your-impact-w-dBfUyx {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 21px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .benefits-section-FHeX4R {
+            align-items: center;
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 60px 24px;
+            position: relative;
+            width: 100%;
+            z-index: 2;
+            background: url('./static/3d-illustration-curved-metallic-circular-tunnel-interior-with-gr.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .partnership-2 .background-3xBBML {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            flex-direction: column;
+            gap: 10px;
+            left: -885px;
+            position: absolute;
+            top: -513px;
+            transform: rotate(180deg);
+        }
+
+        .partnership-2 .x3d-illustration-curv-h8Cpf5 {
+            background-color: transparent;
+            height: 887px;
+            left: 725px;
+            object-fit: cover;
+            position: absolute;
+            top: -309px;
+            transform: rotate(-180deg);
+            width: 390px;
+        }
+
+        .partnership-2 .container-3xBBML {
+            align-items: center;
+            gap: 60px;
+        }
+
+        .partnership-2 .title-YobUM5 {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .partnership-2 .benefits-revenue-model-XgxA4p {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--white-color);
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: var(--font-size-xxxl);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.00px;
+            line-height: 33.0px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .card-Tp1LKK {
+            background-color: transparent;
+            border-color: var(--white-color);
+            padding: 28px 40px 32px;
+        }
+
+        .partnership-2 .moneys-fNIcL3 {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-2 .content-fNIcL3 {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-2 .commission-per-client-BU8g6c {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .earn-a-percentage-of-BU8g6c {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 21px;
+            opacity: 0.8;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .card-92KsZP {
+            background-color: transparent;
+            border-color: var(--white-color);
+            padding: 28px 40px 32px;
+        }
+
+        .partnership-2 .layer-PYeRDV {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-2 .content-PYeRDV {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-2 .additional-services-wMmJrT {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .offer-consulting-and-wMmJrT {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 21px;
+            opacity: 0.8;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .card-GpycZn {
+            background-color: transparent;
+            border-color: var(--white-color);
+            padding: 28px 40px 32px;
+        }
+
+        .partnership-2 .teacher-xkSbkN {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-2 .content-xkSbkN {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-2 .official-certification-xVBm1Y {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .become-a-certified-t-xVBm1Y {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 21px;
+            opacity: 0.8;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .teamcubation-FHeX4R {
+            align-items: center;
+            align-self: stretch;
+            background-color: var(--cultured-pearl);
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .partnership-2 .container-TJsF3r {
+            align-items: center;
+            gap: 32px;
+            padding: 40px 24px;
+        }
+
+        .partnership-2 .content-K6nvju {
+            align-items: flex-end;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .partnership-2 .developed-by-sDImnL {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 22.4px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .footer-FHeX4R {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 32px;
+            padding: 40px 24px;
+            position: relative;
+            width: 100%;
+            z-index: 0;
+        }
+
+        .partnership-2 .container-V4EWQc {
+            align-items: center;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-color: var(--eerie-black-2);
+            border-left-style: none;
+            border-right-style: none;
+            border-top-style: none;
+            gap: 32px;
+            padding: 40px 0px;
+        }
+
+        .partnership-2 .content-BtK07v {
+            align-items: center;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .partnership-2 .header-logo-6rhWl3 {
+            align-self: stretch;
+            width: 100%;
+        }
+
+        .partnership-2 .menu-6rhWl3 {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-wrap: wrap;
+            gap: 6px 32px;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-2 .about-GkRwsE {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .customers-GkRwsE {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .features-GkRwsE {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .integrations-GkRwsE {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .benefits-GkRwsE {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .partnership-GkRwsE {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .ct-as-6rhWl3 {
+            align-self: stretch;
+            flex: 0 0 auto;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .partnership-2 .sign-in-rbaIDf {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-2 .sign-in-nAJn1v {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .talk-to-sales-rbaIDf {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-2 .talk-to-sales-AQiWa9 {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-2 .copyright-V4EWQc {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-2 .copyright-2025-all-rights-reserved-58Uw9f {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .privacy-policy-terms-conditions-58Uw9f {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-2 .card {
+            align-items: center;
+            align-self: stretch;
+            border: 2px solid #fff;
+            border-radius: 16px;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-2 .cards {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 24px;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-2 .container {
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-2 .content {
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-2 .ct-as {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+
+        .partnership-2 .header-logo {
+            background-color: transparent;
+            flex: 0 0 auto;
+            position: relative;
+        }
+
+        .partnership-2 .why-content {
+            align-self: stretch;
+            background-color: transparent;
+            flex: 0 0 auto;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-2 .wrap {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        /* screen - partnership-3 */
+
+        .partnership-3 {
+            align-items: center;
+            background-color: var(--white-color);
+            display: flex;
+            flex-direction: column;
+            left: 0px;
+            min-width: 810px;
+            overflow: hidden;
+            overflow-x: hidden;
+            position: relative;
+            top: 0px;
+        }
+
+        .partnership-3 .header-SXNhld {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            padding: 32px;
+            position: relative;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .partnership-3 .header-logo-y35K0M {
+            flex: 1;
+            flex-grow: 1;
+        }
+
+        .partnership-3 .ct-as-y35K0M {
+            flex: 1;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+
+        .partnership-3 .sign-in-GeODkL {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-3 .sign-in-OilZM8 {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .talk-to-sales-GeODkL {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-3 .talk-to-sales-rlHqox {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .title-SXNhld {
+            align-items: center;
+            align-self: stretch;
+            background-color: var(--cultured-pearl);
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 80px;
+            overflow: hidden;
+            padding: 80px 0px 60px;
+            position: relative;
+            width: 100%;
+            z-index: 9;
+        }
+
+        .partnership-3 .container-Tx5Ngx {
+            align-items: center;
+            gap: 40px;
+            padding: 40px 32px;
+            z-index: 1;
+        }
+
+        .partnership-3 .title-sJ82nJ {
+            background-color: transparent;
+            color: transparent;
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: 50px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.00px;
+            line-height: 50px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            width: 570px;
+        }
+
+        .partnership-3 .span0-lxgBFA {
+            color: var(--eerie-black);
+            font-style: normal;
+            letter-spacing: -0.50px;
+        }
+
+        .partnership-3 .span1-lxgBFA {
+            color: var(--canary);
+            font-style: normal;
+            letter-spacing: -0.50px;
+        }
+
+        .partnership-3 .teamboarding-helps-c-sJ82nJ {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--chicago);
+            font-family: var(--font-family-inter);
+            font-size: var(--font-size-xl);
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: 0.00px;
+            line-height: 27px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .cta-sJ82nJ {
+            align-items: center;
+            background-color: var(--canary);
+            border-radius: 46px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px 32px;
+            position: relative;
+        }
+
+        .partnership-3 .become-a-partner-IxsI59 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .abstract-blur-modern-Tx5Ngx {
+            background-color: transparent;
+            height: 100%;
+            left: 0px;
+            object-fit: cover;
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            z-index: 0;
+        }
+
+        .partnership-3 .clients-SXNhld {
+            align-self: stretch;
+            background-color: transparent;
+            flex: 0 0 auto;
+            position: relative;
+            width: 100%;
+            z-index: 8;
+            filter: grayscale(1);
+        }
+
+        .partnership-3 .why-section-title-SXNhld {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            padding: 48px 0px;
+            position: relative;
+            width: 100%;
+            z-index: 7;
+        }
+
+        .partnership-3 .title-B5R3vM {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .iso-teamboarding-UmpjCL {
+            background-color: transparent;
+            height: 40px;
+            position: relative;
+            width: 40px;
+        }
+
+        .partnership-3 .why-become-a-teamboarding-partner-UmpjCL {
+            background-color: transparent;
+            color: var(--canary);
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.00px;
+            line-height: 36px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .by-joining-our-network-you-will-B5R3vM {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .why-content-SXNhld {
+            z-index: 6;
+        }
+
+        .partnership-3 .why-content-BB0e9N {
+            z-index: 5;
+        }
+
+        .partnership-3 .why-content-SMB3Ua {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 48px 32px;
+            z-index: 4;
+        }
+
+        .partnership-3 .content-jVRq3C {
+            align-items: center;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .partnership-3 .title-kxzfck {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .stand-out-in-the-market-lXbU0x {
+            background-color: transparent;
+            letter-spacing: 0.70px;
+            line-height: 28px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .differentiate-your-b-lXbU0x {
+            align-self: stretch;
+            background-color: transparent;
+            height: 80px;
+            letter-spacing: -1.00px;
+            line-height: 39.6px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .in-todays-competitiv-kxzfck {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .image-jVRq3C {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            border-radius: 8px;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .shot-two-smart-busin-edXxgF {
+            align-self: stretch;
+            background-color: transparent;
+            height: 360px;
+            object-fit: cover;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .program-for-section-SXNhld {
+            align-items: center;
+            align-self: stretch;
+            background-color: var(--cultured-pearl);
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0px 32px;
+            position: relative;
+            width: 100%;
+            z-index: 3;
+        }
+
+        .partnership-3 .container-i9wFBV {
+            align-items: flex-start;
+            gap: 48px;
+            padding: 80px 0px;
+        }
+
+        .partnership-3 .title-QlS38S {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .who-is-this-program-for-zH6P2H {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.70px;
+            line-height: 28px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .our-program-is-designed-for-zH6P2H {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: -1.00px;
+            line-height: 39.6px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .cards-QlS38S {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 32px;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .card-LCoJId {
+            background-color: var(--white-color);
+            border: 2px solid;
+            border-color: var(--cloud);
+            border-radius: 16px;
+            gap: 10px;
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-3 .code-SfEGxH {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-3 .content-SfEGxH {
+            align-items: center;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-3 .digital-transformation-consultancies-OGflhy {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .optimize-enterprise-OGflhy {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .card-rgWR9p {
+            background-color: var(--white-color);
+            border: 2px solid;
+            border-color: var(--cloud);
+            border-radius: 16px;
+            gap: 10px;
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-3 .ranking-VxDHlz {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-3 .content-VxDHlz {
+            align-items: center;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-3 .software-factories-and-it-providers-gfuLFD {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .add-value-by-ensurin-gfuLFD {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .card-CrrAxH {
+            background-color: var(--white-color);
+            border: 2px solid;
+            border-color: var(--cloud);
+            border-radius: 16px;
+            gap: 10px;
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-3 .user-tag-gYtmm6 {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-3 .content-gYtmm6 {
+            align-items: center;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-3 .employee-experience-consultancies-PtfKoZ {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .offer-a-complete-sol-PtfKoZ {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .card-v7tg3E {
+            background-color: var(--white-color);
+            border: 2px solid;
+            border-color: var(--cloud);
+            border-radius: 16px;
+            gap: 10px;
+            padding: 28px 32px 32px;
+        }
+
+        .partnership-3 .award-9NYTj2 {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-3 .content-9NYTj2 {
+            align-items: center;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-3 .onboarding-specialists-LWfGob {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .expand-your-impact-w-LWfGob {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .benefits-section-SXNhld {
+            align-items: center;
+            align-self: stretch;
+            background-color: var(--canary);
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 80px 32px;
+            position: relative;
+            width: 100%;
+            z-index: 2;
+            background: url('./static/3d-illustration-curved-metallic-circular-tunnel-interior-with-gr.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .partnership-3 .background-m9Wadm {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            flex-direction: column;
+            gap: 10px;
+            left: -675px;
+            position: absolute;
+            top: -513px;
+            transform: rotate(180deg);
+        }
+
+        .partnership-3 .x3d-illustration-curv-Ed7fSM {
+            background-color: transparent;
+            height: 887px;
+            left: 515px;
+            object-fit: cover;
+            position: absolute;
+            top: -309px;
+            transform: rotate(-180deg);
+            width: 810px;
+        }
+
+        .partnership-3 .container-m9Wadm {
+            align-items: center;
+            gap: 60px;
+        }
+
+        .partnership-3 .title-QTBaLu {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .benefits-revenue-model-RHLNQJ {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--white-color);
+            font-family: var(--font-family-satoshi_variable-bold);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.00px;
+            line-height: 39.6px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .card-QTBaLu {
+            background-color: transparent;
+            gap: 28px;
+        }
+
+        .partnership-3 .card-edh66c {
+            background-color: transparent;
+            border: 2px solid;
+            border-color: var(--white-color);
+            border-radius: 16px;
+            gap: 10px;
+            padding: 28px 40px 32px;
+        }
+
+        .partnership-3 .moneys-dKx6Wt {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-3 .content-dKx6Wt {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-3 .commission-per-client-czdaCT {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .earn-a-percentage-of-czdaCT {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            opacity: 0.8;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .card-RgNxDe {
+            background-color: transparent;
+            border: 2px solid;
+            border-color: var(--white-color);
+            border-radius: 16px;
+            gap: 10px;
+            padding: 28px 40px 32px;
+        }
+
+        .partnership-3 .layer-dhJiqC {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-3 .content-dhJiqC {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-3 .additional-services-1mHJXi {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .offer-consulting-and-1mHJXi {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            opacity: 0.8;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .card-Ol6g9B {
+            background-color: transparent;
+            border: 2px solid;
+            border-color: var(--white-color);
+            border-radius: 16px;
+            gap: 10px;
+            padding: 28px 40px 32px;
+        }
+
+        .partnership-3 .teacher-MPaATv {
+            background-color: transparent;
+            height: 60px;
+            position: relative;
+            width: 60px;
+        }
+
+        .partnership-3 .content-MPaATv {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .partnership-3 .official-certification-VDNc5W {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .become-a-certified-t-VDNc5W {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            opacity: 0.8;
+            position: relative;
+            text-align: center;
+        }
+
+        .partnership-3 .teamcubation-SXNhld {
+            align-items: center;
+            align-self: stretch;
+            background-color: var(--cultured-pearl);
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .partnership-3 .container-JNyRgq {
+            align-items: center;
+            gap: 32px;
+            padding: 40px 32px;
+        }
+
+        .partnership-3 .content-benw57 {
+            align-items: flex-end;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .partnership-3 .developed-by-dH3TTw {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 22.4px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .header-logo-dH3TTw {
+            flex: 0 0 auto;
+        }
+
+        .partnership-3 .footer-SXNhld {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 32px;
+            padding: 40px 32px;
+            position: relative;
+            width: 100%;
+            z-index: 0;
+        }
+
+        .partnership-3 .container-0i93zc {
+            align-items: center;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-color: var(--eerie-black-2);
+            border-left-style: none;
+            border-right-style: none;
+            border-top-style: none;
+            gap: 32px;
+            padding: 40px 0px;
+        }
+
+        .partnership-3 .content-myfDtT {
+            align-items: center;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .partnership-3 .header-logo-aUiyKf {
+            align-self: stretch;
+            flex: 0 0 auto;
+            width: 100%;
+        }
+
+        .partnership-3 .menu-aUiyKf {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            gap: 24px;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .about-AlejSB {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .customers-AlejSB {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .features-AlejSB {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .integrations-AlejSB {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .benefits-AlejSB {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .partnership-AlejSB {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .ct-as-aUiyKf {
+            align-self: stretch;
+            flex: 0 0 auto;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .partnership-3 .sign-in-DxiHfl {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-3 .sign-in-y0XTbr {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .talk-to-sales-DxiHfl {
+            align-items: center;
+            border: 2px solid;
+            border-color: var(--melrose);
+            border-radius: 20px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+
+        .partnership-3 .talk-to-sales-xWOiWj {
+            letter-spacing: 0.00px;
+            line-height: 20px;
+            margin-top: -2.00px;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .copyright-0i93zc {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .copyright-2025-all-rights-reserved-wObrVo {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .privacy-policy-terms-conditions-wObrVo {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: right;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .partnership-3 .card {
+            align-items: center;
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .container {
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .content {
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .ct-as {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+
+        .partnership-3 .header-logo {
+            background-color: transparent;
+            position: relative;
+        }
+
+        .partnership-3 .why-content {
+            align-self: stretch;
+            background-color: transparent;
+            flex: 0 0 auto;
+            position: relative;
+            width: 100%;
+        }
+
+        .partnership-3 .wrap {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 809px) {
+            .screen.partnership-1 {
+                display: none;
+            }
+
+            .screen.partnership-3 {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 810px) and (max-width: 1439px) {
+            .screen.partnership-1 {
+                display: none;
+            }
+
+            .screen.partnership-2 {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 1440px) {
+            .screen.partnership-2 {
+                display: none;
+            }
+
+            .screen.partnership-3 {
+                display: none;
+            }
+        }
+    </style>
+    <style id="action-links-styles">
+        @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+        #anima-interface {
+            transition: all 0.5s ease-in-out;
+        }
+
+        #anima-watermark {
+            transition: all 0.5s ease-in-out;
+            display: none;
+        }
+
+        #anima-watermark-link {
+            position: fixed;
+            bottom: 20px;
+            height: 30px;
+            border-radius: 1000px;
+            background: #3B3B3B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            text-decoration: none;
+            color: #fff;
+            padding: 8px 16px 8px 11px;
+            font-family: Mulish, sans-serif;
+            font-size: 12px;
+        }
+
+        #anima-watermark-link .text {
+            margin-left: 6px;
+        }
+
+        .omniview-anima-action-links .link {
+            height: 30px;
+            width: 30px;
+            border-radius: 1000px;
+            background: #3B3B3B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .omniview-anima-action-links #comment-link .text, .omniview-anima-action-links #code-link .text {
+            display: none;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        .omniview-anima-action-links #comment-link:hover, .omniview-anima-action-links #code-link:hover {
+            width: 105px;
+        }
+
+        .omniview-anima-action-links #comment-link.pop-active, .omniview-anima-action-links #code-link.pop-active {
+            width: 105px;
+            background: #FF6250;
+        }
+
+        .omniview-anima-action-links #comment-link.pop-active .text, .omniview-anima-action-links #code-link.pop-active .text {
+            display: block
+        }
+
+        .omniview-anima-action-links #comment-link:hover .text, .omniview-anima-action-links #code-link:hover .text {
+            display: block;
+        }
+
+        .link.navigation {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            height: 32px;
+            color: #fff;
+            font-size: 12px;
+            cursor: default;
+            padding: 0 5px;
+        }
+
+        .link.navigation .icon {
+            margin: 0 6px;
+            fill: none;
+            stroke: currentColor;
+            cursor: pointer;
+        }
+
+        .link.navigation .icon.disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+
+        .link.navigation .home-icon {
+            margin-left: 6px;
+            fill: currentColor;
+            stroke: currentColor;
+            cursor: pointer;
+        }
+
+        .omniview-anima-action-links .restart {
+            height: 30px;
+            padding: 0 12px;
+            background: #3B3B3B;
+            border-radius: 1000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #f1f1f1;
+            font-size: 12px;
+        }
+
+        .omniview-anima-action-links {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: Mulish, sans-serif;
+            transition: all 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        .omniview-anima-action-links > * + * {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+        .idle {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #popoverOpener {
+            position: absolute;
+            left: 50%;
+            margin-left: -10vw;
+            text-align: center;
+            top: 45vh;
+            width: 20vw;
+        }
+
+
+        .popover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1060;
+            display: none;
+            font-family: "sans-serif";
+            font-size: 14px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+        }
+
+        .popover.top {
+            margin-top: -12px
+        }
+
+        .popover.right {
+            margin-left: 10px
+        }
+
+        .popover.bottom {
+            margin-top: 10px
+        }
+
+        .popover.left {
+            margin-left: -10px
+        }
+
+        .popover-title {
+            padding: 8px 14px;
+            margin: 0;
+            font-size: 14px;
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #ebebeb;
+            border-radius: 5px 5px 0 0
+        }
+
+        .popover-content {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+            font-family: Mulish, sans-serif;
+        }
+
+
+        .popover > .arrow, .popover > .arrow:after {
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid
+        }
+
+        .popover > .arrow {
+            border-width: 11px
+        }
+
+        .popover > .arrow:after {
+            content: "";
+            border-width: 10px
+        }
+
+        .popover.top > .arrow {
+            bottom: -11px;
+            left: 50%;
+            margin-left: -11px;
+            border-top-color: #999;
+            border-top-color: rgba(0, 0, 0, .25);
+            border-bottom-width: 0
+        }
+
+        .popover.top > .arrow:after {
+            bottom: 1px;
+            margin-left: -10px;
+            content: " ";
+            border-top-color: #fff;
+            border-bottom-width: 0
+        }
+
+        .popover.right > .arrow {
+            top: 50%;
+            left: -11px;
+            margin-top: -11px;
+            border-right-color: #999;
+            border-right-color: rgba(0, 0, 0, .25);
+            border-left-width: 0
+        }
+
+        .popover.right > .arrow:after {
+            bottom: -10px;
+            left: 1px;
+            content: " ";
+            border-right-color: #fff;
+            border-left-width: 0
+        }
+
+        .popover.bottom > .arrow {
+            top: -11px;
+            left: 50%;
+            margin-left: -11px;
+            border-top-width: 0;
+            border-bottom-color: #999;
+            border-bottom-color: rgba(0, 0, 0, .25)
+        }
+
+        .popover.bottom > .arrow:after {
+            top: 1px;
+            margin-left: -10px;
+            content: " ";
+            border-top-width: 0;
+            border-bottom-color: #fff
+        }
+
+        .popover.left > .arrow {
+            top: 50%;
+            right: -11px;
+            margin-top: -11px;
+            border-right-width: 0;
+            border-left-color: #999;
+            border-left-color: rgba(0, 0, 0, .25)
+        }
+
+        .popover.left > .arrow:after {
+            right: 1px;
+            bottom: -10px;
+            content: " ";
+            border-right-width: 0;
+            border-left-color: #fff
+        }
+
+
+        #anima-comment-popover, #anima-code-popover {
+            background: #333333;
+            color: #fff;
+        }
+
+        #anima-comment-popover.top > .arrow, #anima-comment-popover.top > .arrow:after, #anima-code-popover.top > .arrow:after, #anima-code-popover.top > .arrow {
+            border-top-color: #333;
+        }
+
+        #anima-comment-popover .btn, #anima-code-popover .btn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 6px 20px;
+            background: #FF6250;
+            color: #fff;
+            border-radius: 100px;
+            width: max-content;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 550px) {
+            #anima-watermark-link {
+                padding: 6px !important;
+            }
+
+            #anima-watermark-link .text {
+                display: none !important;
+            }
+        }
+
+    </style>
+</head>
+<body style="margin: 0;background: #ffffff;"><input type="hidden" id="anPageName" name="page" value="partnership-2">
+<div class="partnership-1 screen " data-id="2601:763">
+    <header class="header-kZxiUr" data-id="2601:764"><img class="header-logo-zaxlIB header-logo" data-id="2601:765"
+                                                          src="./static/header-logo.svg"
+                                                          
+                                                          alt="Header Logo">
+        <div class="menu-zaxlIB menu" data-id="2601:767">
+            <div class="about valign-text-middle inter-semi-bold-chicago-14px" data-id="2601:768">About</div>
+            <div class="customers valign-text-middle inter-semi-bold-chicago-14px" data-id="2601:769">Customers</div>
+            <div class="features valign-text-middle inter-semi-bold-chicago-14px" data-id="2601:770">Features</div>
+            <div class="integrations valign-text-middle inter-semi-bold-chicago-14px" data-id="2601:771">Integrations
+            </div>
+            <div class="benefits valign-text-middle inter-semi-bold-chicago-14px" data-id="2601:772">Benefits</div>
+            <div class="partnership-T0ruCC valign-text-middle partnership" data-id="2601:773">Partnership</div>
+        </div>
+        <div class="ct-as" data-id="2601:774">
+            <div class="sign-in-up4mst sign-in" data-id="2601:775">
+                <div class="sign-in-6Qq6Fo valign-text-middle sign-in satoshivariable-black-canary-14px"
+                     data-id="2601:776">Sign in
+                </div>
+            </div>
+            <div class="talk-to-sales-up4mst talk-to-sales" data-id="2601:777">
+                <div class="talk-to-sales-XIxo5V valign-text-middle talk-to-sales satoshivariable-black-canary-14px"
+                     data-id="2601:778">Talk to Sales
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="title-kZxiUr title" data-id="2601:779">
+        <div class="container-QzC5pv container" data-id="2601:780">
+            <div class="content-lP6MIg content" data-id="2601:781">
+                <div class="title-wrap-xk9DxP" data-id="2601:782"><h1 class="title-hrQS10 valign-text-middle title"
+                                                                      data-id="2601:783"><span><span
+                        class="span0-uxNKA4">Join the Teamboarding </span><span
+                        class="span1-uxNKA4">Partner Program</span></span></h1></div>
+                <p class="teamboarding-helps-c-xk9DxP valign-text-middle inter-normal-chicago-20px" data-id="2601:784">
+                    Teamboarding helps companies optimize the onboarding of new talent in technical teams. Through our
+                    partner program, consultants, software companies and talent experts can offer an innovative solution
+                    while unlocking new business opportunities.</p></div>
+            <div class="cta-lP6MIg" data-id="2601:785">
+                <div class="become-a-partner-A5KZVT valign-text-middle satoshivariable-black-white-18px"
+                     data-id="2601:786">Become a Partner
+                </div>
+            </div>
+        </div>
+        <img class="background-QzC5pv background" data-id="2601:787" src="./static/background.png"
+             
+             alt="Background"></div>
+    <img class="clients-kZxiUr" data-id="2601:788" src="./static/clients.svg"
+         
+         alt="Clients">
+    <div class="why-section-title-kZxiUr" data-id="2601:1050">
+        <div class="title-aAlPDx title" data-id="2601:1051"><img class="iso-teamboarding-U17x03" data-id="2601:1052"
+                                                                 src="./static/iso-teamboarding.svg"
+                                                                 
+                                                                 alt="iso-teamboarding">
+            <p class="why-become-a-teamboarding-partner-U17x03 valign-text-middle" data-id="2601:1053">Why become a
+                Teamboarding partner?</p></div>
+        <p class="by-joining-our-network-you-will-aAlPDx valign-text-middle inter-normal-chicago-20px"
+           data-id="2601:1054">By joining our network, you will:</p></div>
+    <img class="why-content-kZxiUr why-content" data-id="2601:1055" src="./static/why-content@2x.png"
+         
+         alt="Why Content"><img class="why-content-Uja0id why-content" data-id="2601:1063"
+                                src="./static/why-content-1@2x.png"
+                                
+                                alt="Why Content">
+    <div class="why-content-Ubi1oF why-content" data-id="2601:1071">
+        <div class="content-ECeOgO content" data-id="2601:1072">
+            <div class="title-vUNCZE title" data-id="2601:1073"><p
+                    class="stand-out-in-the-market-xojI0U valign-text-middle satoshivariable-black-canary-14px"
+                    data-id="2601:1074">STAND OUT IN THE MARKET</p>
+                <p class="differentiate-your-b-xojI0U valign-text-middle satoshivariable-bold-eerie-black-36px"
+                   data-id="2601:1075">Differentiate Your Business with Enhanced Technical Onboarding</p></div>
+            <p class="in-todays-competitiv-vUNCZE valign-text-middle inter-normal-chicago-16px" data-id="2601:1076">In
+                today's competitive landscape, offering superior technical onboarding is a key differentiator. Empower
+                your clients to structure and optimize their onboarding processes, resulting in improved client
+                satisfaction, faster time-to-value, and stronger client retention. Position yourself as a leader in
+                client onboarding and gain a significant competitive edge.</p></div>
+        <div class="image-ECeOgO" data-id="2601:1077"><img class="shot-two-smart-busin-SXKAoz" data-id="2601:1078"
+                                                           src="./static/shot-two-smart-business-women-working-together-with-computer-dig-1.png"
+                                                           
+                                                           alt="shot-two-smart-business-women-working-together-with-computer-digital-tablet-while-talking-office 1">
+        </div>
+    </div>
+    <div class="separator-kZxiUr" data-id="2601:1079"></div>
+    <div class="program-for-section-kZxiUr" data-id="2601:1080">
+        <div class="container-3WzsbK container" data-id="2601:1081">
+            <div class="title-qUQkjS title" data-id="2601:1082"><p
+                    class="who-is-this-program-for-7j9gnn valign-text-middle satoshivariable-black-canary-14px"
+                    data-id="2601:1083">WHO IS THIS PROGRAM FOR?</p>
+                <p class="our-program-is-designed-for-7j9gnn valign-text-middle satoshivariable-bold-eerie-black-36px"
+                   data-id="2601:1084">Our program is designed for</p></div>
+            <div class="cards-qUQkjS cards" data-id="2601:1085">
+                <div class="card-qiYboi card" data-id="2601:1086">
+                    <div class="wrap-iNHOxk wrap" data-id="2601:1087"><img class="code-gyycIx" data-id="2601:1088"
+                                                                           src="./static/code.svg"
+                                                                           
+                                                                           alt="code">
+                        <div class="content-gyycIx content" data-id="2601:1089">
+                            <div class="digital-transformation-consultancies-lJywxM inter-semi-bold-eerie-black-20px"
+                                 data-id="2601:1090">Digital transformation consultancies
+                            </div>
+                            <p class="optimize-enterprise-lJywxM inter-normal-chicago-16px" data-id="2601:1091">Optimize
+                                enterprise onboarding with cutting-edge technology.</p></div>
+                    </div>
+                </div>
+                <div class="card-NaLwGC card" data-id="2601:1092">
+                    <div class="wrap-IrfvBV wrap" data-id="2601:1093"><img class="ranking-j6IEwS" data-id="2601:1094"
+                                                                           src="./static/ranking.svg"
+                                                                           
+                                                                           alt="ranking">
+                        <div class="content-j6IEwS content" data-id="2601:1095"><p
+                                class="software-factories-and-it-providers-lrded3 inter-semi-bold-eerie-black-20px"
+                                data-id="2601:1096">Software factories and IT providers</p>
+                            <p class="add-value-by-ensurin-lrded3 inter-normal-chicago-16px" data-id="2601:1097">Add
+                                value by ensuring the smooth integration of new talent.</p></div>
+                    </div>
+                </div>
+                <div class="card-bbtzAL card" data-id="2601:1098">
+                    <div class="wrap-G0owx6 wrap" data-id="2601:1099"><img class="user-tag-tWHAcF" data-id="2601:1100"
+                                                                           src="./static/user-tag.svg"
+                                                                           
+                                                                           alt="user-tag">
+                        <div class="content-tWHAcF content" data-id="2601:1101">
+                            <div class="employee-experience-consultancies-36mx2A inter-semi-bold-eerie-black-20px"
+                                 data-id="2601:1102">Employee experience consultancies
+                            </div>
+                            <p class="offer-a-complete-sol-36mx2A inter-normal-chicago-16px" data-id="2601:1103">Offer a
+                                complete solution to enhance team onboarding.</p></div>
+                    </div>
+                </div>
+                <div class="card-xtJPeO card" data-id="2601:1104">
+                    <div class="wrap-awmL4y wrap" data-id="2601:1105"><img class="award-D3FDlU" data-id="2601:1106"
+                                                                           src="./static/award.svg"
+                                                                           
+                                                                           alt="award">
+                        <div class="content-D3FDlU content" data-id="2601:1107">
+                            <div class="onboarding-specialists-2PiV7O inter-semi-bold-eerie-black-20px"
+                                 data-id="2601:1108">Onboarding specialists
+                            </div>
+                            <p class="expand-your-impact-w-2PiV7O inter-normal-chicago-16px" data-id="2601:1109">Expand
+                                your impact with a platform designed to improve talent integration.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="benefits-section-kZxiUr" data-id="2601:1110">
+        <div class="container-nUeE1n container" data-id="2601:1114">
+            <div class="title-PfdSOk title" data-id="2601:1115">
+                <div class="benefits-revenue-model-x5nCeF valign-text-middle" data-id="2601:1116">Benefits &amp; Revenue
+                    Model
+                </div>
+            </div>
+            <div class="cards-PfdSOk cards" data-id="2601:1117">
+                <div class="card-aoJMBJ card" data-id="2601:1118">
+                    <div class="wrap-eZ55Ci wrap" data-id="2601:1119"><img class="moneys-mbeUWs" data-id="2601:1120"
+                                                                           src="./static/moneys.svg"
+                                                                           
+                                                                           alt="moneys">
+                        <div class="content-mbeUWs content" data-id="2601:1121">
+                            <div class="commission-per-client-h5cVoQ inter-semi-bold-white-20px" data-id="2601:1122">
+                                Commission per Client
+                            </div>
+                            <p class="earn-a-percentage-of-h5cVoQ inter-medium-white-16px" data-id="2601:1123">Earn a
+                                percentage of the software’s value for each implementation.</p></div>
+                    </div>
+                </div>
+                <div class="card-j0dg1k card" data-id="2601:1124">
+                    <div class="wrap-1nJK5q wrap" data-id="2601:1125"><img class="layer-tj55OC" data-id="2601:1126"
+                                                                           src="./static/layer.svg"
+                                                                           
+                                                                           alt="layer">
+                        <div class="content-tj55OC content" data-id="2601:1127">
+                            <div class="additional-services-2RFnH3 inter-semi-bold-white-20px" data-id="2601:1128">
+                                Additional Services
+                            </div>
+                            <p class="offer-consulting-and-2RFnH3 inter-medium-white-16px" data-id="2601:1129">Offer
+                                consulting and charge for implementation, with fees adjusted to project complexity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-xxrhVs card" data-id="2601:1130">
+                    <div class="wrap-oqrVBg wrap" data-id="2601:1131"><img class="teacher-ffjuSE" data-id="2601:1132"
+                                                                           src="./static/teacher.svg"
+                                                                           
+                                                                           alt="teacher">
+                        <div class="content-ffjuSE content" data-id="2601:1133">
+                            <div class="official-certification-W7n6Ph inter-semi-bold-white-20px" data-id="2601:1134">
+                                Official Certification
+                            </div>
+                            <p class="become-a-certified-t-W7n6Ph inter-medium-white-16px" data-id="2601:1135">Become a
+                                Certified Teamboarding Implementer and access exclusive resources.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="teamcubation-kZxiUr" data-id="2601:1136">
+        <div class="container-8BjPc4 container" data-id="2601:1137">
+            <div class="content-45Qwvr content" data-id="2601:1138">
+                <div class="developed-by-g83xDs inter-normal-eerie-black-14px" data-id="2601:1139">Developed by</div>
+                <img class="header-logo-g83xDs header-logo" data-id="2601:1140" src="./static/header-logo-1.svg"
+                     
+                     alt="Header Logo"></div>
+        </div>
+    </div>
+    <footer class="footer-kZxiUr" data-id="2601:1141">
+        <div class="container-pULE8Y container" data-id="2601:1142">
+            <div class="content-FKe2kX content" data-id="2601:1143"><img class="header-logo-3d7LW9 header-logo"
+                                                                         data-id="2601:1144"
+                                                                         src="./static/header-logo-2.svg"
+                                                                         
+                                                                         alt="Header Logo">
+                <div class="menu-3d7LW9 menu" data-id="2601:1145">
+                    <div class="about valign-text-middle inter-medium-chicago-14px" data-id="2601:1146">About</div>
+                    <div class="customers valign-text-middle inter-medium-chicago-14px" data-id="2601:1147">Customers
+                    </div>
+                    <div class="features valign-text-middle inter-medium-chicago-14px" data-id="2601:1148">Features
+                    </div>
+                    <div class="integrations valign-text-middle inter-medium-chicago-14px" data-id="2601:1149">
+                        Integrations
+                    </div>
+                    <div class="benefits valign-text-middle inter-medium-chicago-14px" data-id="2601:1150">Benefits
+                    </div>
+                    <div class="partnership valign-text-middle inter-medium-canary-14px" data-id="2601:1151">
+                        Partnership
+                    </div>
+                </div>
+                <div class="ct-as" data-id="2601:1152">
+                    <div class="sign-in-X5sVp3 sign-in" data-id="2601:1153">
+                        <div class="sign-in-5JjDYl valign-text-middle sign-in satoshivariable-black-canary-14px"
+                             data-id="2601:1154">Sign in
+                        </div>
+                    </div>
+                    <div class="talk-to-sales-X5sVp3 talk-to-sales" data-id="2601:1155">
+                        <div class="talk-to-sales-4kRpk5 valign-text-middle talk-to-sales satoshivariable-black-canary-14px"
+                             data-id="2601:1156">Talk to Sales
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-pULE8Y" data-id="2601:1157"><p
+                class="copyright-2025-all-rights-reserved-fczwBF inter-normal-chicago-14px" data-id="2601:1158">©
+            Copyright 2025, All Rights Reserved</p>
+            <p class="privacy-policy-terms-conditions-fczwBF inter-normal-chicago-14px" data-id="2601:1159">Privacy
+                Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Terms &amp; Conditions</p></div>
+    </footer>
+</div>
+<div class="partnership-2 screen " data-id="2601:1546">
+    <header class="header-FHeX4R" data-id="2601:1547"><img class="header-iso-f13ZHk" data-id="2601:1548"
+                                                           src="./static/header-iso.svg"
+                                                           
+                                                           alt="Header ISO">
+        <div class="ct-as-f13ZHk ct-as" data-id="2601:1550">
+            <div class="sign-in-eEUpOd sign-in" data-id="2601:1551">
+                <div class="sign-in-wuUpUD valign-text-middle sign-in satoshivariable-black-canary-14px"
+                     data-id="2601:1552">Sign in
+                </div>
+            </div>
+            <div class="talk-to-sales-eEUpOd talk-to-sales" data-id="2601:1553">
+                <div class="talk-to-sales-nKzYex valign-text-middle talk-to-sales satoshivariable-black-canary-14px"
+                     data-id="2601:1554">Talk to Sales
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="title-FHeX4R title" data-id="2601:1555">
+        <div class="frame-1618872774-bCsQr9" data-id="2601:1556">
+            <div class="frame-1618872948-4GTEBe" data-id="2601:1557"><h1 class="title-WhRjAx valign-text-middle title"
+                                                                         data-id="2601:1558"><span><span
+                    class="span0-vlg05W">Join the Teamboarding </span><span class="span1-vlg05W">Partner Program</span></span>
+            </h1>
+                <p class="teamboarding-helps-c-WhRjAx valign-text-middle inter-normal-chicago-14px" data-id="2601:1559">
+                    Teamboarding helps companies optimize the onboarding of new talent in technical teams. Through our
+                    partner program, consultants, software companies and talent experts can offer an innovative solution
+                    while unlocking new business opportunities.</p></div>
+            <div class="cta-4GTEBe" data-id="2601:1560">
+                <div class="link-zNA7kp" data-id="2601:1561">
+                    <div class="become-a-partner-hOgHUc valign-text-middle satoshivariable-black-white-18px"
+                         data-id="2601:1562">Become a Partner
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="abstract-blur-modern-bCsQr9" data-id="2601:1563" src="./static/background.png"
+             
+             alt="abstract-blur-modern-background-with-light-effect-depth-field 1"></div>
+    <img class="clients-FHeX4R" data-id="2601:1564" src="./static/clients-1.svg"
+         
+         alt="Clients">
+    <div class="why-section-title-FHeX4R" data-id="2601:1825">
+        <div class="title-hYA5Pk title" data-id="2601:1826"><img class="iso-teamboarding-lmXgmB" data-id="2601:1827"
+                                                                 src="./static/iso-teamboarding.svg"
+                                                                 
+                                                                 alt="iso-teamboarding">
+            <p class="why-become-a-teamboarding-partner-lmXgmB valign-text-middle" data-id="2601:1828">Why become a
+                Teamboarding partner?</p></div>
+        <p class="by-joining-our-network-you-will-hYA5Pk valign-text-middle inter-normal-chicago-16px"
+           data-id="2601:1829">By joining our network, you will:</p></div>
+    <img class="why-content-FHeX4R why-content" data-id="2601:1830" src="./static/why-content-2@2x.png"
+         
+         alt="Why Content"><img class="why-content-C6l6py why-content" data-id="2601:1838"
+                                src="./static/why-content-3@2x.png"
+                                
+                                alt="Why Content">
+    <div class="why-content-DZShEq why-content" data-id="2601:1846">
+        <div class="content-fa8GZI content" data-id="2601:1847">
+            <div class="title-1PLIsl title" data-id="2601:1848"><p
+                    class="stand-out-in-the-market-qYsufv valign-text-middle satoshivariable-black-canary-14px"
+                    data-id="2601:1849">STAND OUT IN THE MARKET</p>
+                <p class="differentiate-your-b-qYsufv valign-text-middle" data-id="2601:1850">Differentiate Your
+                    Business with Enhanced Technical Onboarding</p></div>
+            <p class="in-todays-competitiv-1PLIsl valign-text-middle inter-normal-chicago-14px" data-id="2601:1851">In
+                today's competitive landscape, offering superior technical onboarding is a key differentiator. Empower
+                your clients to structure and optimize their onboarding processes, resulting in improved client
+                satisfaction, faster time-to-value, and stronger client retention. Position yourself as a leader in
+                client onboarding and gain a significant competitive edge.</p></div>
+        <div class="image-fa8GZI" data-id="2601:1852"><img class="shot-two-smart-busin-htXmxi" data-id="2601:1853"
+                                                           src="./static/shot-two-smart-business-women-working-together-with-computer-dig-1.png"
+                                                           
+                                                           alt="shot-two-smart-business-women-working-together-with-computer-digital-tablet-while-talking-office 1">
+        </div>
+    </div>
+    <div class="program-for-section-FHeX4R" data-id="2601:1854">
+        <div class="container-AzylHo container" data-id="2601:1855">
+            <div class="title-pxEptN title" data-id="2601:1856"><p
+                    class="who-is-this-program-for-10x935 valign-text-middle" data-id="2601:1857">WHO IS THIS PROGRAM
+                FOR?</p>
+                <p class="our-program-is-designed-for-10x935 valign-text-middle" data-id="2601:1858">Our program is
+                    designed for</p></div>
+            <div class="cards" data-id="2601:1859">
+                <div class="card-LLxvua card" data-id="2601:1860">
+                    <div class="wrap" data-id="2601:1861"><img class="code-ZPW968" data-id="2601:1862"
+                                                               src="./static/code.svg"
+                                                               
+                                                               alt="code">
+                        <div class="content-ZPW968 content" data-id="2601:1863">
+                            <div class="digital-transformation-consultancies-rA9xmW inter-semi-bold-eerie-black-20px"
+                                 data-id="2601:1864">Digital transformation consultancies
+                            </div>
+                            <p class="optimize-enterprise-rA9xmW inter-normal-chicago-14px" data-id="2601:1865">Optimize
+                                enterprise onboarding with cutting-edge technology.</p></div>
+                    </div>
+                </div>
+                <div class="card-pkpKKt card" data-id="2601:1866">
+                    <div class="wrap" data-id="2601:1867"><img class="ranking-K10nnq" data-id="2601:1868"
+                                                               src="./static/ranking-1.svg"
+                                                               
+                                                               alt="ranking">
+                        <div class="content-K10nnq content" data-id="2601:1869"><p
+                                class="software-factories-and-it-providers-MrUqoL inter-semi-bold-eerie-black-20px"
+                                data-id="2601:1870">Software factories and IT providers</p>
+                            <p class="add-value-by-ensurin-MrUqoL inter-normal-chicago-14px" data-id="2601:1871">Add
+                                value by ensuring the smooth integration of new talent.</p></div>
+                    </div>
+                </div>
+                <div class="card-fA1GWv card" data-id="2601:1872">
+                    <div class="wrap" data-id="2601:1873"><img class="user-tag-JYeslT" data-id="2601:1874"
+                                                               src="./static/user-tag-1.svg"
+                                                               
+                                                               alt="user-tag">
+                        <div class="content-JYeslT content" data-id="2601:1875">
+                            <div class="employee-experience-consultancies-CHd6yG inter-semi-bold-eerie-black-20px"
+                                 data-id="2601:1876">Employee experience consultancies
+                            </div>
+                            <p class="offer-a-complete-sol-CHd6yG inter-normal-chicago-14px" data-id="2601:1877">Offer a
+                                complete solution to enhance team onboarding.</p></div>
+                    </div>
+                </div>
+                <div class="card-i4f7uE card" data-id="2601:1878">
+                    <div class="wrap" data-id="2601:1879"><img class="award-cmoWpD" data-id="2601:1880"
+                                                               src="./static/award-1.svg"
+                                                               
+                                                               alt="award">
+                        <div class="content-cmoWpD content" data-id="2601:1881">
+                            <div class="onboarding-specialists-dBfUyx inter-semi-bold-eerie-black-20px"
+                                 data-id="2601:1882">Onboarding specialists
+                            </div>
+                            <p class="expand-your-impact-w-dBfUyx inter-normal-chicago-14px" data-id="2601:1883">Expand
+                                your impact with a platform designed to improve talent integration.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="benefits-section-FHeX4R" data-id="2601:1884">
+        <div class="container-3xBBML container" data-id="2601:1888">
+            <div class="title-YobUM5 title" data-id="2601:1889">
+                <div class="benefits-revenue-model-XgxA4p valign-text-middle" data-id="2601:1890">Benefits &amp; Revenue
+                    Model
+                </div>
+            </div>
+            <div class="cards" data-id="2601:1891">
+                <div class="card-Tp1LKK card" data-id="2601:1892">
+                    <div class="wrap" data-id="2601:1893"><img class="moneys-fNIcL3" data-id="2601:1894"
+                                                               src="./static/moneys-1.svg"
+                                                               
+                                                               alt="moneys">
+                        <div class="content-fNIcL3 content" data-id="2601:1895">
+                            <div class="commission-per-client-BU8g6c inter-semi-bold-white-20px" data-id="2601:1896">
+                                Commission per Client
+                            </div>
+                            <p class="earn-a-percentage-of-BU8g6c inter-medium-white-14px" data-id="2601:1897">Earn a
+                                percentage of the software’s value for each implementation.</p></div>
+                    </div>
+                </div>
+                <div class="card-92KsZP card" data-id="2601:1898">
+                    <div class="wrap" data-id="2601:1899"><img class="layer-PYeRDV" data-id="2601:1900"
+                                                               src="./static/layer-1.svg"
+                                                               
+                                                               alt="layer">
+                        <div class="content-PYeRDV content" data-id="2601:1901">
+                            <div class="additional-services-wMmJrT inter-semi-bold-white-20px" data-id="2601:1902">
+                                Additional Services
+                            </div>
+                            <p class="offer-consulting-and-wMmJrT inter-medium-white-14px" data-id="2601:1903">Offer
+                                consulting and charge for implementation, with fees adjusted to project complexity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-GpycZn card" data-id="2601:1904">
+                    <div class="wrap" data-id="2601:1905"><img class="teacher-xkSbkN" data-id="2601:1906"
+                                                               src="./static/teacher-1.svg"
+                                                               
+                                                               alt="teacher">
+                        <div class="content-xkSbkN content" data-id="2601:1907">
+                            <div class="official-certification-xVBm1Y inter-semi-bold-white-20px" data-id="2601:1908">
+                                Official Certification
+                            </div>
+                            <p class="become-a-certified-t-xVBm1Y inter-medium-white-14px" data-id="2601:1909">Become a
+                                Certified Teamboarding Implementer and access exclusive resources.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="teamcubation-FHeX4R" data-id="2601:1910">
+        <div class="container-TJsF3r container" data-id="2601:1911">
+            <div class="content-K6nvju content" data-id="2601:1912">
+                <div class="developed-by-sDImnL inter-normal-eerie-black-14px" data-id="2601:1913">Developed by</div>
+                <img class="header-logo" data-id="2601:1914" src="./static/header-logo-3.svg"
+                     
+                     alt="Header Logo"></div>
+        </div>
+    </div>
+    <footer class="footer-FHeX4R" data-id="2601:1915">
+        <div class="container-V4EWQc container" data-id="2601:1916">
+            <div class="content-BtK07v content" data-id="2601:1917"><img class="header-logo-6rhWl3 header-logo"
+                                                                         data-id="2601:1918"
+                                                                         src="./static/header-logo-4.svg"
+                                                                         
+                                                                         alt="Header Logo">
+                <div class="menu-6rhWl3" data-id="2601:1919">
+                    <div class="about-GkRwsE valign-text-middle inter-medium-chicago-14px" data-id="2601:1920">About
+                    </div>
+                    <div class="customers-GkRwsE valign-text-middle inter-medium-chicago-14px" data-id="2601:1921">
+                        Customers
+                    </div>
+                    <div class="features-GkRwsE valign-text-middle inter-medium-chicago-14px" data-id="2601:1922">
+                        Features
+                    </div>
+                    <div class="integrations-GkRwsE valign-text-middle inter-medium-chicago-14px" data-id="2601:1923">
+                        Integrations
+                    </div>
+                    <div class="benefits-GkRwsE valign-text-middle inter-medium-chicago-14px" data-id="2601:1924">
+                        Benefits
+                    </div>
+                    <div class="partnership-GkRwsE valign-text-middle inter-medium-canary-14px" data-id="2601:1925">
+                        Partnership
+                    </div>
+                </div>
+                <div class="ct-as-6rhWl3 ct-as" data-id="2601:1926">
+                    <div class="sign-in-rbaIDf sign-in" data-id="2601:1927">
+                        <div class="sign-in-nAJn1v valign-text-middle sign-in satoshivariable-black-canary-14px"
+                             data-id="2601:1928">Sign in
+                        </div>
+                    </div>
+                    <div class="talk-to-sales-rbaIDf talk-to-sales" data-id="2601:1929">
+                        <div class="talk-to-sales-AQiWa9 valign-text-middle talk-to-sales satoshivariable-black-canary-14px"
+                             data-id="2601:1930">Talk to Sales
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-V4EWQc" data-id="2601:1931"><p
+                class="copyright-2025-all-rights-reserved-58Uw9f inter-normal-chicago-14px" data-id="2601:1932">©
+            Copyright 2025, All Rights Reserved</p>
+            <p class="privacy-policy-terms-conditions-58Uw9f inter-normal-chicago-14px" data-id="2601:1933">Privacy
+                Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Terms &amp; Conditions</p></div>
+    </footer>
+</div>
+<div class="partnership-3 screen " data-id="2601:1160">
+    <header class="header-SXNhld" data-id="2601:1161"><img class="header-logo-y35K0M header-logo" data-id="2601:1162"
+                                                           src="./static/header-logo-5.svg"
+                                                           
+                                                           alt="Header Logo">
+        <div class="ct-as-y35K0M ct-as" data-id="2601:1164">
+            <div class="sign-in-GeODkL sign-in" data-id="2601:1165">
+                <div class="sign-in-OilZM8 valign-text-middle sign-in satoshivariable-black-canary-14px"
+                     data-id="2601:1166">Sign in
+                </div>
+            </div>
+            <div class="talk-to-sales-GeODkL talk-to-sales" data-id="2601:1167">
+                <div class="talk-to-sales-rlHqox valign-text-middle talk-to-sales satoshivariable-black-canary-14px"
+                     data-id="2601:1168">Talk to Sales
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="title-SXNhld" data-id="2601:1169">
+        <div class="container-Tx5Ngx container" data-id="2601:1170"><h1 class="title-sJ82nJ valign-text-middle"
+                                                                        data-id="2601:1171"><span><span
+                class="span0-lxgBFA">Join the Teamboarding </span><span
+                class="span1-lxgBFA">Partner Program</span></span></h1>
+            <p class="teamboarding-helps-c-sJ82nJ valign-text-middle" data-id="2601:1172">Teamboarding helps companies
+                optimize the onboarding of new talent in technical teams. Through our partner program, consultants,
+                software companies and talent experts can offer an innovative solution while unlocking new business
+                opportunities.</p>
+            <div class="cta-sJ82nJ" data-id="2601:1173">
+                <div class="become-a-partner-IxsI59 valign-text-middle satoshivariable-black-white-18px"
+                     data-id="2601:1174">Become a Partner
+                </div>
+            </div>
+        </div>
+        <img class="abstract-blur-modern-Tx5Ngx" data-id="2601:1175" src="./static/background.png"
+             
+             alt="abstract-blur-modern-background-with-light-effect-depth-field 1"></div>
+    <img class="clients-SXNhld" data-id="2601:1176" src="./static/clients-2.svg"
+         
+         alt="Clients">
+    <div class="why-section-title-SXNhld" data-id="2601:1437">
+        <div class="title-B5R3vM" data-id="2601:1438"><img class="iso-teamboarding-UmpjCL" data-id="2601:1439"
+                                                           src="./static/iso-teamboarding.svg"
+                                                           
+                                                           alt="iso-teamboarding">
+            <p class="why-become-a-teamboarding-partner-UmpjCL valign-text-middle" data-id="2601:1440">Why become a
+                Teamboarding partner?</p></div>
+        <p class="by-joining-our-network-you-will-B5R3vM valign-text-middle inter-normal-chicago-20px"
+           data-id="2601:1441">By joining our network, you will:</p></div>
+    <img class="why-content-SXNhld why-content" data-id="2601:1442" src="./static/why-content-4@2x.png"
+         
+         alt="Why Content"><img class="why-content-BB0e9N why-content" data-id="2601:1450"
+                                src="./static/why-content-5@2x.png"
+                                
+                                alt="Why Content">
+    <div class="why-content-SMB3Ua why-content" data-id="2601:1458">
+        <div class="content-jVRq3C content" data-id="2601:1459">
+            <div class="title-kxzfck" data-id="2601:1460"><p
+                    class="stand-out-in-the-market-lXbU0x valign-text-middle satoshivariable-black-canary-14px"
+                    data-id="2601:1461">STAND OUT IN THE MARKET</p>
+                <p class="differentiate-your-b-lXbU0x valign-text-middle satoshivariable-bold-eerie-black-36px"
+                   data-id="2601:1462">Differentiate Your Business with Enhanced Technical Onboarding</p></div>
+            <p class="in-todays-competitiv-kxzfck valign-text-middle inter-normal-chicago-16px" data-id="2601:1463">In
+                today's competitive landscape, offering superior technical onboarding is a key differentiator. Empower
+                your clients to structure and optimize their onboarding processes, resulting in improved client
+                satisfaction, faster time-to-value, and stronger client retention. Position yourself as a leader in
+                client onboarding and gain a significant competitive edge.</p></div>
+        <div class="image-jVRq3C" data-id="2601:1464"><img class="shot-two-smart-busin-edXxgF" data-id="2601:1465"
+                                                           src="./static/shot-two-smart-business-women-working-together-with-computer-dig-1.png"
+                                                           
+                                                           alt="shot-two-smart-business-women-working-together-with-computer-digital-tablet-while-talking-office 1">
+        </div>
+    </div>
+    <div class="program-for-section-SXNhld" data-id="2601:1466">
+        <div class="container-i9wFBV container" data-id="2601:1467">
+            <div class="title-QlS38S" data-id="2601:1468"><p
+                    class="who-is-this-program-for-zH6P2H valign-text-middle satoshivariable-black-canary-14px"
+                    data-id="2601:1469">WHO IS THIS PROGRAM FOR?</p>
+                <p class="our-program-is-designed-for-zH6P2H valign-text-middle satoshivariable-bold-eerie-black-36px"
+                   data-id="2601:1470">Our program is designed for</p></div>
+            <div class="cards-QlS38S" data-id="2601:1471">
+                <div class="card-LCoJId card" data-id="2601:1472">
+                    <div class="wrap" data-id="2601:1473"><img class="code-SfEGxH" data-id="2601:1474"
+                                                               src="./static/code.svg"
+                                                               
+                                                               alt="code">
+                        <div class="content-SfEGxH content" data-id="2601:1475">
+                            <div class="digital-transformation-consultancies-OGflhy inter-semi-bold-eerie-black-20px"
+                                 data-id="2601:1476">Digital transformation consultancies
+                            </div>
+                            <p class="optimize-enterprise-OGflhy inter-normal-chicago-16px" data-id="2601:1477">Optimize
+                                enterprise onboarding with cutting-edge technology.</p></div>
+                    </div>
+                </div>
+                <div class="card-rgWR9p card" data-id="2601:1478">
+                    <div class="wrap" data-id="2601:1479"><img class="ranking-VxDHlz" data-id="2601:1480"
+                                                               src="./static/ranking-2.svg"
+                                                               
+                                                               alt="ranking">
+                        <div class="content-VxDHlz content" data-id="2601:1481"><p
+                                class="software-factories-and-it-providers-gfuLFD inter-semi-bold-eerie-black-20px"
+                                data-id="2601:1482">Software factories and IT providers</p>
+                            <p class="add-value-by-ensurin-gfuLFD inter-normal-chicago-16px" data-id="2601:1483">Add
+                                value by ensuring the smooth integration of new talent.</p></div>
+                    </div>
+                </div>
+                <div class="card-CrrAxH card" data-id="2601:1484">
+                    <div class="wrap" data-id="2601:1485"><img class="user-tag-gYtmm6" data-id="2601:1486"
+                                                               src="./static/user-tag.svg"
+                                                               
+                                                               alt="user-tag">
+                        <div class="content-gYtmm6 content" data-id="2601:1487">
+                            <div class="employee-experience-consultancies-PtfKoZ inter-semi-bold-eerie-black-20px"
+                                 data-id="2601:1488">Employee experience consultancies
+                            </div>
+                            <p class="offer-a-complete-sol-PtfKoZ inter-normal-chicago-16px" data-id="2601:1489">Offer a
+                                complete solution to enhance team onboarding.</p></div>
+                    </div>
+                </div>
+                <div class="card-v7tg3E card" data-id="2601:1490">
+                    <div class="wrap" data-id="2601:1491"><img class="award-9NYTj2" data-id="2601:1492"
+                                                               src="./static/award-2.svg"
+                                                               
+                                                               alt="award">
+                        <div class="content-9NYTj2 content" data-id="2601:1493">
+                            <div class="onboarding-specialists-LWfGob inter-semi-bold-eerie-black-20px"
+                                 data-id="2601:1494">Onboarding specialists
+                            </div>
+                            <p class="expand-your-impact-w-LWfGob inter-normal-chicago-16px" data-id="2601:1495">Expand
+                                your impact with a platform designed to improve talent integration.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="benefits-section-SXNhld" data-id="2601:1496">
+        <div class="container-m9Wadm container" data-id="2601:1500">
+            <div class="title-QTBaLu" data-id="2601:1501">
+                <div class="benefits-revenue-model-RHLNQJ valign-text-middle" data-id="2601:1502">Benefits &amp; Revenue
+                    Model
+                </div>
+            </div>
+            <div class="card-QTBaLu card" data-id="2601:1503">
+                <div class="card-edh66c card" data-id="2601:1504">
+                    <div class="wrap" data-id="2601:1505"><img class="moneys-dKx6Wt" data-id="2601:1506"
+                                                               src="./static/moneys-2.svg"
+                                                               
+                                                               alt="moneys">
+                        <div class="content-dKx6Wt content" data-id="2601:1507">
+                            <div class="commission-per-client-czdaCT inter-semi-bold-white-20px" data-id="2601:1508">
+                                Commission per Client
+                            </div>
+                            <p class="earn-a-percentage-of-czdaCT inter-medium-white-16px" data-id="2601:1509">Earn a
+                                percentage of the software’s value for each implementation.</p></div>
+                    </div>
+                </div>
+                <div class="card-RgNxDe card" data-id="2601:1510">
+                    <div class="wrap" data-id="2601:1511"><img class="layer-dhJiqC" data-id="2601:1512"
+                                                               src="./static/layer-1.svg"
+                                                               
+                                                               alt="layer">
+                        <div class="content-dhJiqC content" data-id="2601:1513">
+                            <div class="additional-services-1mHJXi inter-semi-bold-white-20px" data-id="2601:1514">
+                                Additional Services
+                            </div>
+                            <p class="offer-consulting-and-1mHJXi inter-medium-white-16px" data-id="2601:1515">Offer
+                                consulting and charge for implementation, with fees adjusted to project complexity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-Ol6g9B card" data-id="2601:1516">
+                    <div class="wrap" data-id="2601:1517"><img class="teacher-MPaATv" data-id="2601:1518"
+                                                               src="./static/teacher-1.svg"
+                                                               
+                                                               alt="teacher">
+                        <div class="content-MPaATv content" data-id="2601:1519">
+                            <div class="official-certification-VDNc5W inter-semi-bold-white-20px" data-id="2601:1520">
+                                Official Certification
+                            </div>
+                            <p class="become-a-certified-t-VDNc5W inter-medium-white-16px" data-id="2601:1521">Become a
+                                Certified Teamboarding Implementer and access exclusive resources.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="teamcubation-SXNhld" data-id="2601:1522">
+        <div class="container-JNyRgq container" data-id="2601:1523">
+            <div class="content-benw57 content" data-id="2601:1524">
+                <div class="developed-by-dH3TTw inter-normal-eerie-black-14px" data-id="2601:1525">Developed by</div>
+                <img class="header-logo-dH3TTw header-logo" data-id="2601:1526" src="./static/header-logo-3.svg"
+                     
+                     alt="Header Logo"></div>
+        </div>
+    </div>
+    <footer class="footer-SXNhld" data-id="2601:1527">
+        <div class="container-0i93zc container" data-id="2601:1528">
+            <div class="content-myfDtT content" data-id="2601:1529"><img class="header-logo-aUiyKf header-logo"
+                                                                         data-id="2601:1530"
+                                                                         src="./static/header-logo-7.svg"
+                                                                         
+                                                                         alt="Header Logo">
+                <div class="menu-aUiyKf" data-id="2601:1531">
+                    <div class="about-AlejSB valign-text-middle inter-medium-chicago-14px" data-id="2601:1532">About
+                    </div>
+                    <div class="customers-AlejSB valign-text-middle inter-medium-chicago-14px" data-id="2601:1533">
+                        Customers
+                    </div>
+                    <div class="features-AlejSB valign-text-middle inter-medium-chicago-14px" data-id="2601:1534">
+                        Features
+                    </div>
+                    <div class="integrations-AlejSB valign-text-middle inter-medium-chicago-14px" data-id="2601:1535">
+                        Integrations
+                    </div>
+                    <div class="benefits-AlejSB valign-text-middle inter-medium-chicago-14px" data-id="2601:1536">
+                        Benefits
+                    </div>
+                    <div class="partnership-AlejSB valign-text-middle inter-medium-canary-14px" data-id="2601:1537">
+                        Partnership
+                    </div>
+                </div>
+                <div class="ct-as-aUiyKf ct-as" data-id="2601:1538">
+                    <div class="sign-in-DxiHfl sign-in" data-id="2601:1539">
+                        <div class="sign-in-y0XTbr valign-text-middle sign-in satoshivariable-black-canary-14px"
+                             data-id="2601:1540">Sign in
+                        </div>
+                    </div>
+                    <div class="talk-to-sales-DxiHfl talk-to-sales" data-id="2601:1541">
+                        <div class="talk-to-sales-xWOiWj valign-text-middle talk-to-sales satoshivariable-black-canary-14px"
+                             data-id="2601:1542">Talk to Sales
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-0i93zc" data-id="2601:1543"><p
+                class="copyright-2025-all-rights-reserved-wObrVo inter-normal-chicago-14px" data-id="2601:1544">©
+            Copyright 2025, All Rights Reserved</p>
+            <p class="privacy-policy-terms-conditions-wObrVo inter-normal-chicago-14px" data-id="2601:1545">Privacy
+                Policy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Terms &amp; Conditions</p></div>
+    </footer>
+</div>
+
+
+<div id="t_preload_links"></div>
+</body>
+</html>
