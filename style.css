@@ -6522,6 +6522,7 @@ html[lang=pt] .landing-onboarding .img-5 {
   border-radius: 50px;
   align-items: center;
   position: relative;
+  margin-left: -50px;
 }
 
 .landing-onboarding .header-header-nav-4 {

@@ -260,4 +260,8 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.top-actions-bar .lang-switch-menu').classList.remove('active');
         }
     });
+
+    if (window.location.hash) {
+        document.querySelector(`[href="${window.location.hash}"]`).click();
+    }
 });
