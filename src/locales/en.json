@@ -71,5 +71,9 @@
   "var-text-sending": "Sending...",
   "var-text-invalid-email": "Please enter a valid email",
   "var-text-company-email": "Please enter a company email",
-  "var-text-missing-fields": "Please fill in all the fields"
+  "var-text-missing-fields": "Please fill in all the fields",
+
+  "join-the-teamboarding": "Join the Teamboarding",
+  "partner-program": "Partner Program",
+  "partner-top-desc": "Teamboarding helps companies optimize the onboarding of new talent in technical teams. Through our partner program, consultants, software companies and talent experts can offer an innovative solution while unlocking new business opportunities."
 }
