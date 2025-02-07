@@ -140,6 +140,335 @@
             outline: none;
         }
 
+        .become-partner-dialog-container {
+            --gray-500: rgba(102, 112, 133, 1);
+            --text-body-font-family: "Inter", Helvetica;
+            --text-body-font-weight: 400;
+            --text-body-font-size: 14px;
+            --text-body-letter-spacing: 0px;
+            --text-body-line-height: 20px;
+            --text-body-font-style: normal;
+            --text-xs-medium-font-family: "Inter", Helvetica;
+            --text-xs-medium-font-weight: 500;
+            --text-xs-medium-font-size: 12px;
+            --text-xs-medium-letter-spacing: 0px;
+            --text-xs-medium-line-height: 18px;
+            --text-xs-medium-font-style: normal;
+            --global-colors-teamboarding-tb-primary-dark: var(--global-colors-primary-violet-700);
+            --global-colors-neutral-neutral-500: rgba(121, 119, 118, 1);
+            --global-colors-secondary-violet-500: rgba(85, 24, 114, 1);
+            --global-colors-neutral-neutral-900: rgba(29, 27, 27, 1);
+            --global-colors-neutral-neutral-700: rgba(71, 70, 70, 1);
+            --global-colors-negative-red-500: rgba(223, 55, 48, 1);
+            --global-colors-positive-green-200: rgba(82, 221, 180, 1);
+            --global-colors-primary-violet-300: rgba(170, 160, 255, 1);
+            --global-colors-primary-violet-200: rgba(198, 191, 255, 1);
+            --global-colors-teamboarding-tb-primary-light: var(--global-colors-primary-violet-50);
+            --global-colors-primary-violet-700: rgba(75, 31, 252, 1);
+            --global-colors-neutral-neutral-600: rgba(95, 94, 94, 1);
+            --global-colors-neutral-neutral-white: rgba(255, 255, 255, 1);
+            --global-colors-neutral-neutral-300: rgba(173, 171, 170, 1);
+            --global-colors-neutral-neutral-100: rgba(230, 226, 225, 1);
+            --global-colors-primary-violet-50: rgba(243, 238, 255, 1);
+            --global-colors-neutral-neutral-50: rgba(245, 245, 245, 1);
+            --global-colors-neutral-neutral-200: rgba(200, 198, 197, 1);
+            --global-colors-positive-green-400: rgba(1, 164, 128, 1);
+            --global-colors-positive-green-25: rgba(212, 243, 235, 1);
+            --tokens-text-primary: var(--global-colors-neutral-neutral-900);
+            --tokens-text-secondary: var(--global-colors-neutral-neutral-600);
+            --tokens-text-invert: var(--global-colors-neutral-neutral-white);
+            --tokens-text-tertiary: var(--global-colors-neutral-neutral-300);
+            --tokens-border-secondary: var(--global-colors-neutral-neutral-100);
+            --tokens-background-primary: var(--global-colors-neutral-neutral-white);
+            --tokens-border-primary: var(--global-colors-neutral-neutral-200);
+            --tokens-components-chips-positive-dark: var(--global-colors-positive-green-400);
+            --tokens-components-button-primary: var(--global-colors-primary-violet-700);
+            --tokens-components-chips-negative-dark: var(--global-colors-negative-red-500);
+            --tokens-components-chips-violet-dark: var(--global-colors-primary-violet-700);
+            --tokens-background-secondary: var(--global-colors-neutral-neutral-50);
+            --tokens-components-chips-positive-light: var(--global-colors-positive-green-25);
+
+            --heading-3-font-family: "Inter", Helvetica;
+            --heading-3-font-weight: 600;
+            --heading-3-font-size: 22px;
+            --heading-3-letter-spacing: -0.66px;
+            --heading-3-line-height: 24px;
+            --heading-3-font-style: normal;
+            --label-font-family: "Inter", Helvetica;
+            --label-font-weight: 500;
+            --label-font-size: 11px;
+            --label-letter-spacing: 0.22px;
+            --label-line-height: 150%;
+            --label-font-style: normal;
+            --text-small-font-family: "Inter", Helvetica;
+            --text-small-font-weight: 400;
+            --text-small-font-size: 12px;
+            --text-small-letter-spacing: 0px;
+            --text-small-line-height: 20px;
+            --text-small-font-style: normal;
+
+            --heading-2-font-family: "Inter", Helvetica;
+            --heading-2-font-weight: 600;
+            --heading-2-font-size: 26px;
+            --heading-2-letter-spacing: -0.78px;
+            --heading-2-line-height: 28px;
+            --heading-2-font-style: normal;
+        }
+
+        .become-partner-dialog-container .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .become-partner-dialog-container .become-partner-dialog {
+            position: fixed;
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+            z-index: 1001;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 480px;
+            max-width: 90%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .become-partner-dialog-container .become-partner-dialog .become-partner-dialog-image {
+            width: 100%;
+            display: block;
+        }
+
+        .become-partner-dialog-container .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 32px;
+            padding: 32px;
+            position: relative;
+            background-color: #ffffff;
+        }
+
+        .become-partner-dialog-container .content .title {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 8px;
+            padding: 0px 0px 20px;
+            position: relative;
+            align-self: stretch;
+            width: 100%;
+            flex: 0 0 auto;
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+            border-color: var(--tokens-border-secondary);
+        }
+
+        .become-partner-dialog-container .content .text-wrapper {
+            position: relative;
+            width: fit-content;
+            margin-top: -2px;
+            font-family: var(--heading-3-font-family);
+            font-weight: var(--heading-3-font-weight);
+            color: #141414;
+            font-size: var(--heading-3-font-size);
+            letter-spacing: var(--heading-3-letter-spacing);
+            line-height: var(--heading-3-line-height);
+            white-space: nowrap;
+            font-style: var(--heading-3-font-style);
+        }
+
+        .become-partner-dialog-container .content .div {
+            position: relative;
+            align-self: stretch;
+            font-family: var(--text-body-font-family);
+            font-weight: var(--text-body-font-weight);
+            color: var(--tokens-text-secondary);
+            font-size: var(--text-body-font-size);
+            letter-spacing: var(--text-body-letter-spacing);
+            line-height: var(--text-body-line-height);
+            font-style: var(--text-body-font-style);
+        }
+
+        .become-partner-dialog-container .content .div-2 {
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            align-self: stretch;
+            width: 100%;
+            flex: 0 0 auto;
+        }
+
+        .become-partner-dialog-container .content .form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            align-self: stretch;
+            width: 100%;
+            flex: 0 0 auto;
+        }
+
+        .become-partner-dialog-container .content .input {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            flex: 0 0 auto;
+            display: flex;
+            position: relative;
+            align-self: stretch;
+            width: 100%;
+        }
+
+        .become-partner-dialog-container .content .label {
+            position: relative;
+            align-self: stretch;
+            margin-top: -1px;
+            font-family: var(--label-font-family);
+            font-weight: var(--label-font-weight);
+            color: var(--tokens-text-secondary);
+            font-size: var(--label-font-size);
+            letter-spacing: var(--label-letter-spacing);
+            line-height: var(--label-line-height);
+            font-style: var(--label-font-style);
+        }
+
+        .become-partner-dialog-container .content .input-2 {
+            height: 44px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid;
+            border-color: var(--tokens-border-primary);
+            position: relative;
+            align-self: stretch;
+            width: 100%;
+            background: none;
+            flex: 1;
+            margin-top: -1px;
+            font-family: "Inter", Helvetica;
+            font-weight: 500;
+            color: #000;
+            font-size: 14px;
+            letter-spacing: 0;
+            line-height: 20px;
+        }
+
+        .become-partner-dialog-container .content .frame {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            position: relative;
+            align-self: stretch;
+            width: 100%;
+            flex: 0 0 auto;
+            background-color: #ffffff;
+        }
+
+        .become-partner-dialog-container .content .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 25px;
+            position: relative;
+            align-self: stretch;
+            width: 100%;
+            flex: 0 0 auto;
+            background-color: var(--global-colors-teamboarding-tb-primary-dark);
+            border-radius: 46px;
+            cursor: pointer;
+        }
+
+        .become-partner-dialog-container .content .text-wrapper-2 {
+            position: relative;
+            width: fit-content;
+            margin-top: -1px;
+            font-family: "Satoshi", Helvetica;
+            font-weight: 900;
+            color: var(--tokens-text-invert);
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 0;
+            line-height: 20px;
+            white-space: nowrap;
+        }
+
+        .become-partner-dialog-container .content .p {
+            position: relative;
+            align-self: stretch;
+            height: 20px;
+            font-family: "Inter", Helvetica;
+            font-weight: 400;
+            color: var(--tokens-text-secondary);
+            font-size: 10px;
+            text-align: center;
+            letter-spacing: 0;
+            line-height: 20px;
+            white-space: nowrap;
+        }
+
+        .become-partner-dialog-container .content-ok {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 32px;
+            padding: 32px;
+            position: relative;
+            background-color: #ffffff;
+        }
+
+        .become-partner-dialog-container .content-ok .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+            align-self: stretch;
+            width: 100%;
+            flex: 0 0 auto;
+        }
+
+        .become-partner-dialog-container .content-ok .icon {
+            position: relative;
+            width: 48px;
+            height: 48px;
+        }
+
+        .become-partner-dialog-container .content-ok .text-wrapper {
+            position: relative;
+            width: fit-content;
+            font-family: var(--heading-3-font-family);
+            font-weight: var(--heading-3-font-weight);
+            color: var(--tokens-text-primary);
+            font-size: var(--heading-3-font-size);
+            letter-spacing: var(--heading-3-letter-spacing);
+            line-height: var(--heading-3-line-height);
+            white-space: nowrap;
+            font-style: var(--heading-3-font-style);
+        }
+
+        .become-partner-dialog-container .content-ok .thank-you-for-your {
+            position: relative;
+            align-self: stretch;
+            font-family: var(--text-small-font-family);
+            font-weight: var(--text-small-font-weight);
+            color: var(--tokens-text-secondary);
+            font-size: var(--text-small-font-size);
+            text-align: center;
+            letter-spacing: var(--text-small-letter-spacing);
+            line-height: var(--text-small-line-height);
+            font-style: var(--text-small-font-style);
+        }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico">
@@ -683,6 +1012,7 @@
         }
 
         .partnership-1 .cta-lP6MIg {
+            cursor: pointer;
             align-items: center;
             background-color: var(--canary);
             border-radius: 46px;
@@ -1821,6 +2151,7 @@
         }
 
         .partnership-2 .link-zNA7kp {
+            cursor: pointer;
             align-items: center;
             background-color: var(--canary);
             border-radius: 46px;
@@ -2860,6 +3191,7 @@
         }
 
         .partnership-3 .cta-sJ82nJ {
+            cursor: pointer;
             align-items: center;
             background-color: var(--canary);
             border-radius: 46px;
@@ -4244,9 +4576,75 @@
                 }
             });
         });
+        
+        function showBecomePartnerDialog() {
+          document.querySelector('.become-partner-dialog-container').style.display = 'flex';
+          document.querySelector('.become-partner-dialog-container .content').style.display = 'flex';
+          document.querySelector('.become-partner-dialog-container .content-ok').style.display = 'none';
+          window.setTimeout(function() {
+            document.querySelector('.become-partner-dialog').style.opacity = '1';
+          }, 10);
+        }
+
+        function validateEmail(email) {
+            return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
+        }
+
+        function getVarText(elementId) {
+            return document.getElementById(elementId).value;
+        }
+
+        // const API_URL = 'https://api.prod.tq.teamcubation.com';
+        const API_URL = 'http://localhost';
+
+        function becomePartnerDialogOk() {
+            const name = document.querySelector('#form-name').value;
+            const email = document.querySelector('#form-email').value;
+            const button = document.querySelector('#form-button');
+            if (button.innerText !== getVarText('var-text-sending')) {
+                if (name && email) {
+                    if (!validateEmail(email)) {
+                        alert(getVarText('var-text-invalid-email'));
+                        return;
+                    }
+                    button.innerText = getVarText('var-text-sending');
+                    fetch(API_URL + '/obi-trial', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                          "company": '-',
+                          "name": name,
+                          "email": email,
+                          "source": 'Teamboarding Partnership Landing (lang = ' + document.querySelector('html').getAttribute('lang') + ')'
+                        })
+                    })
+                    .then(response => {
+                        button.innerText = getVarText('var-text-submit');
+                        document.querySelector('.become-partner-dialog-container .content').style.display = 'none';
+                        document.querySelector('.become-partner-dialog-container .content-ok').style.display = 'flex';
+                        document.querySelector('#form-name').value = '';
+                        document.querySelector('#form-email').value = '';
+                        window.setTimeout(hideBecomePartnerDialog, 3000);
+                    });
+                } else {
+                    alert(getVarText('var-text-missing-fields'));
+                }
+            }
+        }
+        
+        function hideBecomePartnerDialog() {
+            document.querySelector('.become-partner-dialog-container').style.display = 'none';
+            document.querySelector('.become-partner-dialog').style.opacity = '0';
+        }
     </script>
 </head>
 <body style="margin: 0;background: #ffffff;">
+<input type="hidden" id="var-text-sending" value="Enviando...">
+<input type="hidden" id="var-text-invalid-email" value="Por favor, introduce un correo electrónico válido">
+<input type="hidden" id="var-text-missing-fields" value="Por favor, completa todos los campos">
+<input type="hidden" id="var-text-submit" value="var-text-submit">
 <div class="top-actions-bar">
     <a class="lang-button">Español</a>
     <div class="lang-switch-menu">
@@ -4280,9 +4678,9 @@
                     <span class="span1-uxNKA4">Partners de Teamboarding</span></span>
                 </h1></div>
                 <p class="teamboarding-helps-c-xk9DxP valign-text-middle inter-normal-chicago-20px" data-id="2601:784">Teamboarding ayuda a las empresas a optimizar la incorporación de nuevos talentos en equipos técnicos. A través de nuestro programa de partners, los consultores, empresas de software y expertos en talento pueden ofrecer una solución innovadora mientras desbloquean nuevas oportunidades de negocio.</p></div>
-            <div class="cta-lP6MIg" data-id="2601:785">
-                <a class="become-a-partner-A5KZVT valign-text-middle satoshivariable-black-white-18px" data-id="2601:786">Conviértete en Partner</a>
-            </div>
+            <a class="cta-lP6MIg" data-id="2601:785" onclick="showBecomePartnerDialog()">
+                <span class="become-a-partner-A5KZVT valign-text-middle satoshivariable-black-white-18px" data-id="2601:786">Conviértete en Partner</span>
+            </a>
         </div>
         <img class="background-QzC5pv background" data-id="2601:787" src="/partners/static/background.png" alt="Background"></div>
     <img class="clients-kZxiUr" data-id="2601:788" src="/partners/static/clients.svg" alt="Clients">
@@ -4435,9 +4833,9 @@
                 </h1>
                 <p class="teamboarding-helps-c-WhRjAx valign-text-middle inter-normal-chicago-14px" data-id="2601:1559">Teamboarding ayuda a las empresas a optimizar la incorporación de nuevos talentos en equipos técnicos. A través de nuestro programa de partners, los consultores, empresas de software y expertos en talento pueden ofrecer una solución innovadora mientras desbloquean nuevas oportunidades de negocio.</p></div>
             <div class="cta-4GTEBe" data-id="2601:1560">
-                <div class="link-zNA7kp" data-id="2601:1561">
-                    <a class="become-a-partner-hOgHUc valign-text-middle satoshivariable-black-white-18px" data-id="2601:1562">Conviértete en Partner</a>
-                </div>
+                <a class="link-zNA7kp" data-id="2601:1561" onclick="showBecomePartnerDialog()">
+                    <span class="become-a-partner-hOgHUc valign-text-middle satoshivariable-black-white-18px" data-id="2601:1562">Conviértete en Partner</span>
+                </a>
             </div>
         </div>
         <img class="abstract-blur-modern-bCsQr9" data-id="2601:1563" src="/partners/static/background.png"></div>
@@ -4588,9 +4986,9 @@
                 <span class="span1-lxgBFA">Partners de Teamboarding</span>
             </h1>
             <p class="teamboarding-helps-c-sJ82nJ valign-text-middle" data-id="2601:1172">Teamboarding ayuda a las empresas a optimizar la incorporación de nuevos talentos en equipos técnicos. A través de nuestro programa de partners, los consultores, empresas de software y expertos en talento pueden ofrecer una solución innovadora mientras desbloquean nuevas oportunidades de negocio.</p>
-            <div class="cta-sJ82nJ" data-id="2601:1173">
-                <a class="become-a-partner-IxsI59 valign-text-middle satoshivariable-black-white-18px" data-id="2601:1174">Conviértete en Partner</a>
-            </div>
+            <a class="cta-sJ82nJ" data-id="2601:1173" onclick="showBecomePartnerDialog()">
+                <span class="become-a-partner-IxsI59 valign-text-middle satoshivariable-black-white-18px" data-id="2601:1174">Conviértete en Partner</span>
+            </a>
         </div>
         <img class="abstract-blur-modern-Tx5Ngx" data-id="2601:1175" src="/partners/static/background.png"></div>
     <img class="clients-SXNhld" data-id="2601:1176" src="/partners/static/clients-2.svg" alt="Clients">
@@ -4724,7 +5122,41 @@
     </footer>
 </div>
 
-
-<div id="t_preload_links"></div>
+<div class="become-partner-dialog-container" style="display: none;">
+  <div class="overlay" onclick="hideBecomePartnerDialog()"></div>
+  <div class="become-partner-dialog">
+    <img class="become-partner-dialog-image" src="/img/shot-two-smart-business-women-working-together-with-computer-digital-tablet-while-talking-office%201.png">
+    <div class="content">
+      <div class="title">
+        <div class="text-wrapper">Conviértete en Partner</div>
+        <p class="div">Por favor, ingresa tus datos a continuación y nos pondremos en contacto contigo en breve.</p>
+      </div>
+      <div class="div-2">
+        <div class="form">
+          <div class="div-2">
+            <div class="input">
+              <label class="label" for="form-name">Nombre Completo</label>
+              <input class="input-2" type="text" id="form-name" name="form-name" placeholder="Ingresa tu nombre completo">
+            </div>
+            <div class="input">
+              <label class="label" for="form-email">Tu correo electrónico</label>
+              <input class="input-2" type="email" id="form-email" name="form-email" placeholder="Ingresa tu correo electrónico">
+            </div>
+          </div>
+        </div>
+        <div class="frame">
+          <a class="link" onclick="becomePartnerDialogOk()"><div class="text-wrapper-2" id="form-button">Enviar</div></a>
+        </div>
+      </div>
+    </div>
+    <div class="content-ok" style="display: none;">
+      <div class="title">
+        <img class="icon" src="../../img/icon-ok.png">
+        <div class="text-wrapper">Solicitud recibida</div>
+        <p class="thank-you-for-your">¡Gracias por tu interés! Hemos recibido tu solicitud y nos pondremos en contacto contigo en breve.</p>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

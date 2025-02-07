@@ -105,5 +105,12 @@
   "offer-consulting-and": "Ofereça consultoria e cobre pela implementação, com taxas ajustadas à complexidade do projeto.",
   "official-certification": "Certificação Oficial",
   "become-a-certified": "Torne-se um Implementador Certificado do Teamboarding e acesse recursos exclusivos.",
-  "developed-by": "Desenvolvido por"
+  "developed-by": "Desenvolvido por",
+
+  "enter-full-name": "Digite seu nome completo",
+  "enter-email": "Digite seu e-mail",
+  "dialog-top-msg": "Por favor, insira seus dados abaixo e entraremos em contato com você em breve.",
+  "dialog-thank-you-title": "Solicitação recebida",
+  "dialog-thank-you": "Obrigado pelo seu interesse! Recebemos sua solicitação e entraremos em contato em breve.",
+  "submit": "Enviar"
 }

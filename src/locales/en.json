@@ -105,5 +105,12 @@
   "offer-consulting-and": "Offer consulting and charge for implementation, with fees adjusted to project complexity.",
   "official-certification": "Official certification",
   "become-a-certified": "Become a Certified Teamboarding Implementer and access exclusive resources.",
-  "developed-by": "Developed by"
+  "developed-by": "Developed by",
+
+  "enter-full-name": "Enter your full name",
+  "enter-email": "Enter your email",
+  "dialog-top-msg": "Please enter your details below and we will get back to you shortly.",
+  "dialog-thank-you-title": "Request received",
+  "dialog-thank-you": "Thank you for your interest! We've received your request and will get back to you shortly.",
+  "submit": "Submit"
 }
