@@ -112,5 +112,11 @@
   "dialog-top-msg": "Por favor, ingresa tus datos a continuación y nos pondremos en contacto contigo en breve.",
   "dialog-thank-you-title": "Solicitud recibida",
   "dialog-thank-you": "¡Gracias por tu interés! Hemos recibido tu solicitud y nos pondremos en contacto contigo en breve.",
-  "submit": "Enviar"
+  "submit": "Enviar",
+
+  "partners-top-about-link": "/es/#About",
+  "partners-top-customers-link": "/es/#Customers",
+  "partners-top-features-link": "/es/#Features",
+  "partners-top-integrations-link": "/es/#Integrations",
+  "partners-top-benefits-link": "/es/#Benefits"
 }

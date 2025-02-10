@@ -112,5 +112,11 @@
   "dialog-top-msg": "Please enter your details below and we will get back to you shortly.",
   "dialog-thank-you-title": "Request received",
   "dialog-thank-you": "Thank you for your interest! We've received your request and will get back to you shortly.",
-  "submit": "Submit"
+  "submit": "Submit",
+
+  "partners-top-about-link": "/#About",
+  "partners-top-customers-link": "/#Customers",
+  "partners-top-features-link": "/#Features",
+  "partners-top-integrations-link": "/#Integrations",
+  "partners-top-benefits-link": "/#Benefits"
 }
