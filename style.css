@@ -2383,6 +2383,13 @@ html[lang=pt] .landing-onboarding .img-5 {
   margin-right: -86px;
 }
 
+html[lang=es] .frame-202 .img-5 {
+  margin-right: -90px;
+}
+html[lang=pt] .frame-202 .img-5 {
+  margin-right: -55px;
+}
+
 .landing-onboarding .chips-4 {
   display: inline-flex;
   gap: 4.62px;
